@@ -135,7 +135,7 @@ For a meaningful analysis, the above classification must be further broken down 
 The following low-level characteristics categorize input modes and their primary effect. Because this survey focuses on interfacing algorithms, UI specifics, such as the layout of buttons, are not considered. Once the specific control mechanisms are analyzed, they constitute a method in combination with the above control paradigms.  
 
 * Setup
-    * System Configuration,Task Initialization
+    * System Configuration, Task Initialization
 * Exemplars
     * Image, Element Arrangement, Element
 * Parameterization
@@ -309,7 +309,7 @@ QUESTION: Again, how to get away from the strong-weak measurements?
 The summary of all control mechanism groups in Table 3.7 shows that there is no approach that fulfils all creative means at least weakly:
 
 ![table_3-7](img/table_3-7.png)  
-*[Table 3.7] Summary of the creative means interpretations for the discussed control mechanisms. Strong characteristics (black circle) in the previously presented analyses of the specific techniques are counted as double and weak, as (white circle) single. Averages of 25-50% are considered as weak and above 50%, as strongly pronounced.*
+*[Table 3.7] Summary of the creative means interpretations for the discussed control mechanisms. Strong characteristics (black circle) in the previously presented analyses of the specific techniques are counted as double and weak, as (white circle) single. Averages of 25-50% are considered as weak and above 50%, as strongly pronounced.*
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
