@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+
+        "markdownlint.config": 
+        {
+            "MD007": { "indent": 4 },
+            "MD041": false,
+            "MD036": false,
+        },
+        "markdownlint.run": "onSave",
+
+        "cSpell.words": [
+            "resample",
+            "spraypaint"
+        ],
+        "cSpell.enabled": true,
+
+        // "python.pythonPath": "/code/venv/source/bin/python",
+        // "python.venvFolders": 
+        // [
+        //     "/code/venv",
+        // ],
+        "workbench.colorCustomizations":
+        {
+            "titleBar.activeBackground":"#ff7d41",
+            "titleBar.inactiveBackground":"#ff7d419d",
+            "titleBar.activeForeground":"#2c2c2c",
+            "titleBar.inactiveForeground":"#a3a3a3",
+        }
+        
+    }
+}
