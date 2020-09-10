@@ -135,13 +135,13 @@ For a meaningful analysis, the above classification must be further broken down 
 The following low-level characteristics categorize input modes and their primary effect. Because this survey focuses on interfacing algorithms, UI specifics, such as the layout of buttons, are not considered. Once the specific control mechanisms are analyzed, they constitute a method in combination with the above control paradigms.  
 
 * Setup
-    * System Configuration,Task Initialization
+    * System Configuration,Task Initialization
 * Exemplars
-    * Image, Element Arrangement, Element
+    * Image, Element Arrangement, Element
 * Parameterization
-    * Visual Output, System/Generation
+    * Visual Output, System/Generation
 * Handling
-    * Visualization, Image-Based, Sketch-Based
+    * Visualization, Image-Based, Sketch-Based
 * Filling
     * Shapes, Masking, Curve/Line/Stroke to Fill
 * Guiding
