@@ -49,7 +49,56 @@ WIP: Creative Control for (Procedural) Pattern Generation
 Abstract
 ==================
 
-TODO: next
+Supporting artists with meaningful digital tools for creative creation is an ongoing research challenge and spans over various disciplines. On an algorithmic level, most solutions focus on adding singular features and control mechanisms. Little attention is paid to novel methods that can complement each other as part of a cohesive pipeline. For this aim however, an overall understanding of a creative creation process, its representation on an algorithmic level and its connection to specific control mechanisms is needed.
+
+As groundwork, we therefore start by dissecting a creation process into to the methodologies of how, what, where and when. Specific control mechanisms are classified into exemplars, parameterization, handling, filling, guiding and placing interactions and related to the stages of a creation process. For making the domain of creative creation more manageable, the creative means of navigation, transparency, variation and stimulation are defined and linked to the control mechanisms.
+
+These theoretical findings are applied to analyzing the specific goal of two-dimensional procedural pattern generation. The algorithmic nature of procedural generation has great capabilities and potential to offer truly novel benefits to traditional creation processes. However, with the power of procedural generation comes difficult controllability. We chose two-dimensional procedural patterns as representative design goal as their potential design space ranges from realistic, over abstracted to artistic.
+
+For the state of the art, we give an overview of the most recent advancements, classify methods according to their control mechanisms and discuss their potential to support creative creation with the developed criteria. The analysis bridges to various related techniques for the chosen design goal such as data-driven ones and the unification of different building blocks to a coherent pipeline, is discussed. Based on this analysis, we identify open issues and sketch out promising research directions.
+
+All in all, we hope to inspire innovation for artist-centered creation processes on a grander scheme.
+
+
+
+
+
+
+<!-- 
+
+This analysis gives a novel understanding 
+
+To address this challenge, this thesis puts it into the context of procedural generation. 
+
+The objective of this thesis is to provide a better understanding of the needs for, and specific methods 
+
+As groundwork, a well defined general understanding of what is needed from an artist perspective is crucial. 
+
+
+In summary, this thesis analyses how artists can be supported with meaningful control mechanisms, and it offers techniques for a purposeful creation pipeline. 
+
+introduce the main relevant PM methods,
+classify these methods according to their underlying techique,
+provide an overview of the most recent PM advancements,
+evaluate them with the most current, relevant criteria, and
+identify open issues and promising research directions.
+
+
+recent advances, discussion and comparison
+formal definition procedural noise functions based on stochastic processes
+classification and review existing procedural noise functions
+usage of procedural noise functions for modeling and how they are applied on surfaces
+introduction of analysis tools and application to evaluate and compare the major approaches to noise generation
+identification of several directions for future work.
+
+make a comprehensive survey and comparisons of different methods, and
+sketch a vision for future work that can help motivate and guide readers that are interested in texture synthesis research.
+
+a taxonomy of sketchbased interfaces focused on geometric modeling applications
+canonical and recent works are presented and classified, including techniques for sketch acquisition, filtering, and interpretation.
+discussion of important challenges and open problems
+
+
 
 For coming up with the abstract you can follow these questions by Kent Beck:
 
@@ -68,6 +117,8 @@ For coming up with the abstract you can follow these questions by Kent Beck:
 A good example:
 
 > The rejection rate for OOPSLA papers is near 90%. Most papers are rejected not because of a lack of good ideas, but because they are poorly structured. Following four simple steps in writing a paper will dramatically increase your chances of acceptance. If everyone followed these steps, the amount of communication in the object community would increase, improving the rate of progress.
+
+ -->
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -250,10 +301,14 @@ Example-based approaches compute a separate output based on a given example and 
 ![table_3-1](img/table_3-1.png)  
 *[Table 3.1] Interaction means for example-based techniques.*
 
-QUESTION: How to substitute the following strong-weak classifications while still making a conntection to the creative means?
+QUESTION: How to substitute the following strong-weak classifications while still making a connection to the creative means?
 
 ![table_3-2](img/table_3-2.png)  
 *[Table 3.2] Creative means for example-based techniques.*
+
+QUESTION: Instead of a strong-weak classification, maybe a simple classification of all methods could work? Along the lines of:
+
+![table_classification_refs](img/table_classification_refs.png)  
 
 ### Shapes and Masks
 
@@ -320,6 +375,7 @@ Questions
 ==================
 
 * Should we focus on procedural techniques (with which definition of procedural)?
-* Should we focus on ornamental/aesthetically pleasing/etc. patterns?
+    * Could it add an value/contribution if we consider procedural and data-driven methods together?
+* Should we focus on ornamental/aesthetically pleasing/etc. patterns? Which design goal should we follow?
 * How can we leave out the strong and weak categories?
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
