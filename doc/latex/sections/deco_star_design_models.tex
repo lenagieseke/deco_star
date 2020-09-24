@@ -1,0 +1,38 @@
+%!TEX root = ../deco_star.tex
+
+%-------------------------------------------------------------------------
+\section{Designs and Models}
+
+
+\subsection{Design Goals}
+
+\textit{[Description of pattern designs we consider.]}
+
+
+\subsection{Models}
+
+In the context of computer graphics, generation techniques are differentiated into procedural and data-driven approaches.
+
+\subsubsection{Procedural}
+Ebert et al. [2002] describe procedural techniques as algorithms and mathematical functions that synthesize a model or an effect.
+
+\textit{[...]}
+
+We further categorizes procedural models as stochastic, function and rule based, grammar based, simulation based, and artificial intelligence based. 
+
+\textit{[...]}
+
+
+\subsection[Data-Driven]{Data-Driven Models}
+\label{subsec:design_models_datadriven}
+
+In contrast to procedural techniques, data-driven methods can be used in two ways in the context of ornamentation. First, they describe the processing of input pixel data, such as a photograph. Second, they refer to the output of a method, which is again pixel data. Data-driven models traditionally do not include underlying design models, as procedural representations do. Consequently, data-driven approaches are flexible in terms of possible designs and can achieve photorealism by processing real photographs.
+
+At the same time, photographs bring the disadvantage of potentially including visual features, such as illumination effects, which are unwanted and difficult to remove. Moreover, further down a production pipeline, pixel data is usually not editable anymore. Working with data such as high-resolution images leads to high memory requirements, and without additional algorithms, data is fixed to its given resolution and scale.
+
+% Does this section really fit here?
+Addressing the issue of resolution example-based synthesis is a well established field of research and aims to create infinite amounts of pixel data based on a given exemplar. The pyramid-based texture synthesis of \citeauthor*{heeger_1995_pbt}~\cite{heeger_1995_pbt} is an early famous example.~\citeauthor*{wei_2009_seb}~\cite{wei_2009_seb} present a comprehensive summary of such example-based texture synthesis techniques, discussing statistical feature matching, neighborhood matching, patch-based and optimization methods. Overall, example-based methods for texture synthesis have achieved similar results in data size, random accessibility and editing and resolution options as procedural textures – but only within specialized contexts and not in an unified manner. Procedural textures offer these capabilities as inherent and combined characteristics.
+
+Data-driven models are numerous and diverse because they can use and produce any input and output data without an underlying procedural model. Their classification is out of scope of this work. However, we do include in the following various techniques that offer further meaningful control mechanisms in the context of ornamentation. These techniques include the tiling and distribution of elements and drawing and brush mechanisms.
+
+% For a review of models that output ornamental patterns, we focus on the output of the models and not on their underlying generation principles in order to come to a summarization.

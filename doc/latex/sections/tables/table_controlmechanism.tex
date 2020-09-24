@@ -1,0 +1,133 @@
+%!TEX root = ../../deco_star.tex
+
+
+
+
+\begin{table}
+\tiny
+
+% \begin{tabu} to \linewidth {
+%     X[1,c]
+%     >{\columncolor[gray]{0.8}}X[1,c]
+%     X[1,c]
+%     >{\columncolor[gray]{0.8}}X[10,l]
+% }
+%     \hline \hline
+%     \textbf{Time End of Step} & 
+%     \textbf{Step} & 
+%     \textbf{Event} &
+%     \textbf{Description} 
+%     \\ \hline \hline \hline \hline
+%     12:18:52 & 1 & 1 & this is a description for the event \\
+%     12:18:52 & 1 & 1 & this is a description for the event \\
+%     12:18:52 & 1 & 1 & this is a description for the event \\
+% \end{tabu}
+
+
+% \begin{tabu}
+
+\begin{tabu} to \linewidth { |[.05mm middleGray] l |[.05mm middleGray] l |[.05mm middleGray]
+    % l
+    % g
+    % g
+    % g
+    % l
+    % l
+    % l
+    % l
+    % g
+    % g
+    % g
+    % l
+    % l
+    % l
+    X[1,l]
+    >{\columncolor[gray]{0.8}}X[1,c]
+    >{\columncolor[gray]{0.8}}X[1,c]
+    >{\columncolor[gray]{0.8}}X[1,c]
+    X[1,l]
+    X[1,l]
+    X[1,l]
+    X[1,l]
+    >{\columncolor[gray]{0.8}}X[1,c]
+    >{\columncolor[gray]{0.8}}X[1,c]
+    >{\columncolor[gray]{0.8}}X[1,c]
+    X[1,l]
+    X[1,l]
+    X[1,l]
+    |[.05mm middleGray]}
+    \taburulecolor{middleGray}\hline
+    % \tableHeaderStyle
+    \multicolumn{3}{|[.05mm middleGray]g}{} & 
+    \multicolumn{3}{g}{HOW} & 
+    \multicolumn{4}{g}{WHAT} &
+    \multicolumn{3}{g}{WHERE} & 
+    \multicolumn{3}{g|[.05mm middleGray]}{WHEN}
+    \\
+
+    \taburulecolor{middleGray}\hline
+
+    \multicolumn{2}{|[.05mm middleGray]l|[.05mm middleGray]}{} & 
+    \sidy{Total (out of 40)} & 
+    \sidy{File} & \sidy{UI} & \sidy{Canvas} & 
+    \sidy{Code} &  \sidy{Value} & \sidy{Intermediate} & \sidy{Element} &
+    \sidy{Global} & \sidy{Region} & \sidy{Local} &
+    \sidy{Before} & \sidy{During} & \sidy{After} 
+    \\
+
+    
+    \taburulecolor{middleGray}\hline
+    \everyrow{\tabucline[.05mm  mainColor]{2-}}
+
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Setup}} \\
+    & \color{nicegray}{Configuration} & 9 & 9 &  &  & 8 & 1 &  &  & 9 & 1 &  & 9 &  &  \\
+    & \color{nicegray}{Initalization} & 14 & 12 & 2 &  & 3 & 1 & 5 & 1 & 13 & 2 &  & 14 &  &  \\
+
+
+    \taburulecolor{middleGray}\hline
+    
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Exemplars}} \\ 
+
+    \multirow[t]{19}{*}{\sidy{\hspace{-10em}$\longleftarrow$ \textit{Decreasing Automation}}}
+    & \color{nicegray}{Image} & 1 & 9 & 1 &  &  &  & 1 & 1 & 1 & 2 &  & 1 &  &  \\
+    & \color{nicegray}{Arrangement} & 9 & 8 & 1 & 1 & 4 &  & 3 & 6 & 9 & 2 &  & 9 &  &  \\
+    & \color{nicegray}{Element} & 9 & 6 & 2 & 1 &  &  & 5 & 4 & 7 & 2 &  & 9 &  &  \\
+
+
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Parameterization}} \\
+    & \color{nicegray}{Visual} Output  & 31 & 23 & 8 &  & 5 & 25 & 2 &  & 29 & 2 &  & 17 & 1 & 16 \\
+    & \color{nicegray}{System} & 16 & 1 & 7 &  &  & 15 & 1 &  & 17 & 4 &  & 16 &  &  \\
+
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Handling}} \\
+    & \color{nicegray}{Visual} UI & 6 &  & 3 & 3 &  &  & 5 & 2 & 4 & 5 &  & 3 & 1 & 4 \\
+    & \color{nicegray}{Image} & 9 & 9 &  &  & 2 &  & 7 &  & 9 & 5 &  & 9 &  &  \\
+    & \color{nicegray}{Sketch} & 7 &  & 1 & 6 &  &  & 8 & 3 & 3 & 7 & 2 & 6 &  & 2 \\
+
+
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Filling}} \\
+    & \color{nicegray}{Shapes} & 32 & 25 &  & 8 & 21 &  & 11 &  & 32 & 12 &  & 32 & 1 &  \\
+    & \color{nicegray}{Masking} & 9 & 4 &  & 6 & 2 &  & 7 &  & 6 & 9 &  & 9 & 1 &  \\
+    & \color{nicegray}{Curve} & 8 &  &  & 8 &  &  & 6 & 2 & 1 & 8 &  & 7 & 1 &  \\
+
+
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Guiding}} \\
+    & \color{nicegray}{Painting} & 6 &  &  & 6 &  &  & 1 & 5 &  & 6 &  &  & 6 &  \\
+    & \color{nicegray}{Directions} & 7 & 1 &  & 6 &  &  & 7 &  & 7 & 7 &  & 7 &  &  \\
+
+
+
+    & \multicolumn{15}{l|[.05mm middleGray]}{\textit{Placing}} \\
+    & \color{nicegray}{Element} & 7 &  &  & 7 &  &  &  & 7 &  &  & 7 & 7 &  &  \\
+    & \color{nicegray}{Drag\&Drop} & 5 &  &  & 5 &  &  &  & 5 & 1 & 4 & 4 &  & 4 & 1 \\
+
+     \taburulecolor{middleGray}\hline
+
+
+\end{tabu}
+
+
+
+
+\caption[Prevalence of control mechanisms]{Prevalence of control mechanisms in the literature: In total, 40 publications are included (the discussed state of the art work). Please note, that the totals of each step (how, what, where, when) can exceed the total of that category as it can be implemented within multiple usage scenarios.}
+\label{table:taxo_controlmechanism}
+\end{table}

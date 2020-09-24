@@ -1,0 +1,76 @@
+% Colors
+
+
+\definecolor{mainColor}{RGB}{180, 180, 180}
+\definecolor{secondColor}{RGB}{142, 68, 173}
+
+\definecolor{lightGray}{RGB}{220, 220, 220}
+\definecolor{middleGray}{RGB}{180, 180, 180}
+\definecolor{darkGray}{gray}{.55}
+
+
+
+\newcommand{\inColor}[1]{\textbf{\textcolor{mainColor}{#1}}}
+
+
+%%\definecolor{nicered}{rgb}{.647,.129,.149}
+\definecolor{niceblue}{rgb}{0.122,0.396,0.651}   %% 31, 101, 166
+\definecolor{nicegray}{rgb}{0.32,0.32,0.32} 
+\definecolor{niceorange}{rgb}{255,205,86}        %% #FFCD56
+
+\definecolor{nicered}{rgb}{220, 20, 60}                      %% rgb(220, 20, 60)
+
+% colors for todo markers
+\colorlet{minor}{nicered!20}
+\colorlet{major}{nicered!80}
+\colorlet{important}{red!50} 
+\colorlet{question}{green!50} 
+\colorlet{figure}{blue!40} 
+\definecolor{published}{HTML}{E0FFFF} %% lightcyan
+\definecolor{note}{rgb}{0.8,0.86,0.97}
+
+
+%% Todo markers
+\def\isTodoEnabled{}
+%\def\isTodoEnabled{disable}
+
+\newcommand{\importantinline}[2][]{\todo[\isTodoEnabled,color=important,caption={\bfseries Important:},inline,#1]%
+  {%
+    \begin{minipage}{1.0\linewidth}
+      {\bfseries Important:} #2
+    \end{minipage}%
+  }}
+
+\newcommand{\important}[2][]{\todo[\isTodoEnabled,color=important,#1]{{\bfseries Important:}#2}}
+\newcommand{\question}[2][]{\todo[\isTodoEnabled,color=question,#1]{{\bfseries Question:} #2}}
+\newcommand{\insertref}[2][]{\todo[\isTodoEnabled,color=orange!40,#1]{{\bfseries Cite:} #2}}
+\newcommand{\explainindetail}[1][]{\todo[\isTodoEnabled,color=blue!40,#1]{\bfseries Explain in Detail!}}
+\newcommand{\minortodo}[2][]{\todo[\isTodoEnabled,color=minor,#1]{{\bfseries Minor:} #2}}
+% \newcommand{\majortodo}[2][]{\todo[\isTodoEnabled,color=major,#1]{{\bfseries Major:} #2}}
+\newcommand{\figuretodo}[2][]{\todo[\isTodoEnabled,color=figure,#1]{{\bfseries Add Figure:} #2}}
+\newcommand{\note}[2][]{\todo[\isTodoEnabled,color=note,caption={\bfseries Note},inline,#1]%
+  {%
+    \begin{minipage}{1.0\linewidth}
+      {\bfseries Note:} #2
+    \end{minipage}%
+  }}
+
+  \newcommand{\majortodo}[2][]{\todo[\isTodoEnabled,color=red!60,caption={\bfseries Todo},inline,#1]%
+  {%
+    \begin{minipage}{1.0\linewidth}
+      {\bfseries Todo:} #2
+    \end{minipage}%
+  }}
+
+\newcommand{\needsRevision}[2][]{\todo[color=nicered!18,caption={{\bfseries Needs Revision}},prepend,inline,#1]%
+  {\\[2ex]%
+    \begin{minipage}{1.0\linewidth}
+      %{\bfseries Needs revision:}
+      #2
+    \end{minipage}%
+  }}
+
+\endinput 
+
+
+
