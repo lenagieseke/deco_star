@@ -5,8 +5,67 @@
 
 
 \subsection{Design Goals}
+\label{sec:design_goals}
 
-\textit{[Description of pattern designs we consider.]}
+\majortodo{Adapt the following section to creative pattern generation.}
+
+In this investigation of creative control for procedural modeling, the design goals of ornamentation trigger challenging questions. Ornamentation goes beyond the basic repetition of elements to create patterns, and requires the use of formative design principles.
+
+The Oxford English Dictionary~\cite{oed_2017} defines ornaments as nonessential accessories intended to adorn. There is no functionality to an ornament other than to beautify a manufactured article without changing its shape or character~\cite{ward_1896_tpo}.
+
+The term ornament can be found in a large variety of contexts, such as in architecture, music or poetry, but this work only refers to two-dimensional visual ornaments. While ornaments may carry symbolic meanings in the arranged elements \cite{wornum_1896_aof}, this work does not include semantics but focuses on visual qualities.
+
+Different cultures and times resulted in various ornamental styles, with great differences in the details as \Cref{fig:historic_examples} shows. Nevertheless common underlying design principles for ornamentation can be identified.
+
+
+\begin{figure}
+    % \centering
+       \includegraphics[width=0.9\columnwidth]{figures/historic_examples/historic_examples.png}
+        \caption[Historic ornamentation examples]{\label{fig:historic_examples} Historic ornamentation examples. Places of origin from left to right, top to bottom:  France, China, USA, UK, Egypt, UK$^{*}$, Poland, UK$^{*}$, Greece, Italy. $^{*}$Images are cutouts of tiled pattern but are often found as presented here. Image sources: please refer to~\Cref{chap:img_refs_taxo}~\nameref{chap:img_refs}.}
+\end{figure}
+
+Ornamentation can be understood as an accurately defined type of decor that follows a structural logic~\cite{ward_1896_tpo, moughtin_1999_udo, arbruzzo_2006_dec}. 
+% But the transition between formal ornamentation and informal decoration is smooth, with various common aspects~\cite{moughtin_1999_udo}. 
+In addition to its aesthetic appeal, an ornament is perceptually distinguished by a sense of order and by its alignment to the space it fills (as summarized by \citeauthor*{wong_1998_cgf}~\cite{wong_1998_cgf} and originally stated by \citeauthor*{ward_1896_tpo}~\cite{ward_1896_tpo, dresser_1875_pdd, arbruzzo_2006_dec}). 
+ \citeauthor*{arbruzzo_2006_dec}~\cite{arbruzzo_2006_dec} elaborate on ornamentation as follows:
+
+\begin{quote}
+\textit{[An] ornament is inextricable linked to scale and proportion, to form and order. In this context, the modus operandi of ornamentation is always to reinforce an existing order: to conform to its partner in the ornament-object relationship, for ornament always has a partner in that which is ornamented.}
+\end{quote}
+
+An underlying perception of order in an ornament is established by even repetition and a balanced distribution of elements, with an intentionally designed and artificial quality~\cite{ward_1896_tpo}. Balance can be achieved with a careful composition of elements, and such balance is built on symmetrical arrangements in most ornaments. Compositions are not limited to the repetition of the same element, but different visual qualities can create various relationships. Visual characteristics attract the eye differently and the \textit{visual weight} of a feature can be used as a measure for the degree of attraction. For example, large, dark and highly saturated colored elements have a greater visual weight than small, light and desaturated ones. These visual weights can be used to create visual correlations (for example, based on Gestalt psychology - a topic too wide for a discussion here) and can counterbalance each other. A larger and lighter colored element might have the same visual weight as a smaller, darker colored one. Hence, varied elements with different visual properties can be combined and still make a balanced whole.
+
+
+\begin{figure}
+    % \centering
+       \includegraphics[width=1\columnwidth]{figures/ornament/ornament_principles.pdf}
+        \caption[Ornamentation principles]{\label{fig:ornamentation_principles} Exemplary dissection of visual characteristics fulfilling ornamental principles. Single features often support several principles, as, for example, the frames and borders create a hierarchical composition, an adaption to the space the ornament fills and visual contrasts. Image source: \cite{morris_1910_tol}.}
+\end{figure}
+
+Hierarchical compositions further increase a sense of order but are also used for creating contrasts (e.g., foreground vs. background) and accentuating structures (e.g., framing). These structures are often used to elaborate and accentuate the form of the space they fill, hence building the ornament-object relationship described by \citeauthor*{arbruzzo_2006_dec}~\cite{arbruzzo_2006_dec}. The following differentiation of an ornamental decoration gives an intuitive understanding of this aspect~\cite{arbruzzo_2006_dec}: Wallpaper can be trimmed for different rooms, but the design is not reproportioned or altered. An ornament, however, is fitted to and references the logic of the space it is designed for. Without adjustment, it cannot be transferred to a different space.
+
+Contrasts and accents are crucial for the visual appeal of an ornament~\cite{wong_1998_cgf,ward_1896_tpo, moughtin_1999_udo}. Single, visually dominant elements and structures might not follow the underlying order of the ornament at all, breaking an otherwise too homogeneous appearance - again distinguishing ornamentation from wallpaper.
+
+\Cref{fig:ornamentation_principles} gives an example of how the described design principles are combine seamlessly into a coherent design.
+
+It takes artistic expertise to balance the contrast between carefully chosen visual accents and to create a sense of order by applying compositional rules and by complementing the space. However, it is exactly this combination of qualities - rule-based composition and repetition on the one hand and the placement of visual accents and the breaking free from order on the other - that make ornamentation an interesting but highly challenging field of algorithmic research in the context of computer graphics.
+
+Ornamentation exemplifies the common challenge of enabling control for tasks for which humans are indispensable in combination with the automation of tedious manufacturing and the computation of structuring rules.
+
+
+
+% \subsubsection{Summary}
+% \label{subsec:ornamentation_summary}
+
+% \label{sum:ornamentation}
+% \textit{Ornamentation}
+%     \begin{itemize}
+%     \item Perception of order
+%     \item Hierarchical compositions
+%     \item Adaptation to the space
+%     \item Contrasts and visual accents
+%     \end{itemize}
+
 
 
 \subsection{Models}
@@ -31,7 +90,7 @@ In contrast to procedural techniques, data-driven methods can be used in two way
 At the same time, photographs bring the disadvantage of potentially including visual features, such as illumination effects, which are unwanted and difficult to remove. Moreover, further down a production pipeline, pixel data is usually not editable anymore. Working with data such as high-resolution images leads to high memory requirements, and without additional algorithms, data is fixed to its given resolution and scale.
 
 % Does this section really fit here?
-Addressing the issue of resolution example-based synthesis is a well established field of research and aims to create infinite amounts of pixel data based on a given exemplar. The pyramid-based texture synthesis of \citeauthor*{heeger_1995_pbt}~\cite{heeger_1995_pbt} is an early famous example.~\citeauthor*{wei_2009_seb}~\cite{wei_2009_seb} present a comprehensive summary of such example-based texture synthesis techniques, discussing statistical feature matching, neighborhood matching, patch-based and optimization methods. Overall, example-based methods for texture synthesis have achieved similar results in data size, random accessibility and editing and resolution options as procedural textures – but only within specialized contexts and not in an unified manner. Procedural textures offer these capabilities as inherent and combined characteristics.
+Addressing the issue of resolution example-based synthesis is a well established field of research and aims to create infinite amounts of pixel data based on a given exemplar. The pyramid-based texture synthesis of \citeauthor*{heeger_1995_pbt}~\cite{heeger_1995_pbt} is an early famous example.~\citeauthor*{wei_2009_seb}~\cite{wei_2009_seb} present a comprehensive summary of such example-based texture synthesis techniques, discussing statistical feature matching, neighborhood matching, patch-based and optimization methods. Overall, example-based methods for texture synthesis have achieved similar results in data size, random accessibility and editing and resolution options as procedural textures - but only within specialized contexts and not in an unified manner. Procedural textures offer these capabilities as inherent and combined characteristics.
 
 Data-driven models are numerous and diverse because they can use and produce any input and output data without an underlying procedural model. Their classification is out of scope of this work. However, we do include in the following various techniques that offer further meaningful control mechanisms in the context of ornamentation. These techniques include the tiling and distribution of elements and drawing and brush mechanisms.
 
