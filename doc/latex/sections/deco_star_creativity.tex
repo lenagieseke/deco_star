@@ -1,156 +1,150 @@
 %!TEX root = ../deco_star.tex
 
 
-\section{Creative Means}
-\label{sec:taxo_creativity}
+\section{Creativity}
+\label{sec:creativity}
 
-In order to solve complex tasks for which no obvious standardized solution is apparent, thinking creatively enables a change in perspective and the development of different solutions.
+% ZOOM INTO TOPIC
+Many content generation contexts in computer graphics involve creative considerations. To consider creativity is especially relevant for investigating control mechanisms because the controls provide the means for creative creation. However, creativity is also a notoriously difficult topic to address because it is an ill-defined domain and involves insights from various disciplines.
 
-% In every day life, popular literature on ``how to be creative'' continues to be of great demand. The complexity of the professional world requires novel, individual and interdisciplinary ideas in contrast to commonly learned and standardized approaches. \textit{Creative thinking} reached the status of being a buzz word and at the same time its specific meanings got more and more obscure.
+% % WHAT DID THE OTHER RELATED TO THE PROBLEM?
+% One research direction solves creative generation requirements with computational creativity. This investigation of algorithms that perform creatively is again a multidisciplinary field. It merges research in artificial intelligence, cognitive science, art, design, philosophy and psychology. The interested reader is referred to the Association for Computational Creativity~\citep{acc_2018_ccr} and its various resources. 
 
-Creativity is also an established field of research in computer science. On the one hand, there are efforts to develop algorithms that perform creatively. On the other hand, there is the common goal of supporting human creativity with digital tools, which is the focus of this survey.
+For creativity related research in computer science, on the one hand, there are efforts to develop algorithms that perform creatively. On the other hand, there is the common goal of supporting human creativity with digital tools, which is the focus of this survey. The goal of enabling human creativity is, for example, well researched in regard to interface design. This is an established field in the human-computer interaction community and based largely on the pioneering work of \citeauthor*{shneiderman_2007_cst}~\cite{shneiderman_2007_cst} about \textit{Creativity Support Tools}. Interface design aspects are included but are not focus of this survey. However, the need for bridging between developing the core algorithms and the interface in order to support creative-artistic intent has been voiced by past research~\cite{deterding_2017_mci,isenberg_2016_inw, salesin_2002_nar}, and this work wishes to contribute to this effort.
 
-% is this maybe better in the introduction?
-In the context of this goal of enabling human creativity, \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} presented the quantifiable \textit{Creativity Support Index} (CSI), which has found its way into the graphics community \cite{shugrina_2017_ppi}. The index measures how well a tool enables creativity based on a psychometric survey. The development and validation of the measurement dimensions - namely, \textit{exploration}, \textit{expressiveness}, \textit{immersion}, \textit{enjoyment}, \textit{results worth effort}, and \textit{collaboration} - are mainly based on user tests. \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} quantified the specific phrases participants used to describe a creative process. However, a clear definition of terms like  \textit{exploration} and \textit{expressiveness} is missing or the meaning of a statement such as ``I was able to be very creative, [...]'' is left open. 
+For this survey, rooted in the field of computer graphics, we review potentially relevant characteristics of algorithms that might help to enable artists to be creative. Hence, our focus is on underlying algorithms and their control mechanisms. 
 
-In order to assess the related work, which is discussed in the next chapter, a quantified user study for all presented techniques is not feasible. Doing so would also not be meaningful because the support of creativity is not a goal for most methods. However, most methods do offer carefully developed control mechanisms. We propose it to build a discussion of the means for creativity on the presented control mechanisms in a publication and on the specifics given from the authors. Based on the given information, we reflect on the potential for creative means in a meaningful way, even if creative control was not necessarily the authors' intention. This survey is meant as a step toward understanding the creative control options within the current state of the art. In terms of measurement dimensions, this survey can be seen as a subset of the more general and user-study-based classification with the \textit{Creativity Support Index}.
+The computer graphics community usually addresses questions that solve specific and singular tasks, such as example-based texturing, brush-based modeling or optimizing the structural integrity of a pattern. Such tasks concentrate on efficiency, consist of exact descriptions and are well qualified for algorithmic solutions. Creativity, however, as described in more detail in the following section, feeds on flexibility, diversity, exploration and engagement. In order to support these characteristics, solutions should to be more multifaceted and creation processes should be investigated as a whole.
 
+As evaluation technique, \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} presented the quantifiable \textit{Creativity Support Index} (CSI), which has found its way into the graphics community \cite{shugrina_2017_ppi}. The index measures how well a tool enables creativity based on a psychometric survey. The development and validation of the measurement dimensions - namely, \textit{exploration}, \textit{expressiveness}, \textit{immersion}, \textit{enjoyment}, \textit{results worth effort}, and \textit{collaboration} - are mainly based on user tests. \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} quantified the specific phrases participants used to describe a creative process. However, a clear definition of terms like \textit{exploration} and \textit{expressiveness} is missing or the meaning of a statement such as ``I was able to be very creative, [...]'' is left open. 
 
+Also, quantified user study is often not feasible, for example for this survey and for assessing the state of the art. Furthermore, doing so would not be meaningful because the support of creativity is not a goal for most methods. However, most methods do offer carefully developed control mechanisms. We propose it to build a discussion of the means for creativity on the presented control mechanisms in a publication and on the specifics given from the authors. Based on the given information, we reflect on the potential for creative means in a meaningful way, even if creative control was not necessarily the authors' intention. 
 
+We derive a working basis of such creative means in regard control mechanisms for our discussion in the following review of relevant references. Our classification is meant as a step toward understanding the creative control options within the current state of the art. In terms of measurement dimensions, it can be seen as an evaluation on algorithmic level and a subset of the more general and user-study-based classification with the \textit{Creativity Support Index}. 
 
-In order to assess the means of a technique to enable human creativity, a common understanding of human creativity is needed. Academic discussions about what constitutes creativity have a long history in the field of psychology~\cite{weisberg_2006_cui}, cognitive science~\cite{boden_2004_cmm} and philosophy~\cite{gaut_2010_pc} and is ongoing. 
+\subsection{Creative Means}
+\label{subsec:creative_means}
 
-Recently, Robert W. Weisberg, a cognitive psychologist, made a valuable advancement in defining creative processes~\cite{weisberg_2006_cui}. Weisberg's main argument is that a creative person ``intentionally produces a novel product'' (p.70). Weisberg explicitly decouples a possible generally accepted value of a product from being the result of a creative process (please refer to~\cite{weisberg_2006_cui}, p.63, for a detailed argumentation). We follow Weisberg's exclusion of the potential and often diffuse value of the result of a creative process and also focus on the creative intent. 
+Academic discussions about what constitutes creativity have a long history in the field of psychology~\cite{weisberg_2006_cui}, cognitive science~\cite{boden_2004_cmm} and philosophy~\cite{gaut_2010_pc} and is ongoing. 
 
-For a better understanding of \textit{novelty},~\citeauthor*{boden_2010_cat}~\cite{boden_2010_cat} described it as a surprising product, one that the creator did not directly anticipated (p.30). Magret Boden also differentiated between a product being surprising or novel to oneself in contrast to something being universally novel (\cite{boden_2010_cat} p.30). In this survey of creativity regarding control mechanisms, we only include novelty in reference to the expectations of a single artist.
+% QUESTION: Is the following in the correct tense or should it be in present?
+
+\citeauthor*{weisberg_2006_cui}~\cite{weisberg_2006_cui} made the argument that a creative person ``intentionally produces a novel product'' (p.70). Weisberg explicitly decouples a possible generally accepted value of a product from being the result of a creative process (please refer to~\cite{weisberg_2006_cui}, p.63, for a detailed argumentation). We follow Weisberg's exclusion of the potential and often diffuse value of the result of a creative process and also focus on the creative intent. 
+
+For a better understanding of \textit{novelty},~\citeauthor*{boden_2010_cat}~\cite{boden_2010_cat} described it as a surprising product, one that the creator did not directly anticipated (p.30). \citeauthor*{boden_2010_cat} also differentiated between a product being surprising or novel to oneself in contrast to something being universally novel (\cite{boden_2010_cat} p.30). In this survey of creativity regarding control mechanisms, we only include novelty in reference to the expectations of a single artist.
 
 The integration of \textit{intention} in describing a creative process is crucial for the development of meaningful algorithms. Weisberg explains that a painter who accidentally stains a painting - a stain which is later applauded by the art world as an innovative technique - cannot be considered a creative result. Hence, algorithms need to enable artists to follow their intentions with transparent and controllable mechanisms. The idea, for example, of an algorithm producing a large number of random design choices for an artist to choose from contradicts the principle of intention.
 
-Further arguing against randomness in creative processes, Weisberg states that a creative process entails ``staying within the box.'' A creator needs domain-specific knowledge and expertise in order to come up with something novel or surprising. Weisberg bases his argument on an exemplary in-depth analysis and on the empirical evidence of unique case studies: Watson and Crick's formulation of their DNA model, representing a scientific creative process; the Wright brother's invention of the airplane as creative engineering task; and Picasso's creation of Guernica as an artistic creative work (\cite{weisberg_2006_cui} p.6,~\cite{markman_2009_tis} pp.28-38). Weisberg rejects the common perception of creativity as being an ``unfathomable leap of insight'' and advocates its systematic accessibility. He argues that this perception of creativity results from missing context and domain knowledge and from neglecting to include the whole process that leads to a novel product.
+Weisberg argues against randomness in creative processes and states that a creative process entails ``staying within the box.'' He explains that a creator needs domain-specific knowledge and expertise in order to come up with something novel or surprising. 
+% Weisberg bases his argument on an exemplary in-depth analysis and on the empirical evidence of unique case studies: Watson and Crick's formulation of their DNA model, representing a scientific creative process; the Wright brother's invention of the airplane as creative engineering task; and Picasso's creation of Guernica as an artistic creative work (\cite{weisberg_2006_cui} p.6,~\cite{markman_2009_tis} pp.28-38). 
+Weisberg rejects the common perception of creativity as being an ``unfathomable leap of insight'' and advocates its systematic accessibility. He argues that this perception of creativity results from missing context and domain knowledge and from neglecting to include the whole process that leads to a novel product.
 
-We applied Weisberg's argument in the context of control mechanisms by requiring techniques to enable the artist to fully understand the domain they work with. Cause and effect of interactions as well as the overall options to control the output must be transparent and navigable.
+Weisberg's argument applied in the context of control mechanisms leads to requiring techniques to enable artists to fully understand the domain they work with. Cause and effect of interactions as well as the overall options to control the output must be transparent and navigable.
 
 Weisenberg concludes his considerations about creative processes and innovation by stating that ``you must also work to broaden and deepen your database''~\cite{markman_2009_tis}. Hence, control mechanisms not only need to be transparent and fully steerable for an artist, but they also must offer a large space for an creator to explore. \citeauthor*{boden_2010_cat}~\cite{boden_2010_cat} describes this as a landscape to navigate through. This increase of possible options is a core aspect of many common creativity techniques, such as brainstorming, and must also be used for the development of digital tools~\cite{terry_2004_vea}.
 % creative thinking involves inside-the-box thinking: ordinary thought processes, operating on a rich database, bringing about extraordinary results.
 
-It is interesting to note that a substantial body of work~\cite{onarheim_2010_occ,shih_2011_buc,biskjaer_2014_cud,stokes_2005_ccp} suggests that constraints also stimulate creative processes. This seemingly contradicts the argument of offering a large design space to explore and again emphasizes the need for a design space to be meaningful and well framed for the domain it represents. It has to provide space to delve into without the danger of getting lost. Classical brainstorming, for example, is on the one hand based on the idea of coming up with as many answers to a question as possible - with no restrictions. On the other hand, a brainstorming session starts with a carefully crafted problem statement, which is supposed to be as precise and descriptive as possible. Hence, human brainstormers intuitively remain in the domain of the problem statement and exclusively offer solutions related to the problem. Therefore in a system that computes options for a design space, all options need to make sense, while ``enabling someone to see possibilities they hadn't glimpsed before''~\cite{boden_2010_cat}. 
+A substantial body of work~\cite{onarheim_2010_occ,shih_2011_buc,biskjaer_2014_cud,stokes_2005_ccp} suggests, however, that constraints can stimulate creative processes. This 
+% seemingly contradicts the argument of offering a large design space to explore and again
+emphasizes the need for a design space not just to be big but meaningful and well framed for the domain it represents. It has to provide space to delve into without the danger of getting lost. Classical brainstorming, for example, is on the one hand based on the idea of coming up with as many answers to a question as possible - with no restrictions. On the other hand, a brainstorming session starts with a carefully crafted problem statement, which is supposed to be as precise and descriptive as possible. Hence, human brainstormers intuitively remain in the domain of the problem statement and exclusively offer solutions related to the problem. Therefore in a system that computes options for a design space, all options need to make sense, while ``enabling someone to see possibilities they hadn't glimpsed before''~\cite{boden_2010_cat}. 
 
-Well designed constraints can act as stimuli for discovering unpredicted results. Common creativity techniques often include such stimulating constraints or motivations to guide the exploration in a specific direction. For example, with the Six Thinking Hats technique, each hat represents a specific mindset, such as “critical” or “emotional”, with which a participant should operate. This technique enables a large variety of possible stimuli and cues such as associations, analogies, abstractions, visualizations and reversals, including purely random inputs. Stimuli are a field of active research and as mentioned above, the usefulness of random cues has been doubted. Christensen and Schunn summarize their insights (\cite{markman_2009_tis}, pp.48-69) about cognitive support for creative processes, saying that the pool of random stimuli needs to be restricted to increase the opportunity for novelty and to decrease the probability of misleading failures (p.68).
+% Well designed constraints can act as stimuli for discovering unpredicted results. 
+Common creativity techniques often include stimulating constraints or motivations to guide the exploration in a specific direction. For example, with the Six Thinking Hats technique \cite{debono_1985_sth}, each hat represents a specific mindset, such as "critical" or "emotional", with which a participant should operate. This technique enables a large variety of possible stimuli and cues such as associations, analogies, abstractions, visualizations and reversals, including purely random inputs. Stimuli are a field of active research and as mentioned above, the usefulness of random cues is doubted. \citeauthor*{markman_2009_tis} summarize their insights (\cite{markman_2009_tis}, pp.48-69) about cognitive support for creative processes, saying that the pool of random stimuli needs to be restricted to increase the opportunity for novelty and to decrease the probability of misleading failures (p.68).
 
-In the process of enabling creativity, the target audience is also an influencing factor. Each skill level requires its own unique type of support. \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} discuss the handling of different user competencies as another example for the importance of balancing simplicity and expressiveness. The authors mention that more expressive but also more complex tools score higher on the CSI. The framework presented in this chapter, does not explicitly discuss the appropriateness of a technique for different skill levels (unless it specifically distinguishes a related work, as, for example, in \cite{benedetti_2014_pba}) but instead focuses on the general suitability of a technique to create the design goal with a reasonable training curve for an average artist.
+In the process of enabling creativity, the target audience is also an influencing factor. Each skill level requires its own unique type of support. \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} discuss the handling of different user competencies as example for the importance of balancing simplicity and expressiveness. The authors mention that more expressive but also more complex tools score higher on the CSI. In the following discussions, this survey does not explicitly investigates the appropriateness of a technique for different skill levels (unless it specifically distinguishes a related work, as, for example, in \cite{benedetti_2014_pba}) but instead focuses on the general suitability of a technique to create the design goal with a reasonable training curve for an average artist. Also, for this first investigation, we focus on support for a single artist but it is worth mentioning that an enabling of collaborative creative work would be a meaningful aspect to add in the future.
 
 % collaboration as big next question
 % http://ceur-ws.org/Vol-1907/7_mici_dove.pdf
 % http://ceur-ws.org/Vol-1907/6_mici_dalsgaard.pdf
 
-To summarize, control mechanisms that support creative methods should offer variation, the chance of steerable exploration and meaningful stimuli, according to the domain a given mechanism serves. For these characteristics, there is no clear translation into quantifiable metrics, such as timings or error rates, which are standardized measurements for productivity~\cite{cherry_2014_qcs,shneiderman_2007_cst}.
+To sum up the above review in the context of control mechanisms, mechanisms should offer variation, the chance of steerable exploration and meaningful stimuli, according to the domain a given mechanism serves. For these characteristics, there is no clear translation into quantifiable metrics, such as timings or error rates, which are standardized measurements for productivity~\cite{cherry_2014_qcs,shneiderman_2007_cst}.
 
-For our framework, we understand variation as the size of the design space within the context of the technique. For the exploration of different designs we distinguish between the general controllability necessary for navigating a design space (``there are many different roads in the landscape''), and the transparency of that navigation and the understanding of cause and effect when using the tool (``I have the map to the landscape and know how to get from one point to another''). Lastly we investigate the stimuli of a method and its suggestive capabilities. All categories can be seen as somewhat loose and experimental and aiming toward a better understanding of requirements for creative controls.
+For this survey, we understand variation as the size of the design space within the context of the technique. For the exploration of different designs we distinguish between the general controllability necessary for navigating a design space (``there are many different roads in the landscape''), and the transparency of that navigation and the understanding of cause and effect when using the tool (``I have the map to the landscape and know how to get from one point to another''). Lastly we reflect on the stimuli of a method and its suggestive capabilities. 
 
-Each of the classification categories - namely \textit{navigation}, \textit{transparency}, \textit{variation} and \textit{stimulation} - is summarized in a discussion-based rating of \textit{non-existent}, \textit{weak} ($\circ$) and \textit{strong} ($\bullet$). The definition of \textit{weak} and \textit{strong} for each category is clarified in the following. The judgment of one classification category might also be closely connected to another one. For example, a technique with little variability is much easier to navigate. Equally, limitations in navigation or transparency can result in stimulating surprises.
+The following further specifies the above classification categories - namely \textit{navigation}, \textit{transparency}, \textit{variation} and \textit{stimulation} in the context of control mechanisms. However, at this point, these categories can be seen as somewhat loose and experimental, aiming toward a better understanding of requirements for creative controls.
 
-The specifications for the stated quantities for \textit{strong} and \textit{weak} are intended to make the techniques comparable and to give an overall impression of their capabilities. However, when applying the analysis framework, the specific numbers for each category might need to be adjusted for a creation context by experts for that specific domain. 
+% Each of the classification categories - namely \textit{navigation}, \textit{transparency}, \textit{variation} and \textit{stimulation} - is summarized in a discussion-based rating of \textit{non-existent}, \textit{weak} ($\circ$) and \textit{strong} ($\bullet$). The definition of \textit{weak} and \textit{strong} for each category is clarified in the following. The judgment of one classification category might also be closely connected to another one. For example, a technique with little variability is much easier to navigate. Equally, limitations in navigation or transparency can result in stimulating surprises.
+
+% The specifications for the stated quantities for \textit{strong} and \textit{weak} are intended to make the techniques comparable and to give an overall impression of their capabilities. However, when applying the analysis framework, the specific numbers for each category might need to be adjusted for a creation context by experts for that specific domain. 
 
 
-\subsection{Navigation}
-\label{subsec:taxo_navigation}
+\subsubsection{Navigation}
+\label{subsubsec:navigation}
 
 The means of navigation describe whether a creation processes is efficiently manageable as well the extent of the controllability.
 
 \begin{itemize}
-    \item \textit{\textbf{Interactive:}} Refers to a system with ideally no noticeable delays when executing controls and computing results. Lengthy, non-creative configuration requirements are also potentially distracting. Hence, a thorough analysis should consider the whole process an artist has to go through to produce a result.
+    \item \textit{Interactive:} Refers to a system with ideally no noticeable delays when executing controls and computing results. Lengthy, non-creative configuration requirements are also potentially distracting. Hence, a thorough analysis should consider the whole process an artist has to go through to produce a result.
 
-    We liberally accept a manageable performance as \textit{strong} when the reported performance overall is under five seconds and as \textit{weak} for a performance under 30 seconds. 
+    % We liberally accept a manageable performance as \textit{strong} when the reported performance overall is under five seconds and as \textit{weak} for a performance under 30 seconds. 
 
-    \item \textit{\textbf{Quantity of Controls:}} This category indicates how flexible and controllable a technique is by counting the number of different controls that can be adjusted for one output. 
+    \item \textit{Quantity of Controls:} This category indicates how flexible and controllable a technique is, e.g. by counting the number of different controls that can be adjusted for one output. 
 
-    \textit{Strong} refers to at least eight (approximately half of all discussed control mechanisms) different control mechanism types (listed in~\Cref{subsec:taxo_control_mechanism}) and \textit{weak}, to at least four.
+    % \textit{Strong} refers to at least eight (approximately half of all discussed control mechanisms) different control mechanism types (listed in~\Cref{subsec:control_mechanism}) and \textit{weak}, to at least four.
     
-    Ideally, this category would refer to the ratio of visual features of the possible output that are relevant to humans to controllable features. This would ensure that the controls cover all necessary features and that they complement each other. However, the identification of generally describable, perceptually relevant visual features is out of the scope of this chapter and left to future work.
+    Ideally, this category would refer to the ratio of visual features of the possible output that are relevant to humans to controllable features. This would ensure that the controls cover all necessary features and that they complement each other. However, the identification of generally describable, perceptually relevant visual features is out of the scope of this survey and left to future work.
 
-    \item \textit{\textbf{Navigation History:}} Describes the ability to go back and forth in one's own creation process, such as using an eraser.
+    \item \textit{Navigation History:} Describes the ability to go back and forth in one's own creation process, such as using an eraser.
 
-    \textit{Strong} refers to a navigable editing history of at least three steps, while \textit{weak} refers to a clearly defined undo functionality.
+    % \textit{Strong} refers to a navigable editing history of at least three steps, while \textit{weak} refers to a clearly defined undo functionality.
 \end{itemize}
 
 
 
 
-\subsection{Transparency}
-\label{subsec:taxo_transparency}
+\subsubsection{Transparency}
+\label{subsubsec:transparency}
 
 The means of transparency describe how clear the understanding of cause and effect within the system are.
 \begin{itemize}
-    \item \textit{\textbf{Control Domain:}} Refers to how well controls are mapped to visual features and how well they cover the possible design range of each feature. A high-quality control should not have any overlapping effects with other controls.
+    \item \textit{Control Domain:} Refers to how well controls are mapped to visual features and how well they cover the possible design range of each feature. A high-quality control should not have any overlapping effects with other controls.
 
-    We consider the control domain setup to be \textit{strong} if there is sufficient controllability, meaning a match of visual features with controls, and if the controllability is meaningful, hence the controls all affect different visual features. The control domain is \textit{weak} if only one of the aspects is well developed. This category highly depends on the creation context and needs to be individually defined for a design space.
+    % We consider the control domain setup to be \textit{strong} if there is sufficient controllability, meaning a match of visual features with controls, and if the controllability is meaningful, hence the controls all affect different visual features. The control domain is \textit{weak} if only one of the aspects is well developed. This category highly depends on the creation context and needs to be individually defined for a design space.
 
-    \item \textit{\textbf{Control Communication:}} This category describes how well controls (e.g., with a visualization and/or little abstraction) represent their effects on the result. For artist-centered tools this could mean that controls should be visual and directly on the canvas.
+    \item \textit{Control Communication:} This category describes how well controls (e.g., with a visualization and/or little abstraction) represent their effects on the result. For artist-centered tools this could mean that controls should be visual and directly on the canvas.
 
-    Hence, \textit{strong} refers to at least five of the control mechanisms that are less abstract, namely from the categories of exemplars, handling, filling, guiding or placing, while \textit{weak} refers to at least three.
+    % Hence, \textit{strong} refers to at least five of the control mechanisms that are less abstract, namely from the categories of exemplars, handling, filling, guiding or placing, while \textit{weak} refers to at least three.
 \end{itemize}
 
 
-\subsection{Variation}
-\label{subsec:taxo_variation}
+\subsubsection{Variation}
+\label{subsubsec:variation}
 % mention expressiveness
 The means of variation indicate how visually different the results can be.
 
 \begin{itemize}
-    \item \textit{\textbf{Size of the Design Space:}} A design space is limited if all results look rather similar to each other and are part of a specific design class. A large design space of one technique allows, for example, for different texture classes such as combining stochastic and structural creation.
+    \item \textit{Size of the Design Space:} A design space is limited if all results look rather similar to each other and are part of a specific design class. A large design space of one technique allows, for example, for different texture classes such as combining stochastic and structural creation.
 
-    We consider this category to be \textit{strongly} pronounced if the technique includes at least five design types, while it is \textit{weak} with at least three.
+    % We consider this category to be \textit{strongly} pronounced if the technique includes at least five design types, while it is \textit{weak} with at least three.
 
-    \item \textit{\textbf{Openness of the Design Space:}} Refers to the limitlessness of possible designs and that there is no attachment of the technique to a specific design class. An open design space enables an artist to come up with a distinctive individual style, for example. Different artists can create inherently different and unique results with the same tool if it has a open desgin space.
+    \item \textit{Openness of the Design Space:} Refers to the limitlessness of possible designs and that there is no attachment of the technique to a specific design class. An open design space enables an artist to come up with a distinctive individual style, for example. Different artists can create inherently different and unique results with the same tool if it has a open desgin space.
 
-    We rank a technique as \textit{strong} with at least five of the following characteristics and as \textit{weak} with three. We total the number of the least determining controls, namely sketching, painting and placement mechanisms. As the possibility to add different creation models gives undetermined design options to a technique, both in regard to design logic and specific elements, for example with different procdural texture models, we count this option twice. If only the option to provide any element, for example graphical assets, is given with no influence on the design logic, this is counted once.
+    % We rank a technique as \textit{strong} with at least five of the following characteristics and as \textit{weak} with three. We total the number of the least determining controls, namely sketching, painting and placement mechanisms. As the possibility to add different creation models gives undetermined design options to a technique, both in regard to design logic and specific elements, for example with different procdural texture models, we count this option twice. If only the option to provide any element, for example graphical assets, is given with no influence on the design logic, this is counted once.
     
 \end{itemize}
 
-We do understand that a clear definition of the available different design classes is needed. However, these dependent on the design context. The analysis in \Cref{chap:taxo_analysis} presents possible classes for the context of procedural generation.
+We do understand that a clear definition of the available different design classes is needed. However, these soleley dependent on the design context. 
+% The analysis in \Cref{chap:analysis} presents possible classes for the context of procedural generation.
 
 
-\subsection{Stimulation}
-\label{subsec:taxo_stimulation}
+\subsubsection{Stimulation}
+\label{subsubsec:stimulation}
 
 The means of stimulation indicate how well an artist can enter a pleasurable and stimulating workflow.
 \begin{itemize}
-    \item \textit{\textbf{Immersion:}} How natural and enjoyable the usage of a system feels.
+    \item \textit{Immersion:} How natural and enjoyable the usage of a system feels.
 
     An immersive technique needs to be fluent to navigate, controls have to be intuitive and the design space large enough to not to hit its boundaries while using the tool. 
     
-    Hence for a ranking as \textit{strong}, the categories control quantity, domain, communication and the design space size have to be ranked as \textit{strong}. If at least one of those are marked as \textit{weak}, the immersion experience is also marked as \textit{weak}.
+    % Hence for a ranking as \textit{strong}, the categories control quantity, domain, communication and the design space size have to be ranked as \textit{strong}. If at least one of those are marked as \textit{weak}, the immersion experience is also marked as \textit{weak}.
 
-    \item \textit{\textbf{Stimuli:}} The support to find surprising results - for example, with design suggestions or variations of the input. 
-
-    Options to support stimulation are still underrepresented but on the rise with machine learning techniques. A clear definition of this category is not feasible at this point.
+    \item \textit{Stimuli:} The support to find surprising results - for example, with design suggestions or variations of the input. Options to support stimulation are still underrepresented but on the rise with machine learning techniques. A clear definition of this category is not feasible at this point.
 
 \end{itemize}
 
-For stimulation being more broadly accepted as relevant research question and required element for tools that enable creative creation, first more research has to go into understanding what constitutes effective stimulation before it can be implemented. A psychologically well-grounded theoretical assessment of stimuli is out of scope of this thesis. For the following discussion stimuli are included if a technique is explicitly evaluated in regard to its stimuli, for example with a survey. However, this category can not be included overall and in a unified manner and its generalizable assessments is left to future work.
+% For stimulation being more broadly accepted as relevant research question and required element for tools that enable creative creation, first more research has to go into understanding what constitutes effective stimulation before it can be implemented. A psychologically well-grounded theoretical assessment of stimuli is out of scope of this thesis. For the following discussion stimuli are included if a technique is explicitly evaluated in regard to its stimuli, for example with a survey. However, this category can not be included overall and in a unified manner and its generalizable assessments is left to future work.
 
-\section{Discussion}
-\label{subsec:creativity_discussion}
+In summary, for handling the ill-defined topic of creativity, we follow the definition of creativity as intentionally producing a novel and surprising product. We derive means for creative control from recent research results and relate them to control mechanisms. By this we hope to further a more objective judging of the ability of a technique to support creativity and a detailed comparison of methods and give an first example for that in the following review of the state of the art.
 
-% \subimport{tables/}{02_table_summary}
+Various aspects of our discussion guides still leave room for interpretation. Knowledge from other disciplines, for example in regard to the perception of visual features, can contribute with valuable insights. We hope that our work inspires such research towards a quantifiable analysis of creative control.
 
-
-% specific most creative control
-The summary of all control mechanism groups in \Cref{table:analysis_summary} shows that there is no approach that fulfils all creative means at least weakly. 
-
-The employment of curves and sketching can be identified as promising creative method for the current state of the art. This confirms the general appeal of transferring real-world tools, such as a pen and eraser, into the digital workspace in combination with automatization. However, this is not the only promising approach as the creative use of vector fields shows. This is a mechanism that is not directly found in analog creation processes. A particular surplus of controllability and expressiveness is generated, in contrast to mechanisms available in the analog world. Vector fields are still easy to understand through characteristics such as flows and directions, which again stem from real-world experiences. In this combination of unique digital functionality with intuitively assessable analogies lies great potential, and it should be further investigated.
-% Add machine learning as direction?
-
-% focus of interest
-The summary in \Cref{table:analysis_summary} also shows that there has been comparatively little attention on an overall development of transparent navigation techniques. It is interesting to note that only two of the discussed publications mention a navigation history for their creation process. There has been some specialized work focusing on editing histories in a data-driven context~\cite{hu_2013_iie,chen_2016_dah}. However, even though this is an essential mechanism in common digital tools and a true surplus for an efficient and creative process for artists, most past research does not consider this challenge. Reasons range from techniques where a navigation history is simply a development task and of no interest to researchers to techniques where such a history is hardly possible. Nonetheless, a careful investigation of actual capabilities and limitations for editing histories is in order.
-
-% interdependent trade-offs
-Moreover, the above mentioned tendency of improvements to navigation and transparency that potentially reduce possible design variations is affirmed. Joint research investigations that combine the development of algorithms, control mechanisms and interfaces might be able to resolve this contradiction.
-
-% ornamentation
-Similarly, there is always a trade-off between the different ornamental design subtasks. As of now, there is no one method capable of creating an ornament with all its characteristics, either data-driven or procedural. Research usually specializes in a specific domain, thus neglecting the challenge to unify necessary control and design aspects in an effective manner~\cite{smelik_2014_aso}.
-
-% promising outlook
-Overall, data-driven approaches that integrate procedural modeling features seem to be the most successful in providing creative control. We believe that this is due to data-driven approaches being overall a more restrained and accessible context for the development of novel control functionalities. Even though they are powerful, the underlying algorithmic structure of procedural models make them fairly complex and thus limiting.
-
-Novel combinations of data-driven and procedural approaches have been called for (e.g., by \cite{zehnder_2016_dso,xia_2018_ddc}), allowing for an efficient representation and the automation of tedious tasks while offering creative control to artists in a unified manner.
