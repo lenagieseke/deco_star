@@ -1,17 +1,9 @@
 %!TEX root = ../deco_star.tex
 
 
-\importantinline{All references from 2018 on are still missing!}
+\importantinline{The status of all references is 2018. All references from 2018 on are still missing!}
 
 \section{Introduction}
-
-\majortodo{Increase the focus on procedural generations.}
-\majortodo{Increase the focus on control mechanisms (as it is not in the title anymore).}
-
-% TODO: Work somewhere in:
-% Procedural representations are notoriously difficult to control~\citep{bourque_2004_ptm,lagae_2010_pis,gilet_2010_ias,benes_2011_gpm,lasram_2012_ssf,lasram_2012_ptp}, and
-% WHY IS THIS AN IMPORTANT, RELEVANT AND CURRENT TOPIC 
-% much effort has gone into investigating control mechanisms within specific contexts. Botanical and architectural procedural modeling, for example, are popular fields of research. There have been summarizing surveys for procedural noise~\citep{lagae_2010_sap}, landscapes~\citep{smelik_2014_aso} and urban spaces~\citep{vanegas_2009_mab} as well as in the context of games~\citep{hendrikx_2013_pcg, togelius_2011_sbp}, including even a short summary of models for ornamentation~\citep{whitehead_2010_tpd}. However, the overall investigation of generating and designing decorative patterns and ornamentation is less prominent. This could be credited to ornamentation being an ill-defined domain due to it involving creative-artistic considerations. Nonetheless, its diverse design aspects make ornamentation a rich and compelling topic.
 
 % % WHY IS THIS AN IMPORTANT, RELEVANT AND CURRENT TOPIC 
 Digital tools for creative processes with various forms of output are indispensable for most artists. Even designs that have a distinct hand-made quality to them, such as Disney's animation Paperman for example, were computer-generated~\cite{disney_2012_ppm}, employing novel software solutions that are fully controllable by artists. Furthermore, more than three decades of research in academia have produced various control mechanisms for creation. These are often said to be artist-controllable but are less often proven to be so.
@@ -20,22 +12,27 @@ Digital tools for creative processes with various forms of output are indispensa
 Most research has been executed without direct and continuous collaboration with artists. Moreover, large-scale user studies with suitable participants are usually impractical. Due to these obstacles, there is little common understanding in the research community regarding what artist needs actually are and how mechanisms are validated. Furthermore, research has typically focused on solving one specific aspect while accepting significant trade-offs for other steps in a creation process.
 
 % WHAT DID THE OTHER RELATED TO THE PROBLEM?
-For example, the automatic targeted control of a large design space results in long computation times and non-intuitive configuration requirements (e.g.,~\cite{bourque_2004_ptm, wong_1998_cgf}). Equally, flexible creation pipelines that enable both automation and manual controllability often suffer from a restricted design space (e.g.,~\cite{santoni_2016_ggp}).  
+For example, the automatic targeted control of a large design space results in long computation times and non-intuitive configuration requirements (e.g., for~\cite{bourque_2004_ptm, wong_1998_cgf}). Equally, flexible creation pipelines that enable both automation and manual controllability often suffer from a restricted design space (e.g., for~\cite{santoni_2016_ggp}).  
 
 It is an important challenge to investigate creation processes from a more artist-centered perspective and to consider all tasks and efforts as a whole, from initial configuration requirements to local edits. As a further challenge, control mechanisms have to be linked to an expressive design space, which is the basis for all meaningful creative creation. In order to analyze and validate novel creation algorithms, artist feedback also has to be evaluated. However, such interdisciplinary studies still suffer at times from undefined language and vague discussions. It is an open challenge to complement user studies with a more precise and determinative terminology that is also commonly applicable and understandable by artists.
 
 % WHAT ARE WE GOING TO DO ABOUT IT?
 The previous statement naturally leads to general questions about artist-centered full controllability in combination with distinctive output spaces and a meaningful and applicable evaluation of digital creation tools. These considerations are based on decades of research in multiple disciplines. However, there is little common ground on what is needed as theoretical basis for an evaluation of creative control mechanisms with various open questions. For example, what are relevant characteristics of a creation process with digital tools? What are specific control mechanisms, ranging from global to local and from automatic to manual, with varying levels of abstraction for their handling? How do these mechanisms relate to the stages of a creation process? What are the requirements for creative creation, and how can these be customized to the context of digital creation tools?
 
-To bring further insights, this survey investigates those problems in the scope of creative two-dimensional visual pattern generation, tackling a limited but highly challenging and representative creation process and design space. In particular, in this report we present the state of the art in control mechanisms for the creative generation of visual patterns with the following goals:
+To bring further insights, this survey investigates those problems in the scope of creative two-dimensional visual pattern generation, tackling a restricted but highly challenging and representative creation process and design space. 
+
+The underlying regularity of pattern designs is based on a repetitive and balanced distribution of elements, usually following hierarchical structures. These characteristics can be efficiently implemented by procedural approaches \cite{stava_2010_ipm} because they automatically fill a space based on generative rules. An artist should be freed from such tedious, non-inspiring and repetitive tasks. In order to execute order, computational generation techniques are not only an easement, but they also perform in a potentially more precise and less error-prone way than a human artist. Hence, procedural representations are an ideal basis for creative pattern generation. However, the creative demands of, for example, laying out space-specific designs and of placing highlights must also be considered. Procedural models must be augmented, and different approaches must be unified in order to enable the control and quality of manual creation as well as the efficiency and accuracy of computation. 
+
+Much effort has gone into investigating control mechanisms within specific contexts, as procedural representations are notoriously difficult to control~\cite{bourque_2004_ptm,lagae_2010_pis,gilet_2010_ias,benes_2011_gpm,lasram_2012_ssf,lasram_2012_ptp}. Botanical and architectural procedural modeling, for example, are popular fields of research. There have been summarizing surveys for procedural noise~\cite{lagae_2010_sap}, landscapes~\cite{smelik_2014_aso} and urban spaces~\cite{vanegas_2009_mab} as well as in the context of games~\cite{hendrikx_2013_pcg, togelius_2011_sbp}, including even a short summary of models for ornamentation~\cite{whitehead_2010_tpd}. However, the overall investigation of generating and designing patterns creatively is less prominent. This could be credited to creative pattern generation being an ill-defined domain due to it involving creative-artistic considerations. Nonetheless, its diverse design aspects make pattern generation a rich and compelling topic.
+
+Within this topic, this survey present the state of the art in control mechanisms for the creative generation of visual patterns with the following goals:
 % that includes the following topics:
 
 % Research questions are then structured along an axis of decreasing automation, from fully automated goal-oriented control to interactive creative control to manual experimental control.
 
 \begin{itemize}
-    \item The identification of relevant characteristics of a creation process with digital tools.
+    \item The identification of relevant characteristics of a creative creation process with digital tools. A dissection of a creative process into potentially classifiable characteristics as common ground for a discussion about enabling creativity.
     \item The classification of control mechanisms as theoretical grounding, ranging from global to local and from automatic to manual, with varying levels of abstraction for their handling and the relation of these mechanisms to the stages of a creation process. 
     \item An interlinking analysis of the state of the art, bridging between procedural and data-driven solutions with joint classification results. 
-    \item A dissection of a creative process into potentially classifiable characteristics as common ground for a discussion about enabling creativity.
     \item An investigation of the capabilities of a specific mechanism in a creative process and their potential for creative creation within a coherent pipeline.
 \end{itemize}

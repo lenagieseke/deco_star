@@ -6,33 +6,18 @@
 
 % In this section, we execute the above established analysis framework in regard to creative control for pattern generation. 
 
+The contribution of this survey is twofold. On the one hand, its categorizes the state of the art with regard to control mechanisms, translates this categorization to overall control paradigms and discusses their means for creative control. On the other hand, it selects the work not by its underlying algorithms and creation techniques but by its design goal, namely creative pattern generation. Pattern generation includes a variation of representative creation challenges, such as combining ordered fillings and repetitive structures with individual global layouts and highlighting components that might break that underlying order. The focus on the visual output instead of specific underlying algorithms allows for a novel and unifying discussion of techniques and merges a discussion of work that is traditionally studied separately. Thus this focus furthers a common understanding of creative control mechanisms.
 
-% WHY IS THIS A DIFFICULT PROBLEM
-On the one hand, patterns include repetitive and ordered structures that are often considered as \textit{textures}, thus demanding automatic and procedural creation. On the other hand, visually pleasing patterns often require a global layout, adapt to the space they are filling and include visual hierarchies and highlights that are singularly placed with creative intent. This artistic challenge either requires computational creativity, or an artist’s creativity must be supported with meaningful digital tools.
-
-Procedural representations are notoriously difficult to control~\cite{bourque_2004_ptm,lagae_2010_pis,gilet_2010_ias,benes_2011_gpm,lasram_2012_ssf,lasram_2012_ptp}, and
-% WHY IS THIS AN IMPORTANT, RELEVANT AND CURRENT TOPIC 
-much effort has gone into investigating control mechanisms within specific contexts. Botanical and architectural procedural modeling, for example, are popular fields of research. There have been summarizing surveys for procedural noise~\cite{lagae_2010_sap}, landscapes~\cite{smelik_2014_aso} and urban spaces~\cite{vanegas_2009_mab} as well as in the context of games~\cite{hendrikx_2013_pcg, togelius_2011_sbp}, including even a short summary of models for ornamentation~\cite{whitehead_2010_tpd}. However, the overall investigation of generating and designing decorative patterns and ornamentation is less prominent. This could be credited to ornamentation being an ill-defined domain due to it involving creative-artistic considerations. Nonetheless, its diverse design aspects make ornamentation a rich and compelling topic.
-
-
-% WHAT ARE WE GOING TO DO ABOUT IT?
-Creative pattern generation is also an interesting testing ground for addressing the delicate balance between giving artists as much control as is needed without burdening them with unwanted details. Procedural representations are well suited for expressing repetitive and ordered structures and enable parametric control. However, traditional procedural modeling approaches are in need of novel control mechanisms that are intuitively navigable, flexible and engaging.
-
-% ZOOM INTO TOPIC
-The contribution of this survey is twofold. On the one hand, its categorizes the state of the art with regard to control mechanisms and translates this categorization to overall control paradigms.
-%  and investigates their means for creative control. 
-On the other hand, it selects the work not by its underlying algorithms and creation techniques but by its design goal, namely creative pattern generation. Pattern generation includes a variation of representative creation challenges, such as combining ordered fillings and repetitive structures with individual global layouts and highlighting components that might break that underlying order. 
-
-% WHY IS THIS AN IMPORTANT, RELEVANT AND CURRENT TOPIC 
-The focus on the visual output instead of specific underlying algorithms allows for a novel and unifying discussion of techniques and merges a discussion of work that is traditionally studied separately. Thus this focus furthers a common understanding of creative control mechanisms.
-
-
-% It is important to note that in the following, we do not analyze the specific aesthetic value of an ornament except with regard to its coherence with the defining design principles. 
+The analysis of the control mechanisms is directly taken from the authors' descriptions. However, the following discussion of the creative means has an interpretative nature to it. Despite our best efforts to give a clear reasoning, we also agree that this is not always unambiguously manageable. Thus, this discussion should be viewed as a step toward an objective discussion about terms such as artist-usable and creatively controllable as well as a more realistic usage of these terms.
 
 \note{The following categories for the subsections are up for discussion.}
 
+\note{The following text are not reworked and aligned to the storyline of the STAR yet.}
+
 \subsection{Texturing Methods}
 \label{subsec:analysis_texturing_methods}
+
+\question[inline]{Should the texturing section overall be shortened?}
 
 Texturing methods focus on creating a repetitive and homogeneous pattern as automatically as possible. These methods provide only a fraction of the controllability needed for ornamentation. They are solely applicable for the subparts of an ornament with a texture-like quality to it, such as background regions and fillings.
 
@@ -48,9 +33,7 @@ Relevant factors for differentiating example-based techniques are the size of th
 \paragraph{Stochastic Textures}
 \label{para:analysis_example_based_stochastic}
 
-
 \majortodo{Condense and shorten this section.}
-
 
 For procedural texture generation, stochastic textures have been the foundation of both research investigations and many complex models. Stochastic textures are generated with noise functions, and \citeauthor*{lagae_2010_sap}~\cite{lagae_2010_sap} present the state of the art for work before the year 2010. In terms of the controllability of the textures, the authors identify three main approaches. First, the indirect access to the noise through the control of the power spectrum. Second, the direct access to its appearance through function parameters, and 
 third, example-based techniques. 
@@ -105,7 +88,9 @@ The investigation of example-based techniques shows valuable achievements for go
 
 Element arrangements potentially enable greater visual variation because they do not need to adhere to any rule formulation. At the same time, the generation of a sample arrangement, usually done in an external application, is potentially tedious. A sample that is too small might lead to uniform results. Moreover, elements are often carefully connected in ornamentation, and ornaments include a hierarchy of structures. Hence, element arrangements can only provide a subset - albeit an important one - of the design space needed for ornamentation.
 
-The related work is overall uniform in working toward the classical requirements of finding the most efficient goal-oriented control as \Cref{table:analysis_example_creative} shows. With the exception of \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} and \citeauthor*{galerne_2012_gne}~\cite{galerne_2012_gne} little effort has been made towards improving visual control for an artist. \citeauthor*{ma_2013_det}~\cite{ma_2013_det} present various powerful control functionalities but do not show their capabilities within an artist usable scenario. \citeauthor*{gilet_2012_map}~\cite{gilet_2012_map} also offer comparatively more mechanisms but as required configuration for their computation not necessarily as variable controllability.
+The related work is overall uniform in working toward the classical requirements of finding the most efficient goal-oriented control 
+%  as \Cref{table:analysis_example_creative}
+shows. With the exception of \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} and \citeauthor*{galerne_2012_gne}~\cite{galerne_2012_gne} little effort has been made towards improving visual control for an artist. \citeauthor*{ma_2013_det}~\cite{ma_2013_det} present various powerful control functionalities but do not show their capabilities within an artist usable scenario. \citeauthor*{gilet_2012_map}~\cite{gilet_2012_map} also offer comparatively more mechanisms but as required configuration for their computation not necessarily as variable controllability.
 
 Even if they are example-based, many techniques still require considerable non-creative effort for an artist, such as working with a power spectrum or predicting how changes in the exemplar, such as element arrangements, affect the output. The potential of these methods for creative control of ornamentation lies in furthering interactive performance, reducing initialization requirements and experimenting with the spatial influence of controls. The presented work only focuses on global designs, such as the whole canvas and repeating regions. Methods for which regions could be defined, models layered or the placement of single elements integrated constitute valuable directions for ornamentation.
 
@@ -128,7 +113,7 @@ The following section discusses procedural techniques that consider global shape
 
 \citeauthor*{santoni_2016_ggp}~\cite{santoni_2016_ggp} present the procedural generation of tangles, which are repetitive black-and-white hand-drawn patterns made from dots, straight lines, simple curves and circles. Tangle elements usually align to the shape they fill, for example, by outlining it. A stochastic group grammar with grouping, geometric and decorative operators composites recursive patterns at different scales, filling two-dimensional shapes as well as handling holes. A tangle generation usually takes a few seconds, with a complex example taking about 3 minutes. The authors demonstrate the applicability of their method with an interactive system based on a parameterized artist interface, including history navigation, rule re-expansion and sketch-based operator modification. A user study evaluates the system as accurate, controllable and easy to use after a reasonable training time.
 
-\citeauthor*{loi_2017_pae}~\cite{loi_2017_pae} present a procedural framework for a large variety of element texture designs. The authors aim for designs that are unrelated to their spatial location and the space they fill, calling it stationary. Their programmable method is developed for technical artists and requires programming expertise. Generating pattern scripts are built with partitioning, mapping and merging operators. These operators enable both global and local design control and the composition of designs. The operator-based technique would enable a node-based interface design, which is not explicitly demonstrated in the article. The execution time for most designs is a few seconds, with some examples taking more than 1 minute. A user study with technical artists carefully evaluates the system’s scripting interface, concluding positive results overall.
+\citeauthor*{loi_2017_pae}~\cite{loi_2017_pae} present a procedural framework for a large variety of element texture designs. The authors aim for designs that are unrelated to their spatial location and the space they fill, calling it stationary. Their programmable method is developed for technical artists and requires programming expertise. Generating pattern scripts are built with partitioning, mapping and merging operators. These operators enable both global and local design control and the composition of designs. The operator-based technique would enable a node-based interface design, which is not explicitly demonstrated in the article. The execution time for most designs is a few seconds, with some examples taking more than 1 minute. A user study with technical artists carefully evaluates the system's scripting interface, concluding positive results overall.
 
 % Shape-based, grammar
 \citeauthor*{loi_2017_pae}~\cite{loi_2017_pae} offer a complex shape-filling and masking system for procedural open L-system models by dividing a target space into artist editable guide shapes. Seeds for the L-system are interactively given by an artist as a position and orientation. The guide shapes determine what types of patterns grow in different areas. The connections between the shapes are manually specified by the artist and in turn guide the connections between elements. Based on a mass-spring system, the guides can be intuitively edited as a whole. The authors report on pattern generation performance for most scenarios as less than a second, with up to 45 seconds for only one complex scenario.
@@ -152,9 +137,11 @@ For filigrees, which are thinly structured repetitive patterns, \citeauthor*{che
 \subsubsection{Summary}
 \label{subsec:analysis_masks_summary}
 
-The above discussed procedural generation techniques offer novel systems that decouple control mechanisms from the implementation of individual models. This enables more possible results for one specific technique, thus improving the size of design spaces, as~\Cref{table:analysis_shape} shows. Sophisticated masks and growth constraints lead to visually interesting and complex designs. However, it is not directly predictable how a space will be filled exactly. Because most of the presented methods only offer quite limited interactive performance, even  a basic trail and error exploration is hardly feasible; hence, the navigation of the design space becomes cumbersome, and stimulation becomes hindered. The one technique \cite{santoni_2016_ggp} that offers the means for a transparent navigation is also the one with the most restricted design space. \citeauthor*{santoni_2016_ggp}~\cite{santoni_2016_ggp}s' consideration of a navigation history stands out from all related work in this survey. In terms of stimuli, the mass-spring system for editing control guides offered by \citeauthor*{benes_2011_gpm}~\cite{benes_2011_gpm} is a promising direction because it is intuitive, enjoyable to use and encourages exploration.
+The above discussed procedural generation techniques offer novel systems that decouple control mechanisms from the implementation of individual models. This enables more possible results for one specific technique, thus improving the size of design spaces. 
+% , as~\Cref{table:analysis_shape} shows. 
+Sophisticated masks and growth constraints lead to visually interesting and complex designs. However, it is not directly predictable how a space will be filled exactly. Because most of the presented methods only offer quite limited interactive performance, even  a basic trail and error exploration is hardly feasible; hence, the navigation of the design space becomes cumbersome, and stimulation becomes hindered. The one technique \cite{santoni_2016_ggp} that offers the means for a transparent navigation is also the one with the most restricted design space. \citeauthor*{santoni_2016_ggp}~\cite{santoni_2016_ggp}s' consideration of a navigation history stands out from all related work in this survey. In terms of stimuli, the mass-spring system for editing control guides offered by \citeauthor*{benes_2011_gpm}~\cite{benes_2011_gpm} is a promising direction because it is intuitive, enjoyable to use and encourages exploration.
 
-In terms of control mechanisms for a decorative design goal, these techniques do not permit hierarchical or element-level local controls or the control of element connections needed by artists who want to use ornamentation without having to write code.
+In terms of control mechanisms for a decorative design goal, these techniques do not permit hierarchical or element-level local controls or the control of element connections needed by artists who want to generate patterns creatively without having to write code.
 
 %-------------------------------------------------------------------------
 %-------------------------------------------------------------------------
@@ -170,11 +157,11 @@ Fields constitute a powerful tool for combining an automatic procedural filling 
 Already included in the described work of \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} above, the authors employ vector fields to define the overall growth direction and alignment of elements within an example-guided arrangement.
 % We also make use of vector fields generated from artists' sketches, but we use them to establish element connectivity and to guide to growth of a model. 
 
-\citeauthor*{yuanyuan_2011_gso}~\cite{yuanyuan_2011_gso} present a shape grammar that is guided by either a vector or tensor field. The field can influence the grammar’s translation command, potentially leading to globally pronounced structures. The field can furthermore guide rotation, scaling, and color parameters. The artist can specify a priori field constraints, such as regular and singular field elements, on the surface to be filled. Once the field is computed, local Laplacian smoothing can be applied. The authors report a synthesis performance for geometric surfaces from less than a second up to 3 minutes.
+\citeauthor*{yuanyuan_2011_gso}~\cite{yuanyuan_2011_gso} present a shape grammar that is guided by either a vector or tensor field. The field can influence the grammar's translation command, potentially leading to globally pronounced structures. The field can furthermore guide rotation, scaling, and color parameters. The artist can specify a priori field constraints, such as regular and singular field elements, on the surface to be filled. Once the field is computed, local Laplacian smoothing can be applied. The authors report a synthesis performance for geometric surfaces from less than a second up to 3 minutes.
 % Mention "more artistic freedom"
 % These systems produce patterns that are more homogeneous than the decorative ornaments that we aim for.
 
-\citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. For each element, a predefined spine controls the element’s deformation. The artist defines direction guides and optionally fixed elements that control the computation of evenly placed streamlines. Elements are placed and deformed along streamlines. An iterative refinement step optimizes for a dense and balanced filling. First, streamlines are slightly shifted to cohere to the space available. Second, elements a re-placed with rotational adjustments and possible overlaps into free space of neighboring elements, reducing negative space. An average packing takes about an hour.
+\citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. For each element, a predefined spine controls the element's deformation. The artist defines direction guides and optionally fixed elements that control the computation of evenly placed streamlines. Elements are placed and deformed along streamlines. An iterative refinement step optimizes for a dense and balanced filling. First, streamlines are slightly shifted to cohere to the space available. Second, elements a re-placed with rotational adjustments and possible overlaps into free space of neighboring elements, reducing negative space. An average packing takes about an hour.
 % Symmetrical copying
 
 Vector fields are further employed in various other specific procedural modeling contexts. For example for procedural street modeling~\cite{chen_2008_ips}, micrography~\cite{maharik_2011_dm} or botanical models~\cite{xu_2015_ptm}.
@@ -192,7 +179,9 @@ Vector fields are further employed in various other specific procedural modeling
 \subsubsection{Summary}
 \label{subsec:analysis_vectorfields_summary}
 
-The discussed work in \Cref{table:analysis_vectorfield} shows that fields allow for greater visual variation by opening the design space and transparent control for filling a space automatically. When designing a vector field, artists do not work with the pattern directly, but fields are intuitive to understand. Their abstraction translates to the model in a straightforward manner. Thus, using flow within a vector field to design is a suitable control mechanism, especially for ornamentation and its characteristic element alignments to the space.
+The discussed work 
+% in \Cref{table:analysis_vectorfield} 
+shows that fields allow for greater visual variation by opening the design space and transparent control for filling a space automatically. When designing a vector field, artists do not work with the pattern directly, but fields are intuitive to understand. Their abstraction translates to the model in a straightforward manner. Thus, using flow within a vector field to design is a suitable control mechanism, especially for ornamentation and its characteristic element alignments to the space.
 
 %-------------------------------------------------------------------------
 %-------------------------------------------------------------------------
@@ -241,7 +230,7 @@ More painting-like methods can be found, for example, in procedural botanical mo
 
 In order to create an ornament along a sketch, \citeauthor*{lu_2014_dds}~\cite{lu_2014_dds} present a data-driven approach. Given vector pattern exemplars are placed and deformed along a artist-given curve. Boundaries between element segments and visual soundness are optimized through graph cut and hierarchical texture synthesis. For the exemplars, an artist has to define the start and end point of their spines. If needed, the whole spine can be sketched as an input. The artist can refine results with add and erase constraints that are drawn on the pattern. The authors report a synthesizing performance from 1 to 8 seconds. A related data-driven approach for synthesizing example-based vector patterns along a curve was presented by \citeauthor*{zhou_2014_tsv}~\cite{zhou_2014_tsv} in the same year. In this work, the authors focus on ensuring a structurally sound output pattern and an extension to fill a surface. Topology descriptors and artist-given topological constraints are included in the element assembling optimization process. Additionally, local pattern orientations and a variation value can be defined by an artist. Once a pattern is generated, an artist can interactively adjust the underlying curve, with the pattern being updated accordingly. Generation performances are reported to be around a few seconds, with complex models a little more than 2 minutes.
 
-\citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} present a multifaceted tool to create textures from pen-and-ink drawings with sketch-based control mechanisms, mixing data-driven and procedural modeling. Basis drawings can be repeated along paths, used for brushes, fill regions, optionally consider perspective and propagate modifications of the drawing to all repeated elements. A user study confirms the system’s usefulness to efficiently create repetitive textures while maintaining the natural workflow and artistic control of an artist. \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} build upon that work by automatically detecting and suggesting possible repetitions to the artist, aiming for a less regular, more painting-like quality. The presented system also offers various brush options and navigation tools in order to combine automation with artist control.
+\citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} present a multifaceted tool to create textures from pen-and-ink drawings with sketch-based control mechanisms, mixing data-driven and procedural modeling. Basis drawings can be repeated along paths, used for brushes, fill regions, optionally consider perspective and propagate modifications of the drawing to all repeated elements. A user study confirms the system's usefulness to efficiently create repetitive textures while maintaining the natural workflow and artistic control of an artist. \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} build upon that work by automatically detecting and suggesting possible repetitions to the artist, aiming for a less regular, more painting-like quality. The presented system also offers various brush options and navigation tools in order to combine automation with artist control.
 % They seem to have a undo button?
 
 % Not in table
@@ -257,7 +246,9 @@ Similar approaches have also been investigated in the context of texture paintin
 \subsubsection{Summary}
 \label{subsec:analysis_curves_sketches_painting_summary}
 
-Curves and sketch-like methods offer a well communicated, hence transparent navigation, as~\Cref{table:analysis_shape} shows. The discussed techniques are mostly interactive, artists are familiar with their functionality from the real world and they work directly on the canvas. The ease and directness of usage also constitute a foundation for possible immersion. Using painting-like methods can allow for smoother navigation by integrating brush settings and increasing the quantity of controls.
+Curves and sketch-like methods offer a well communicated, hence transparent navigation. 
+% , as~\Cref{table:analysis_shape} shows. 
+The discussed techniques are mostly interactive, artists are familiar with their functionality from the real world and they work directly on the canvas. The ease and directness of usage also constitute a foundation for possible immersion. Using painting-like methods can allow for smoother navigation by integrating brush settings and increasing the quantity of controls.
 
 However, because creation techniques and design spaces are open, it could lead to manual and tedious creation requirements for ornamentation, such as when filling a background. Here, the incorporation of procedural creation principles for automatic fillings into a data-driven process by \citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} and \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} is a promising direction. Instead of fostering a free painting-like quality, design principles for ornamentation could be added to create a more organized output.
 
@@ -274,7 +265,7 @@ For ornamentation, this type of variation is needed for preventing a monotonous,
 
 By detecting symmetries and curvilinear element arrangements in a given vector pattern, \citeauthor*{yeh_2009_dsa}~\cite{yeh_2009_dsa} extend the manual data-driven design processes with procedural-modeling-like editing options. Based on the detected element groups, an artist can adjust the spacing, location and scale of one element directly and propagate that change to the all other elements in the group. The authors also offer a brush that recreates recognized element groups.
 
-The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers suitable design variations of the vector pattern an artist is working on. An artist can select and continue with one of the offered alternatives. The system constantly re-selects from an exponential number of relevant variations based on the artist’s modifications. The user interface is carefully laid out in order to offer design variations in an intuitive and efficient manner while at the same time not hindering an artist’s own workflow. The authors thoroughly evaluate their system quantitatively and qualitatively - for example, with a user study. Overall, participants agreed on the usefulness of technique.
+The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers suitable design variations of the vector pattern an artist is working on. An artist can select and continue with one of the offered alternatives. The system constantly re-selects from an exponential number of relevant variations based on the artist's modifications. The user interface is carefully laid out in order to offer design variations in an intuitive and efficient manner while at the same time not hindering an artist's own workflow. The authors thoroughly evaluate their system quantitatively and qualitatively - for example, with a user study. Overall, participants agreed on the usefulness of technique.
 
 % Also, there are procedural techniques that enable low-level control on the results themselves. But only in specific contexts such as architecture~\cite{lipp_2008_ive} and landscapes \citeauthor*{emilien_2015_wie}~\cite{emilien_2015_wie}, which do not translate to the context of ornamentation. 
 
@@ -283,7 +274,9 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 \subsubsection{Summary}
 \label{subsec:analysis_elementplacement}
 
-The discussion of this section is closely related to the data-driven sketch-based techniques, and it shows a further promising approach for integrating procedural modeling functionalities into a data-driven process. As \Cref{table:analysis_elementplacement} shows, \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} present a overall transparently navigable and stimulating control mechanism. With a carefully designed workflow, it further fosters an artist stimulation by offering novel but suitable design variations.
+The discussion of this section is closely related to the data-driven sketch-based techniques, and it shows a further promising approach for integrating procedural modeling functionalities into a data-driven process. 
+% As \Cref{table:analysis_elementplacement} shows,
+\citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} present a overall transparently navigable and stimulating control mechanism. With a carefully designed workflow, it further fosters an artist stimulation by offering novel but suitable design variations.
 
 
 \subimport{tables/}{table_all}
@@ -300,6 +293,7 @@ The discussion of this section is closely related to the data-driven sketch-base
 
 
 \textit{[...]}
+\majortodo[inline]{Discuss Table 2.}
 
 %-------------------------------------------------------------------------
 %-------------------------------------------------------------------------
@@ -310,7 +304,7 @@ The review of the state of the art shows that there are various limitations and 
 
 In addition to machine learning and semantically driven approaches, collaboration is a valuable future line of investigation for enabling creative work. With regard to technology, more and more aspects of common tools either are fully browser-based or are in some way connected to the cloud-based storage of assets, settings and results; therefore, they function online and are easily shared. Collaboration is closely connected to the previously discussed issue of navigation histories. This is not only relevant for individual work processes but also for more general production pipelines in a commercial context. In this regard, the sharing and collaborative work on iterations, which involves multiple persons referencing different versions, is essential. Some work has been done (e.g.,~\cite{salvati_2015_mcm,oleary_2018_csi}) but further investigations of collaboration for creative control are called for. 
 
-As discussed in \Cref{sec:analysis_models}, control techniques are closely inter-related with the representation of the underlying models. Therefore, a more unified development of models across research communities would be beneficial. Expert knowledge of usability should especially be considered. However, further automation for the creation of complex ornamental models also poses interesting challenges, such as abstraction \cite{nan_2011_cgr}, symmetry computation~\cite{cullen_2011_sh} and design space variations.
+As discussed in \Cref{sec:models}, control techniques are closely inter-related with the representation of the underlying models. Therefore, a more unified development of models across research communities would be beneficial. Expert knowledge of usability should especially be considered. However, further automation for the creation of complex ornamental models also poses interesting challenges, such as abstraction \cite{nan_2011_cgr}, symmetry computation~\cite{cullen_2011_sh} and design space variations.
 
 
 \paragraph{Machine Learning}
@@ -349,27 +343,4 @@ Nonetheless, these works present an interesting approach that is worth further i
 
 % %-------------------------------------------------------------------------
 
-
-
-%-------------------------------------------------------------------------
-%-------------------------------------------------------------------------
-% \newpage
-
-\section{Conclusion}
-\label{sec:analysis_summary}
-
-In order to achieve the  goal of creative control for procedural ornamentation of specific design goals, an understanding of creativity and creative means, underlying models and the identification and classification of the related state of the art are required.
-
-Specific ornamental design goals are a perception of order through the structured repetition of elements and hierarchical compositions. Ornaments adapt to the space they fill and integrate  contrasts and highlighting accents for visual appeal.
-
-This work follows the definition of creativity as intentionally producing a novel and surprising product and identifies navigation, transparency, variation and stimulation as analyzable means for engaging in creativity.
-
-While the focus of this work is on procedural models, various relevant data-driven approaches are integrated and work that solely specializes on ornamental designs highlighted. For a better understanding of the creative control capabilities of the state of the art, the control paradigms of how, what, where and when are analyzed and broken down into specific mechanisms with exemplars, parameterization, handling, filling, guiding and placing and their respective interactions.
-
-Our analysis shows that current work mainly focuses on specific and separated single aspects, which can not support overall creative control for ornamentation. For more complete and meaningful solutions aspects of both, data-driven and procedural techniques are needed and must be merged to a unified whole.
-
-
- % With this work we aim to further foster the previous stated goal~\cite{wei_2009_seb} of merging both approaches to a unified whole.
- % enabling creative control while automating repetitive tasks.
-
-%-------------------------------------------------------------------------
+                                       
