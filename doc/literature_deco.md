@@ -21,6 +21,13 @@
     * [Element Placement](#element-placement)
     * [Machine Learning](#machine-learning)
     * [Semantic Attributes](#semantic-attributes)
+    * [Add But Not Sure Where](#add-but-not-sure-where)
+    * [Maybe Add](#maybe-add)
+        * [Tile-based designs](#tile-based-designs)
+        * [Hand-drawing](#hand-drawing)
+        * [Fabrication](#fabrication)
+        * [Coloring](#coloring)
+        * [Creativity](#creativity)
 
 ## Texturing Methods
 
@@ -161,7 +168,24 @@
     pages = {71--79},
     year = {2014},
 }
+* @article{tu_2020_cct,
+    title = {Continuous Curve Textures},
+    author = {Peihan Tu and Li-Yi Wei and Koji Yatani and Takeo Igarashi and Matthias Zwicker},
+    journal = {{ACM} Transactions on Graphics},
+    volume = {39},
+    number = {6},
+    year = 2020,
+}
 
+* @inproceedings {pauly_2009_sot,
+booktitle = {Eurographics 2009 - State of the Art Reports},
+editor = {M. Pauly and G. Greiner},
+title = {{State of the Art in Example-based Texture Synthesis}},
+author = {Wie, Li-Yi and Lefebvre, Sylvain and Kwatra, Vivek and Turk, Greg},
+year = {2009},
+publisher = {The Eurographics Association},
+}
+    * https://diglib.eg.org/bitstream/handle/10.2312/egst.20091063.093-117/093-117.pdf?sequence=1&isAllowed=y
 
 #### Element Arrangements
 
@@ -235,6 +259,52 @@
     pages = {10–17},
 }
 
+* @article{chen_2019_mpc,
+    author = {Chen, Minghai and Xu, Fan and Lu, Lin},
+    year = {2019},
+    title = {Manufacturable pattern collage along a boundary},
+    volume = {5},
+    journal = {Computational Visual Media},
+}
+* @article{DAVISON201923,
+    title = "Interactive example-palettes for discrete element texture synthesis",
+    journal = "Computers & Graphics",
+    volume = "78",
+    pages = "23 - 36",
+    year = "2019",
+}
+    * https://prism.ucalgary.ca/ds2/stream/?#/documents/90e293e8-1edd-4f9c-8891-c8d9bed7c894/page/3
+* @inproceedings{hsu_2020_aef,
+author = {Hsu, Chen-Yuan and Wei, Li-Yi and You, Lihua and Zhang, Jian Jun},
+title = {Autocomplete Element Fields},
+year = {2020},
+publisher = {ACM},
+booktitle = {Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
+pages = {1–13},
+numpages = {13},
+}
+    * https://dl.acm.org/doi/10.1145/3313831.3376248
+* @inproceedings{hsu_2018_bef,
+    author = {Hsu, Chen-Yuan and Wei, Li-Yi and You, Lihua and Zhang, Jian Jun},
+    title = {Brushing Element Fields},
+    year = {2018},
+    publisher = {Association for Computing Machinery},
+    booktitle = {SIGGRAPH Asia 2018 Technical Briefs},
+    articleno = {6},
+    numpages = {4},
+}
+    * https://dl.acm.org/doi/10.1145/3283254.3283274
+* @inproceedings{10.1111/cgf.12152,
+author = {Landes, Pierre-Edouard and Galerne, Bruno and Hurtut, Thomas},
+title = {A Shape-Aware Model for Discrete Texture Synthesis},
+year = {2013},
+publisher = {Eurographics Association},
+booktitle = {Proceedings of the Eurographics Symposium on Rendering},
+pages = {67–76},
+}
+    * https://dl.acm.org/doi/10.1111/cgf.12152
+    * https://hal.archives-ouvertes.fr/hal-00825735/document
+
 
 
 ### Grammar Generation
@@ -258,6 +328,21 @@
     pages = {63--74},
     publisher = {ACM},
 } 
+
+##### ADD
+
+* @article{guo_ipm,
+author = {Guo, Jianwei and Jiang, Haiyong and Benes, Bedrich and Deussen, Oliver and Zhang, Xiaopeng and Lischinski, Dani and Huang, Hui},
+title = {Inverse Procedural Modeling of Branching Structures by Inferring L-Systems},
+year = {2020},
+issue_date = {September 2020},
+publisher = {ACM},
+volume = {39},
+number = {5},
+journal = {{ACM} Transactions on Graphics},
+articleno = {155},
+}
+    * https://dl.acm.org/doi/10.1145/3394105
 
 ## Shapes and Masts
 
@@ -466,6 +551,18 @@
     publisher = {ACM},
 } 
 
+##### ADD
+
+@inproceedings{pedersen_2006_ola,
+    author = {Pedersen, Hans and Singh, Karan},
+    title = {Organic Labyrinths and Mazes},
+    year = {2006},
+    publisher = {Association for Computing Machinery},
+    booktitle = {Proceedings of the 4th International Symposium on Non-Photorealistic Animation and Rendering},
+    pages = {79–86},
+}
+    * https://dl.acm.org/doi/10.1145/1124728.1124742
+
 ### Curves As Control Mechanisms
 
 ##### IN
@@ -672,6 +769,45 @@
     publisher = {ACM},
 }
 
+##### Maybe Add
+
+* @article{hu_2019_ssf,
+author = {Hu, Zhongyuan and Xie, Haoran and Fukusato, Tsukasa and Sato, Takahiro and Igarashi, Takeo},
+title = {Sketch2VF: Sketch-based flow design with conditional generative adversarial network},
+journal = {Computer Animation and Virtual Worlds},
+volume = {30},
+number = {3-4},
+pages = {e1889},
+year = {2019}
+}
+    * http://www.jaist.ac.jp/~xie/sketch2vf.html
+
+* @article {heer_2019_apa,
+	author = {Heer, Jeffrey},
+	title = {Agency plus automation: Designing artificial intelligence into interactive systems},
+	volume = {116},
+	number = {6},
+	pages = {1844--1850},
+	year = {2019},
+	publisher = {National Academy of Sciences},
+	journal = {Proceedings of the National Academy of Sciences}
+}
+    * https://www.pnas.org/content/116/6/1844
+* @InProceedings{gatys_2017_cpf,
+author = {Gatys, Leon A. and Ecker, Alexander S. and Bethge, Matthias and Hertzmann, Aaron and Shechtman, Eli},
+title = {Controlling Perceptual Factors in Neural Style Transfer},
+booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {July},
+year = {2017}
+}
+    * https://openaccess.thecvf.com/content_cvpr_2017/html/Gatys_Controlling_Perceptual_Factors_CVPR_2017_paper.html
+
+* Interactive example-based terrain authoring with conditional generative adversarial networks
+    * https://dl.acm.org/doi/10.1145/3130800.3130804
+* Interactive Modeling and Authoring of Climbing Plants
+    * http://hpcg.purdue.edu/bbenes/papers/Haedrich2017EG.pdf
+
+
 ## Semantic Attributes
 
 ##### IN
@@ -727,4 +863,264 @@
     booktitle    = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
     year         = {2014},
 }
+
+##### ADD
+
+* @misc{godi_2019_tra,
+      title={Texel-Att: Representing and Classifying Element-based Textures by Attributes}, 
+      author={Marco Godi and Christian Joppi and Andrea Giachetti and Fabio Pellacini and Marco Cristani},
+      year={2019},
+      eprint={1908.11127},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+    * https://arxiv.org/abs/1908.11127
+
+* @inproceedings{joppi_2019_tri,
+    author={Joppi, Christian
+    and Godi, Marco
+    and Giachetti, Andrea
+    and Pellacini, Fabio
+    and Cristani, Marco",
+    editor="Ricci, Elisa
+    and Rota Bul\`o, Samuel
+    and Snoek, Cees
+    and Lanz, Oswald
+    and Messelodi, Stefano
+    and Sebe, Nicu},
+    title={Texture Retrieval in the Wild Through Detection-Based Attributes},
+    booktitle={Image Analysis and Processing -- ICIAP 2019},
+    year={2019},
+    publisher={Springer International Publishing},
+    pages={522--533}
+}
+    * https://arxiv.org/pdf/1908.11111.pdf
+
+
+## Add But Not Sure Where
+
+* @inproceedings{talton_2009_emw,
+  author = {Jerry O. Talton and Daniel Gibson and Lingfeng Yang and Pat Hanrahan and Vladlen Koltun},
+  title = {Exploratory Modeling with Collaborative Design Spaces},
+  booktitle = {Proceedings of the 2nd Annual ACM SIGGRAPH Conference and Exhibition in Asia},
+  year = {2009},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+}
+    * http://jerrytalton.net/research/tgyhk-emcds-09/paper.pdf
+
+* @inproceedings{friske_2019_acs,
+    author = {Friske, Mikhaila and Wu, Shanel and Devendorf, Laura},
+    title = {AdaCAD: Crafting Software For Smart Textiles Design},
+    year = {2019},
+    publisher = {ACM},
+    booktitle = {Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems},
+    pages = {1–13},
+}
+    * https://dl.acm.org/doi/abs/10.1145/3290605.3300575
+
+* @inproceedings{li_2020_sva,
+    author = {Li, Jingyi and Brandt, Joel and Mech, Radom\'{\i}r and Agrawala, Maneesh and Jacobs, Jennifer},
+    title = {Supporting Visual Artists in Programming through Direct Inspection and Control of Program Execution},
+    year = {2020},
+    publisher = {ACM},
+    booktitle = {Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
+    pages = {1–12},
+}
+    * https://dl.acm.org/doi/abs/10.1145/3313831.3376765
+* @inproceedings{10.1145/3025453.3025927,
+    author = {Jacobs, Jennifer and Gogia, Sumit and Mundefinedch, Radom\'{\i}r and Brandt, Joel R.},
+    title = {Supporting Expressive Procedural Art Creation through Direct Manipulation},
+    year = {2017},
+    publisher = {ACM},
+    booktitle = {Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems},
+    pages = {6330–6341},
+}
+    * https://dl.acm.org/doi/10.1145/3025453.3025927
+
+* 
+@article{alvarez_2019_ido,
+    author = {Alvarez, Luis and MonzÃ³n, Nelson and Morel, Jean-Michel},
+    title = {Interactive design of random aesthetic abstract textures by composition principles},
+    journal = {Leonardo},
+    volume = {0},
+    pages = {1-11},
+    year = {2019},
+}
+    * http://dev.ipol.im/~nmonzon/aat/Alvarez_msR1.pdf
+
+* @article{galin_2019_aro,
+author = {Galin, Eric and Guérin, Eric and Peytavie, Adrien and Cordonnier, Guillaume and Cani, Marie-Paule and Benes, Bedrich and Gain, James},
+    title = {A Review of Digital Terrain Modeling},
+    journal = {Computer Graphics Forum},
+    volume = {38},
+    number = {2},
+    pages = {553-577},
+    year = {2019}
+}
+* http://hpcg.purdue.edu/bbenes/papers/Galin19STAR.pdf
+
+* @inproceedings{li_:_2019_aqp,
+    author = {Li, Yifei and Breen, David E. and McCann, James and Hodgins, Jessica},
+    title = {Algorithmic Quilting Pattern Generation for Pieced Quilts},
+    booktitle = {Proceedings of Graphics Interface 2019},
+    year = {2019},
+    publisher = {Canadian Information Processing Society},
+}
+    * http://graphicsinterface.org/proceedings/gi2019/gi2019-13/
+* @article{peihan_2019_pps,
+    title = {Point Pattern Synthesis via Irregular Convolution},
+    author = {Peihan Tu, Dani Lischinski and Hui Huang},
+    journal = {Computer Graphics Forum (Proceedings of SGP 2019)},
+    volume = {38},
+    number = {5},
+    pages = {109--122},
+    year = {2019},
+} 
+    * https://vcc.tech/research/2019/PointSyn
+
+
+## Maybe Add
+
+* Mention recommendation systems?
+    * http://pages.stern.nyu.edu/~atuzhili/pdf/TKDE-Paper-as-Printed.pdf
+* Causality: a conceptual model of interaction history
+    * https://dl.acm.org/doi/10.1145/2556288.2556990
+* Patch-based geometric texture synthesis
+    * https://dl.acm.org/doi/10.1145/2487276.2487278
+* Towards effective evaluation of geometric texture synthesis algorithms
+    * https://dl.acm.org/doi/10.1145/2486042.2486043
+* Digital tools in collaborative creative work
+    * https://dl.acm.org/doi/abs/10.1145/3240167.3240262
+* A survey of the state-of-the-art in patch-based synthesis
+    * https://link.springer.com/article/10.1007/s41095-016-0064-2#citeas
+* Semi-Procedural Textures using Point Process Texture Basis Functions
+    * http://pascal.guehl.pagesperso-orange.fr/index.html
+* Authoring landscapes by combining ecosystem and terrain erosion simulation
+    * https://dl.acm.org/doi/10.1145/3072959.3073667
+* Example based repetitive structure synthesis
+    * https://people.inf.ethz.ch/~sobarbar/papers/Rov15/Rov15.pdf
+
+
+### Tile-based designs
+
+* @article{bian_2018_tpd,
+    author = {Bian, Xiaojun and Wei, Li-Yi and Lefebvre, Sylvain},
+    title = {Tile-Based Pattern Design with Topology Control},
+    year = {2018},
+    publisher = {The Association for Computers in Mathematics and Science Teaching},
+    volume = {1},
+    number = {1},
+    journal = {Proceedings of the ACM on Computer Graphics and Interactive Techniques},
+    articleno = {23},
+}
+    * https://dl.acm.org/doi/10.1145/3203204
+* @article{derouet_2019_gsw,
+    author = {Derouet-Jourdan, Alexandre and Salvati, Marc and Jonchier, Théo},
+    title = {Generating Stochastic Wall Patterns On-the-fly with Wang Tiles},
+    journal = {Computer Graphics Forum},
+    volume = {38},
+    number = {2},
+    pages = {255-264},
+    year = {2019}
+}
+    * https://olm.co.jp/rd/wp-content/uploads/GeneratingStochasticWallPatternsOn-the-FlyWithWangTiles.pdf
+
+### Hand-drawing
+
+* @article{xing_2015_aha,
+    author = {Xing, Jun and Wei, Li-Yi and Shiratori, Takaaki and Yatani, Koji},
+    title = {Autocomplete Hand-Drawn Animations},
+    year = {2015},
+    publisher = {ACM},
+    volume = {34},
+    number = {6},
+    journal = {{ACM} Transactions on Graphics},
+    articleno = {169},
+}
+    * https://dl.acm.org/doi/abs/10.1145/2816795.2818079
+
+
+
+### Fabrication
+
+##### ADD
+
+* @article{bickel_2018_sat,
+  author       = {Bickel, Bernd and Cignoni, Paolo and Malomo, Luigi and Pietroni, Nico},
+  title        = {State of the Art on Stylized Fabrication},
+  journal      = {Computer Graphics Forum},
+  volume       = {37},
+  year         = {2018},
+}
+* @article{bermano_sot,
+author = {Bermano, Amit H. and Funkhouser, Thomas and Rusinkiewicz, Szymon},
+title = {State of the Art in Methods and Representations for Fabrication-Aware Design},
+journal = {Computer Graphics Forum},
+volume = {36},
+number = {2},
+pages = {509-535},
+year = {2017}
+}
+* https://www.cs.tau.ac.il/~amberman/fabStar.pdf
+
+
+* Fabricable Tile Decors
+    * https://dl.acm.org/doi/10.1145/3130800.3130817
+* Star-shaped metrics for mechanical metamaterial design
+    * https://dl.acm.org/doi/abs/10.1145/3306346.3322989
+* By-example synthesis of structurally sound patterns
+    * https://dl.acm.org/doi/10.1145/2766984
+* Fabricable Dihedral Escher Tessellations
+    * http://irc.cs.sdu.edu.cn/Dihedral/index.html
+* Interactive fabrication: new interfaces for digital fabrication
+    * https://dl.acm.org/doi/10.1145/1935701.1935716
+* Connected fermat spirals for layered fabrication
+    * https://dl.acm.org/doi/10.1145/2897824.2925958
+
+
+### Coloring
+
+* http://www.shumash.com/research
+
+### Creativity
+
+##### ADD
+
+* @inproceedings{frich_2018_tyo,
+author = {Frich, Jonas and Mose Biskjaer, Michael and Dalsgaard, Peter},
+title = {Twenty Years of Creativity Research in Human-Computer Interaction: Current State and Future Directions},
+year = {2018},
+publisher = {ACM},
+booktitle = {Proceedings of the 2018 Designing Interactive Systems Conference},
+pages = {1235–1257},
+}
+    * https://dl.acm.org/doi/abs/10.1145/3196709.3196732
+* @inproceedings{10.1145/3290605.3300619,
+author = {Frich, Jonas and MacDonald Vermeulen, Lindsay and Remy, Christian and Biskjaer, Michael Mose and Dalsgaard, Peter},
+title = {Mapping the Landscape of Creativity Support Tools in HCI},
+year = {2019},
+publisher = {ACM},
+booktitle = {Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems},
+pages = {1–18},
+}
+    * https://dl.acm.org/doi/abs/10.1145/3290605.3300619
+* @inproceedings{10.1145/3357236.3395474,
+author = {Remy, Christian and MacDonald Vermeulen, Lindsay and Frich, Jonas and Biskjaer, Michael Mose and Dalsgaard, Peter},
+title = {Evaluating Creativity Support Tools in HCI Research},
+year = {2020},
+publisher = {ACM},
+booktitle = {Proceedings of the 2020 ACM Designing Interactive Systems Conference},
+pages = {457–476},
+}
+    * https://dl.acm.org/doi/abs/10.1145/3357236.3395474
+* @inproceedings{benedetti_2014_pwb,
+author = {Benedetti, Luca and Winnem\"{o}ller, Holger and Corsini, Massimiliano and Scopigno, Roberto},
+title = {Painting with Bob: Assisted Creativity for Novices},
+year = {2014},
+publisher = {ACM},
+booktitle = {Proceedings of the 27th Annual ACM Symposium on User Interface Software and Technology},
+pages = {419–428},
+}
+    *  https://dl.acm.org/doi/abs/10.1145/2642918.2647415
 
