@@ -42,8 +42,6 @@ Curves and hand-drawn paths give an artist more direct control than the previous
 
 Painting-tool-like methods create output along curves but do so directly without taking an a priori completed curve into consideration, as if using a spray can or a brush. Painting techniques usually include a brush diameter, hence the size of the area to be filled along the curve.
 
-Besides the value of the indirect use of curves as a control tool, their direct employment as a visual element is also relevant. Formed curves, such as circles, spirals or hearts, are essential components for many pattern designs such as ornamentation.
-
 \subsubsection{Element Placement}
 \label{subsubsec:commonly_used_control_mechanisms_elements}
 
@@ -94,6 +92,7 @@ By introducing a noise that permits for the approximation of arbitrary spectral 
 \paragraph{Regular to Irregular Pattern}
 \label{para:analysis_distribution_and_repetition_regular}
 
+\minortodo[inline]{Add intro}
 
 \subparagraph{Example-Based Control}
 \label{subpara:analysis_regular_examplebased_control}
@@ -102,12 +101,9 @@ All the above discussed noise-based methods control a single stochastic procedur
 
 \citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} allow for the whole procedural texture spectrum with their parameter retrieval technique. In so doing, they employ two types of similarity metrics, and two types of optimization strategies. As input, an artist needs to individually select the distance metric and optimization strategy for each fitting task. As initialization for the optimization, the authors propose "on the order of 200" pre-computed random choices to choose from. The authors report an average optimization time of 12 minutes, not specifying for how many parameters. \citeauthor*{gilet_2012_mkn}~\cite{gilet_2012_mkn} report more than an hour for the performance times. For such a search-based approach, the parameter count is highly influential on the performance for both visual quality and computation time. With a higher number of parameters the current form of the approach quickly becomes unfeasible. 
 
-\colorbox{red} {Todo: Add \cite{gieseke_2014_ipr, tu_2020_cct, guehl_2020_stu}}
+\insertref[inline]{\cite{gieseke_2014_ipr, tu_2020_cct, guehl_2020_stu}}
 
-Drawing Tiles:
-
-\colorbox{red} {Todo: Add \cite{bian_2018_tpd, guehl_2020_stu, derouet_2019_gsw}}
-
+\insertref[inline]{Drawing Tiles: \cite{bian_2018_tpd, guehl_2020_stu, derouet_2019_gsw}}
 
 \subsubsection{Rule-based and Design-Specific Pattern}
 \label{subsubsec:analysis_rulebased_and_designspecific}
@@ -175,7 +171,7 @@ Painting-tool-like methods create output along curves but do so directly without
 
 More painting-like methods can be found, for example, in procedural botanical modeling \cite{anastacio_2008_spl,chen_2008_stm,palubicki_2009_sot}, procedural landscape generation~\cite{emilien_2015_wie}, as part of a procedural water color engine~\cite{diverdi_2013_ppp} or for dynamic effects~\cite{xing_2016_eit}. 
 
-\colorbox{red} {Todo: Add \cite{gieseke_2017_ooo}}
+\insertref[inline]{\cite{gieseke_2017_ooo}}
 
 
 \subparagraph{Data-driven Generation}
@@ -194,8 +190,7 @@ Similar approaches have also been investigated in the context of texture paintin
 
 Even though not a generating technique in itself, exploration is an important characteristic of a creative process. \citeauthor*{todi_2016_sse}~\cite{todi_2016_sse} present a tool for exploring sketches and the automatic optimization of common layout types. With the method of \citeauthor*{chen_2016_msi}~\cite{chen_2016_msi}, an artist can browse a collection of texture images by sketching highly abstracted pattern features. The represented structural features of reflection, rotation, and translation symmetries adhere to important design principles for visually pleasing patterns. One could imagine a similar intuitive approach for exploring the parameter space of an ornamental procedural representation, for example.
 
-\colorbox{red} {Todo: Add \cite{talton_2009_emw}}
-
+\insertref[inline]{\cite{talton_2009_emw}}
 
 \subsubsection{Element Arrangements}
 \label{subsubsec:analysis_element_arrangements}
@@ -205,7 +200,7 @@ Element arrangements have individual and unconnected visual entities as smallest
 \minortodo[inline]{Also mention shapes and masks.}
 
 \paragraph{Example-Based Control}
-\label{para:commonly_element_arrangements_example}
+\label{para:analysis_element_arrangements_example}
 
 An example-based control can be used to arrange the elements. From an example arrangements, relationships between elements are extracted, and results are reproduced for the synthesis. 
 
@@ -215,14 +210,16 @@ An example-based control can be used to arrange the elements. From an example ar
 
 The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a sample of a discrete element distribution and an output shape to fill both in two and three dimensions. The exemplar has to contain the actual elements in their domain and cannot be basic pixel data. In its broadest sense, this underlying distribution model can be seen as a procedural model. Even though there are no generative rules, characteristics of the discrete elements and their distribution can be parametrized, and changes can be automatically processed and reproduced in the output. In order to fill the output shape with elements, an energy optimization is processed with a novel neighborhood similarity metric. In addition to element positions, the metric includes  variable features referring to orientation, geometry, appearance and type, for example. Hence, the metric is capable of reproducing global aggregate distributions that go beyond local element placements. The authors also extended their work to the spatial-temporal domain~\cite{ma_2013_det}. In regard to the available control mechanisms for artists, necessary inputs are the exemplary element distribution, the neighborhood size to consider and the output shape. Further distribution constraints based on element attributes are optional. Examples for the inclusion of a vector field and element drag and drop are given. The authors report seconds to minutes for performance times with a non-optimized implementation.
 
-\colorbox{red} {Todo: Sort and add \cite{almeraj_2013_pgt, landes_2013_asm, davison_2019_ief, peihan_2019_pps, chen_2019_mpc, li_2019_aqp}}
+
+\insertref[inline]{Needs sorting: \cite{almeraj_2013_pgt, landes_2013_asm, davison_2019_ief, peihan_2019_pps, chen_2019_mpc, li_2019_aqp}}
+
 
 \paragraph{Vector Fields}
 \label{para:analysis_element_arrangements_fields}
 
 \citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. For each element, a predefined spine controls the element's deformation. The artist defines direction guides and optionally fixed elements that control the computation of evenly placed streamlines. Elements are placed and deformed along streamlines. An iterative refinement step optimizes for a dense and balanced filling. First, streamlines are slightly shifted to cohere to the space available. Second, elements a re-placed with rotational adjustments and possible overlaps into free space of neighboring elements, reducing negative space. An average packing takes about an hour.
 
-\colorbox{red} {Todo: Add \cite{saputra_2018_rde, hsu_2018_bef, davison_2019_ief, hsu_2020_aef}}
+\insertref[inline]{\cite{saputra_2018_rde, hsu_2018_bef, davison_2019_ief, hsu_2020_aef}}
 
 \paragraph{Data-Driven Approach}
 \label{para:analysis_element_arrangements_datadriven}
@@ -236,14 +233,13 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 % Shape-based, grammar
 \citeauthor*{benes_2011_gpm}~\cite{benes_2011_gpm} offer a complex shape-filling and masking system for procedural open L-system models by dividing a target space into artist editable guide shapes. Seeds for the L-system are interactively given by an artist as a position and orientation. The guide shapes determine what types of patterns grow in different areas. The connections between the shapes are manually specified by the artist and in turn guide the connections between elements. Based on a mass-spring system, the guides can be intuitively edited as a whole. The authors report on pattern generation performance for most scenarios as less than a second, with up to 45 seconds for only one complex scenario.
 
-\colorbox{red} {Todo: Add \cite{alvarez_2019_ido}}
-
+\insertref[inline]{\cite{alvarez_2019_ido}}
 
 
 \subsection{Curves, Lines and Sketches}
 \label{subsec:analysis_curves_lines_and_sketches}
 
-The following section discusses work that enables the direct control of curves as pattern elements.
+Besides the value of the indirect use of curves as a control tool, their direct employment as a visual element is also relevant. Formed curves, such as circles, spirals or hearts, are essential components for many pattern designs such as ornamentation. The following section discusses work that enables the direct control of curves as pattern elements.
 
 \citeauthor*{anderson_2008_udt}~\cite{anderson_2008_udt} adapted the design principles for ornamentation discussed by \citeauthor*{wong_1998_cgf}~\cite{wong_1998_cgf} as well as their core growth mechanism of "finding the largest space to fill next."  \citeauthor*{anderson_2008_udt}~\cite{anderson_2008_udt}s' technique places discrete elements on the sides of an artist-given curve, while not filling the curve itself. The artist can input masks not to be filled, proxies controlling the size and type of elements to be placed and to equal the sum of radii on both sides of the curve. Two input interfaces exist, the interactive view and the buffer view. The authors do not report a user study or specific performance times but call their system interactive.  
 
@@ -253,31 +249,26 @@ Also incorporating an artist-defined curve as the spine of a pattern, \citeautho
 \citeauthor*{merrell_2010_ecs}~\cite{merrell_2010_ecs} generated a set of curves in the same style of a given parametric example curve. A style is defined by local properties, such as tangents and curvatures that are derived from a local shape analysis. The new curves are computed with a rule-based system that allows artists to interactively edit the result. Interactivity is somewhat diminished by computation times of a few minutes for a curve set.
 \citeauthor*{zehnder_2016_dso}~\cite{zehnder_2016_dso} provide artists with a tool to directly assemble structurally sound curve networks on a three-dimensional surface. The components of the network are spline curves defined by the artist. Components can be placed manually or are repeated semi-automatically. The curves can be moved on the surface while having an elastic quality to them. To prevent structural weaknesses, the system indicates problematic areas and suggests improvements, seamlessly combining the design task with engineering requirements.
 
-\colorbox{red} {Todo: Add \cite{pedersen_2006_ola}}
+\insertref[inline]{\cite{pedersen_2006_ola}}
 
-In section \Cref{subpara:analysis_rulebased_sketchbased_datadriven} we already discussed data-driven techniques for creating repetitive structures with sketching. ~\cite{kazi_2012_vit, xing_2014_apr, xing_2015_aha} can be similarly used to sketch parts of a pattern directly.
+In section \ref{subpara:analysis_rulebased_sketchbased_datadriven} we already discussed data-driven techniques for creating repetitive structures with sketching. ~\cite{kazi_2012_vit, xing_2014_apr, xing_2015_aha} can be similarly used to sketch parts of a pattern directly.
 
 \subsection{Connections, Branches and Directionality}
 \label{subsec:analysis_connections_branches_and_directionality}
 
-\begin{itemize}
-    \item Example-based branching: \colorbox{red} {Todo: Add \cite{guo_2020_ipm}, as inspiration?: \cite{guerin_2017_ieb}}
-    \item Data-driven directionality: \colorbox{red} {Todo: Add \cite{xing_2016_eit, hu_2019_ssf}}
-    \item Street-Modeling: \colorbox{red} {Todo: Add \cite{chu_2019_ntg}}, Plants: \colorbox{red} {Todo: Add \cite{haedrich_2017_ima}}
-\end{itemize}
+\majortodo[inline]{Write Section}
+
+\insertref[inline]{Example-based branching: \cite{guo_2020_ipm, guerin_2017_ieb}}
+\insertref[inline]{Data-driven directionality: \cite{xing_2016_eit, hu_2019_ssf}}
+\insertref[inline]{Street-Modeling: \cite{chu_2019_ntg}, Plants: \cite{haedrich_2017_ima}}
 
 
 \subsubsection{Vector Fields}
 \label{subsec:analysis_connections_branches_and_directionality_vectorfields}
 
+In section~\ref{para:analysis_element_arrangements_example} about element arrangements discussed in detail, \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} employ vector fields to define the overall growth direction and alignment of elements within an example-guided arrangement. \citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. In section~\ref{para:analysis_rulebased_vector_fields} about rule-based pattern discussed in detail, \citeauthor*{yuanyuan_2011_gso}~\cite{yuanyuan_2011_gso} present a shape grammar that is guided by either a vector or tensor field.
 
-In section TODO: about element arrangements discussed in detail, \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} employ vector fields to define the overall growth direction and alignment of elements within an example-guided arrangement. \citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. 
-
-In section TODO: about rule-based pattern discussed in detail, \citeauthor*{yuanyuan_2011_gso}~\cite{yuanyuan_2011_gso} present a shape grammar that is guided by either a vector or tensor field.
-
-
-\colorbox{red} {Todo: Add \cite{gieseke_2017_ooo}}
-
+\insertref[inline]{\cite{gieseke_2017_ooo}}
 
 Vector fields are further employed in various other specific procedural modeling contexts. For example for procedural street modeling~\cite{chen_2008_ips}, micrography~\cite{maharik_2011_dm} or botanical models~\cite{xu_2015_ptm}.
 
@@ -298,8 +289,9 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 \subsection{Combination of Design Features}
 \label{subsec:analysis_combination_of_design_features}
 
+\majortodo[inline]{Write Section}
+\insertref[inline]{\cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva}}
 
-\colorbox{red} {Todo: Add \cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva}}
 
 \subsection{Discussion of the Creative Means}
 \label{subsec:analysis_creative_means}
@@ -370,8 +362,7 @@ As discussed in \Cref{sec:models}, control techniques are closely inter-related 
 % This is actually quite important and could/should be further elaborated.
 The procedural content generation (PCG) for games community is pushing the general integration of artificial intelligence (AI) into a procedural creation process. A new paradigm of \textit{mixed-initiative creative interfaces} is rising and is actively fostered, as an ACM Conference on Human Factors in Computing Systems (CHI) workshop under the same name in 2017 shows~\cite{deterding_2017_mci}. As the workshop summary states, it is the goal to ``put human and computer in a tight interactive loop where each suggests, produces, evaluates, modifies, and selects creative outputs in response to the other.'' In order to achieve this, AI enables computer agency, and novel interfaces enable collaboration between computers and human users. The workshop brought PCG and interaction design researchers together, stressing the importance of bridging disciplines. Similarly to games, the context of creative pattern generation also constitutes a challenging but fruitful testing ground for the investigation of mixed-initiative creative interfaces and for the task of balancing artist control and automation, as this survey shows. In general, the involvement of the computer graphics community with its various topics and rich algorithmic knowledge would be promising.
 
-\colorbox{red} {Todo: Add \cite{heer_2019_apa}}
-
+\insertref[inline]{\cite{heer_2019_apa}}
 
 \subsubsection{Semantic Attributes}
 \label{subsec:analysis_outlook_semantic-attributes}
@@ -386,4 +377,4 @@ Nonetheless, these works present an interesting approach that is worth further i
 % % \minortodo[inline]{Add Semantic aware methods for evolutionary art} ??
 % https://dl.acm.org/doi/10.1145/2576768.2598293
 
-\colorbox{red} {Todo: Add \cite{joppi_2019_tri}}
+\insertref[inline]{\cite{joppi_2019_tri}}
