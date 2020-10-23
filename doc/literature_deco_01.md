@@ -1,13 +1,14 @@
 # Analysis of the State of the Art
 
 * [Analysis of the State of the Art](#analysis-of-the-state-of-the-art)
+    * [New Categories](#new-categories)
     * [Texturing Methods](#texturing-methods)
         * [Example-Based Control](#example-based-control)
             * [Stochastic Textures](#stochastic-textures)
             * [Unrestricted Texture Designs](#unrestricted-texture-designs)
             * [Element Arrangements](#element-arrangements)
         * [Grammar Generation](#grammar-generation)
-    * [Shapes and Masts](#shapes-and-masts)
+    * [Shapes and Masks](#shapes-and-masks)
         * [Rule- and Grammar-Based Methods](#rule--and-grammar-based-methods)
             * [Probabilistic Interference](#probabilistic-interference)
         * [Data-Driven Fillings](#data-driven-fillings)
@@ -27,7 +28,27 @@
         * [Hand-drawing](#hand-drawing)
         * [Fabrication](#fabrication)
         * [Coloring](#coloring)
+    * [Different Sections](#different-sections)
         * [Creativity](#creativity)
+        * [Models](#models)
+
+
+## New Categories
+
+* Stochastic Pattern
+    * Example-Based Control
+* Regular to Structural Pattern
+* Tile-based Pattern
+* Element Arrangements
+    * Example-Based Control
+* Pattern Combinations
+    * Example-Based Control
+* Shapes and Masks
+    * Probabilistic Interference
+    * Data-Driven Fillings
+* Curves, Sketches and Painting
+* Element Placement
+
 
 ## Texturing Methods
 
@@ -157,9 +178,11 @@
     year = {2004},
 }
 
-##### TO ADD
 
-* @article {gieseke_2014_ipr,
+
+##### ADDED
+
+* added @article {gieseke_2014_ipr,
     author = {Gieseke, L. and Koch, S. and Hahn, J.-U. and Fuchs, M.},
     title = {Interactive Parameter Retrieval for Two-Tone Procedural Textures},
     journal = {Computer Graphics Forum},
@@ -167,6 +190,10 @@
     number = {4},
     pages = {71--79},
     year = {2014},
+
+##### TO ADD
+
+
 }
 * @article{tu_2020_cct,
     title = {Continuous Curve Textures},
@@ -177,15 +204,6 @@
     year = 2020,
 }
 
-* @inproceedings {pauly_2009_sot,
-booktitle = {Eurographics 2009 - State of the Art Reports},
-editor = {M. Pauly and G. Greiner},
-title = {{State of the Art in Example-based Texture Synthesis}},
-author = {Wie, Li-Yi and Lefebvre, Sylvain and Kwatra, Vivek and Turk, Greg},
-year = {2009},
-publisher = {The Eurographics Association},
-}
-    * https://diglib.eg.org/bitstream/handle/10.2312/egst.20091063.093-117/093-117.pdf?sequence=1&isAllowed=y
 
 #### Element Arrangements
 
@@ -344,7 +362,7 @@ articleno = {155},
 }
     * https://dl.acm.org/doi/10.1145/3394105
 
-## Shapes and Masts
+## Shapes and Masks
 
 ### Rule- and Grammar-Based Methods
 
@@ -1083,11 +1101,16 @@ year = {2017}
 
 * http://www.shumash.com/research
 
+
+
+
+## Different Sections
+
 ### Creativity
 
-##### ADD
+##### ADDED
 
-* @inproceedings{frich_2018_tyo,
+* added @inproceedings{frich_2018_tyo,
 author = {Frich, Jonas and Mose Biskjaer, Michael and Dalsgaard, Peter},
 title = {Twenty Years of Creativity Research in Human-Computer Interaction: Current State and Future Directions},
 year = {2018},
@@ -1096,7 +1119,7 @@ booktitle = {Proceedings of the 2018 Designing Interactive Systems Conference},
 pages = {1235–1257},
 }
     * https://dl.acm.org/doi/abs/10.1145/3196709.3196732
-* @inproceedings{10.1145/3290605.3300619,
+* added @inproceedings{10.1145/3290605.3300619,
 author = {Frich, Jonas and MacDonald Vermeulen, Lindsay and Remy, Christian and Biskjaer, Michael Mose and Dalsgaard, Peter},
 title = {Mapping the Landscape of Creativity Support Tools in HCI},
 year = {2019},
@@ -1105,7 +1128,7 @@ booktitle = {Proceedings of the 2019 CHI Conference on Human Factors in Computin
 pages = {1–18},
 }
     * https://dl.acm.org/doi/abs/10.1145/3290605.3300619
-* @inproceedings{10.1145/3357236.3395474,
+* added @inproceedings{10.1145/3357236.3395474,
 author = {Remy, Christian and MacDonald Vermeulen, Lindsay and Frich, Jonas and Biskjaer, Michael Mose and Dalsgaard, Peter},
 title = {Evaluating Creativity Support Tools in HCI Research},
 year = {2020},
@@ -1114,6 +1137,9 @@ booktitle = {Proceedings of the 2020 ACM Designing Interactive Systems Conferenc
 pages = {457–476},
 }
     * https://dl.acm.org/doi/abs/10.1145/3357236.3395474
+
+##### MAYBE
+
 * @inproceedings{benedetti_2014_pwb,
 author = {Benedetti, Luca and Winnem\"{o}ller, Holger and Corsini, Massimiliano and Scopigno, Roberto},
 title = {Painting with Bob: Assisted Creativity for Novices},
@@ -1124,3 +1150,18 @@ pages = {419–428},
 }
     *  https://dl.acm.org/doi/abs/10.1145/2642918.2647415
 
+
+
+### Models
+
+##### ADDED
+
+* added @inproceedings {pauly_2009_sot,
+    booktitle = {Eurographics 2009 - State of the Art Reports},
+    editor = {M. Pauly and G. Greiner},
+    title = {{State of the Art in Example-based Texture Synthesis}},
+    author = {Wie, Li-Yi and Lefebvre, Sylvain and Kwatra, Vivek and Turk, Greg},
+    year = {2009},
+    publisher = {The Eurographics Association},
+}
+    * https://diglib.eg.org/bitstream/handle/10.2312/egst.20091063.093-117/093-117.pdf?sequence=1&isAllowed=y
