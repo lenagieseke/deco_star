@@ -3,21 +3,29 @@
 
 \begin{abstract}
 
-    Alternative title: A Survey of Creative Pattern Generation
-    \newline
+    Alternative title: A Survey of Creative Pattern Generation \newline
 
-    \note{This is currently a summary of the STAR for communication purposes - not the abstract:}
+    Supporting artists with meaningful digital tools for creative creation is an ongoing research challenge and spans over various disciplines. On an algorithmic level however, most solutions focus on adding singular features and control mechanisms. Little attention is paid to an overall creative workflow, which needs to delicately balance between giving users as much control as is needed without burdening them with unwanted details. Towards the goal of enabling a creative workflow, we examine current methods in the scope of two-dimensional creative pattern generation and their control mechanisms. This is a complex design problem. On the one hand, the repetitive nature of a pattern is well matched with algorithmic creation, especially with procedural models. On the other hand, control mechanisms beyond automation need to be given to artists for inventive designs. 
 
-    Supporting artists with meaningful digital tools for creative creation is an ongoing research challenge and spans over various disciplines. On an algorithmic level, most solutions focus on adding singular features and control mechanisms. Little attention is paid to novel methods that can complement each other as part of a cohesive pipeline and creative workflow. Towards the goal of enabling a creative workflow, we survey current methods in the scope of creative pattern generation and their control mechanisms. We classify techniques and discuss their potential to support creative creation with newly developed criteria. 
-    \newline
+    For analyzing the state of the art, we dissect a creation process into to the methodologies of how, what, where and when. To relate control mechanisms on algorithmic level to the stages of a creation process, we classify specific control mechanisms into exemplars, parameterization, handling, filling, guiding and placing interactions. For making a discussion of creative creation more manageable, we base our discourse on the creative means of navigation, transparency, variation and stimulation. The chosen design goal allows us to meaningfully bridge our analysis between various techniques such as procedural and data-driven approaches. All in all, we hope to inspire innovation for artist-centered creation processes on a grander scheme.
+
+    % TODO: Contribution in one or (max) two sentences
+    % This STAR contributes with an interlinking analysis and classification of control mechanisms on an algorithmic level within the scope of creative pattern generation and discusses their potential for a creative workflow.
+
+
+
+    % \note{This is currently a summary of the STAR for communication purposes - not the abstract:}
+
+    % Supporting artists with meaningful digital tools for creative creation is an ongoing research challenge and spans over various disciplines. On an algorithmic level, most solutions focus on adding singular features and control mechanisms. Little attention is paid to novel methods that can complement each other as part of a cohesive pipeline and creative workflow. Towards the goal of enabling a creative workflow, we survey current methods in the scope of creative pattern generation and their control mechanisms. We classify techniques and discuss their potential to support creative creation with newly developed criteria. 
+    % \newline
     
-    The specific goal of two-dimensional and creative pattern generation, offers a complex design challenge. On the one hand, the repetitive nature of a pattern is well represented with algorithmic creation, especially with procedural representations. On the other hand, the design space of possible pattern designs ranges from realistic, over abstracted to artistic. Here, considerations about a creative workflow and the need to go beyond automation rise and meaningful control needs to be given to artists. Typically however, with the power of procedural generation comes difficult controllability. Combining the algorithmic nature of procedural generation with novel forms of controllability has great capabilities and potential to offer truly novel benefits to traditional creation processes. 
-    \newline
+    % The specific goal of two-dimensional and creative pattern generation, offers a complex design challenge. On the one hand, the repetitive nature of a pattern is well represented with algorithmic creation, especially with procedural representations. On the other hand, the design space of possible pattern designs ranges from realistic, over abstracted to artistic. Here, considerations about a creative workflow and the need to go beyond automation rise and meaningful control needs to be given to artists. Typically however, with the power of procedural generation comes difficult controllability. Combining the algorithmic nature of procedural generation with novel forms of controllability has great capabilities and potential to offer truly novel benefits to traditional creation processes. 
+    % \newline
     
-    For analyzing the state of the art and a better understanding of creative creation with digital tools, we dissect a creation process into to the methodologies of how, what, where and when. To relate control mechanisms on algorithmic level to the stages of a creation process, we classify specific control mechanisms into exemplars, parameterization, handling, filling, guiding and placing interactions. For making the domain of creative creation more manageable, the creative means of navigation, transparency, variation and stimulation are defined and linked to the control mechanisms.
-    \newline
+    % For analyzing the state of the art and a better understanding of creative creation with digital tools, we dissect a creation process into to the methodologies of how, what, where and when. To relate control mechanisms on algorithmic level to the stages of a creation process, we classify specific control mechanisms into exemplars, parameterization, handling, filling, guiding and placing interactions. For making the domain of creative creation more manageable, the creative means of navigation, transparency, variation and stimulation are defined and linked to the control mechanisms.
+    % \newline
     
-    With these criteria, we survey the most recent algorithmic representations for creative pattern generation. For this chosen design goal, the analysis bridges between various techniques such as procedural and data-driven approaches. We identify open issues and sketch out promising research directions towards the unification of different building blocks to a coherent pipeline. All in all, we hope to inspire innovation for artist-centered creation processes on a grander scheme.
+    % With these criteria, we survey the most recent algorithmic representations for creative pattern generation. For this chosen design goal, the analysis bridges between various techniques such as procedural and data-driven approaches. We identify open issues and sketch out promising research directions towards the unification of different building blocks to a coherent pipeline. All in all, we hope to inspire innovation for artist-centered creation processes on a grander scheme.
 
 %-------------------------------------------------------------------------
 %  ACM CCS 1998
@@ -31,29 +39,59 @@
 %The tool at \url{http://dl.acm.org/ccs.cfm} can be used to generate
 % CCS codes.
 %Example:
+% \begin{CCSXML}
+% <ccs2012>
+% <concept>
+% <concept_id>10010147.10010371.10010352.10010381</concept_id>
+% <concept_desc>Computing methodologies~Collision detection</concept_desc>
+% <concept_significance>300</concept_significance>
+% </concept>
+% <concept>
+% <concept_id>10010583.10010588.10010559</concept_id>
+% <concept_desc>Hardware~Sensors and actuators</concept_desc>
+% <concept_significance>300</concept_significance>
+% </concept>
+% <concept>
+% <concept_id>10010583.10010584.10010587</concept_id>
+% <concept_desc>Hardware~PCB design and layout</concept_desc>
+% <concept_significance>100</concept_significance>
+% </concept>
+% </ccs2012>
+% \end{CCSXML}
+
+% \ccsdesc[300]{Computing methodologies~Collision detection}
+% \ccsdesc[300]{Hardware~Sensors and actuators}
+% \ccsdesc[100]{Hardware~PCB design and layout}
+
 \begin{CCSXML}
 <ccs2012>
 <concept>
-<concept_id>10010147.10010371.10010352.10010381</concept_id>
-<concept_desc>Computing methodologies~Collision detection</concept_desc>
-<concept_significance>300</concept_significance>
+<concept_id>10010147.10010371</concept_id>
+<concept_desc>Computing methodologies~Computer graphics</concept_desc>
+<concept_significance>500</concept_significance>
 </concept>
 <concept>
-<concept_id>10010583.10010588.10010559</concept_id>
-<concept_desc>Hardware~Sensors and actuators</concept_desc>
-<concept_significance>300</concept_significance>
+<concept_id>10003120.10003123.10010860</concept_id>
+<concept_desc>Human-centered computing~Interaction design process and methods</concept_desc>
+<concept_significance>500</concept_significance>
 </concept>
 <concept>
-<concept_id>10010583.10010584.10010587</concept_id>
-<concept_desc>Hardware~PCB design and layout</concept_desc>
-<concept_significance>100</concept_significance>
+<concept_id>10003120.10003123.10011758</concept_id>
+<concept_desc>Human-centered computing~Interaction design theory, concepts and paradigms</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003120.10003123.10011760</concept_id>
+<concept_desc>Human-centered computing~Systems and tools for interaction design</concept_desc>
+<concept_significance>300</concept_significance>
 </concept>
 </ccs2012>
 \end{CCSXML}
 
-\ccsdesc[300]{Computing methodologies~Collision detection}
-\ccsdesc[300]{Hardware~Sensors and actuators}
-\ccsdesc[100]{Hardware~PCB design and layout}
+\ccsdesc[500]{Computing methodologies~Computer graphics}
+\ccsdesc[500]{Human-centered computing~Interaction design process and methods}
+\ccsdesc[500]{Human-centered computing~Interaction design theory, concepts and paradigms}
+\ccsdesc[300]{Human-centered computing~Systems and tools for interaction design}
 
 
 \printccsdesc   
