@@ -281,13 +281,6 @@ In section TODO: about rule-based pattern discussed in detail, \citeauthor*{yuan
 
 Vector fields are further employed in various other specific procedural modeling contexts. For example for procedural street modeling~\cite{chen_2008_ips}, micrography~\cite{maharik_2011_dm} or botanical models~\cite{xu_2015_ptm}.
 
-\subsubsection{Creative Means Discussion}
-\label{subsec:analysis_vectorfields_summary}
-
-
-The discussed work shows that fields allow for greater visual variation by opening the design space and transparent control for filling a space automatically. When designing a vector field, artists do not work with the pattern directly, but fields are intuitive to understand. Their abstraction translates to the model in a straightforward manner. Thus, using flow within a vector field to design is a suitable control mechanism, especially for designs that aims to align their elements to the space.
-
-
 
 
 \subsection{Single Accents}
@@ -301,14 +294,6 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 
 % \subimport{tables/}{02_table_elementplacement}
 
-\subsubsection{Creative Means Discussion}
-\label{subsec:analysis_elementplacement}
-
-TODO (still applicable?): The discussion of this section is closely related to the data-driven sketch-based techniques, and it shows a further promising approach for integrating procedural modeling functionalities into a data-driven process. 
-% As \Cref{table:analysis_elementplacement} shows,
-\citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} present a overall transparently navigable and stimulating control mechanism. With a carefully designed workflow, it further fosters an artist stimulation by offering novel but suitable design variations.
-
-
 
 \subsection{Combination of Design Features}
 \label{subsec:analysis_combination_of_design_features}
@@ -316,6 +301,57 @@ TODO (still applicable?): The discussion of this section is closely related to t
 
 \colorbox{red} {Todo: Add \cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva}}
 
+\subsection{Discussion of the Creative Means}
+\label{subsec:analysis_creative_means}
+
+\minortodo[inline]{Add intro}
+
+\subsubsection{Example-Based Control}
+\label{subsubsec:analysis_creative_means_example}
+
+The investigation of example-based techniques shows valuable achievements for goal-oriented control and for increasing design spaces within specific contexts. With regard to creative control, in addition to the gain in \textit{variability} being a crucial step, the presented work also improves \textit{navigability} through interactive performances.
+
+Element arrangements potentially enable greater visual variation because they do not need to adhere to any rule formulation. At the same time, the generation of a sample arrangement, usually done in an external application, is potentially tedious. A sample that is too small might lead to uniform results. Moreover, elements are often carefully connected in creative pattern designs, and might include a hierarchy of structures, such as for ornaments. Hence, element arrangements can only provide a subset - albeit an important one - of the design space needed for creative pattern generation.
+
+The related work is overall uniform in working toward the classical requirements of finding the most efficient goal-oriented control 
+%  as \Cref{table:analysis_example_creative} shows
+. With the exception of \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} and \citeauthor*{galerne_2012_gne}~\cite{galerne_2012_gne} little effort has been made towards improving visual control for an artist. \citeauthor*{ma_2013_det}~\cite{ma_2013_det} present various powerful control functionalities but do not show their capabilities within an artist usable scenario. \citeauthor*{gilet_2012_map}~\cite{gilet_2012_map} also offer comparatively more mechanisms but as required configuration for their computation not necessarily as variable controllability.
+
+Even if they are example-based, many techniques still require considerable non-creative effort for an artist, such as working with a power spectrum or predicting how changes in the exemplar, such as element arrangements, affect the output. The potential of these methods for creative control lies in furthering interactive performance, reducing initialization requirements and experimenting with the spatial influence of controls. The presented work only focuses on global designs, such as the whole canvas and repeating regions. Methods for which regions could be defined, models layered or the placement of single elements integrated constitute valuable directions for creative control mechanisms.
+
+
+\subsubsection{Shapes and Masks}
+\label{subsubsec:analysis_creative_means_shapes}
+
+Procedural generation techniques offer novel systems that decouple control mechanisms from the implementation of individual models. This enables more possible results for one specific technique, thus improving the size of design spaces. 
+% , as~\Cref{table:analysis_shape} shows. 
+Sophisticated masks and growth constraints lead to visually interesting and complex designs. However, it is not directly predictable how a space will be filled exactly. Because most of the presented methods only offer quite limited interactive performance, even  a basic trail and error exploration is hardly feasible; hence, the navigation of the design space becomes cumbersome, and stimulation becomes hindered. The one technique \cite{santoni_2016_ggp} that offers the means for a transparent navigation is also the one with the most restricted design space. \citeauthor*{santoni_2016_ggp}~\cite{santoni_2016_ggp}s' consideration of a navigation history stands out from all related work in this survey. In terms of stimuli, the mass-spring system for editing control guides offered by \citeauthor*{benes_2011_gpm}~\cite{benes_2011_gpm} is a promising direction because it is intuitive, enjoyable to use and encourages exploration.
+
+In terms of control mechanisms for a more complex design goal, these techniques do not permit hierarchical or element-level local controls or the control of element connections needed by artists who want to generate patterns creatively without having to write code.
+
+
+\subsubsection{Vector Fields}
+\label{subsubsec:analysis_creative_means_fields}
+
+The discussed work 
+% in \Cref{table:analysis_vectorfield} 
+shows that fields allow for greater visual variation by opening the design space and transparent control for filling a space automatically. When designing a vector field, artists do not work with the pattern directly, but fields are intuitive to understand. Their abstraction translates to the model in a straightforward manner. Thus, using flow within a vector field to design is a suitable control mechanism, especially for designs that aims to align their elements to the space.
+
+\subsubsection{Curves, Sketches and Painting}
+\label{subsubsec:analysis_creative_means_curves}
+
+Curves and sketch-like methods offer a well communicated, hence transparent navigation. 
+% , as~\Cref{table:analysis_shape} shows. 
+The discussed techniques are mostly interactive, artists are familiar with their functionality from the real world and they work directly on the canvas. The ease and directness of usage also constitute a foundation for possible immersive flow of work. Using painting-like methods can allow for smoother navigation by integrating brush settings and increasing the quantity of controls.
+
+However, because creation techniques and design spaces are open, it could lead to manual and tedious creation requirements for patterns, such as when filling a background. Here, the incorporation of procedural creation principles for automatic fillings into a data-driven process by \citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} and \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} is a promising direction. Instead of fostering a free painting-like quality, design principles for pattern designs could be added to create a more organized output.
+
+\subsubsection{Element Placement}
+\label{subsubsec:analysis_creative_means_elements}
+
+Element placement control mechanisms are closely related to the data-driven sketch-based techniques, and it shows a further promising approach for integrating procedural modeling functionalities into a data-driven process. 
+% As \Cref{table:analysis_elementplacement} shows,
+\citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} present a overall transparently navigable and stimulating control mechanism. With a carefully designed workflow, it further fosters an artist stimulation by offering novel but suitable design variations.
 
 
 \subsection{Outlook}
