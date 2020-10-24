@@ -1,0 +1,44 @@
+%!TEX root = ../deco_star.tex
+
+%-------------------------------------------------------------------------
+\section{Terminology}
+
+The following clarifies our usage of terms that are relevant for an analysis of control mechanisms. Even though we believe our terminology to be generally applicable, to proof so is not our goal. This terminology serves as a basis for our specific analysis. Some aspects are discussed in detail in different sections of this report but are included here for an overview of terms.
+
+\textbf{Pattern:} Constitutes a generic term for any type of repeated, often regular, arrangement~\cite{oed_2017}.
+
+\textbf{Texture:} \label{par:taxo_terminology_texture}In the context of computer graphics, \textit{texturing} is commonly understood as modeling a surface's color (i.e., their color texture) with no implications for a design, while designing a surface' s interaction with light is understood as \textit{shading}. 
+
+Texture refers in its traditional meaning to the character of a woven fabric~\cite{oed_2017} with properties such as \textit{fine} or \textit{coarse}. This work understands texture similarly with regard to potentially repetitive structures. \citeauthor*{lin_2006_qeo}~\cite{lin_2006_qeo} define a spectrum for such structures. The spectrum ranges from regular deterministic textures with distinguishable texture elements recurrently placed to irregular placements to purely stochastic textures.
+
+% \textbf{Decor:} Refers to elements that generally embellish and beautify without implying any specific design rules in itself.
+
+\textbf{Ornament:} Constitutes a specific type of decor adhering to certain design rules, such as order, hierarchal structures, space adaptation and visual contrast and accents (\Cref{subsubsec:ornamentation}).
+
+\textbf{Artistic:} Refers to a task with an outcome that potentially has meaning and value beyond aesthetics and practicality. In addition to formal skills that depend on a given domain, an artistic task usually requires creative thinking as well as intuition, emotion and sensual considerations, for example.
+
+\textbf{Creative:} Refers to a task that intentionally produces a novel, non-standard outcome, as discussed in (\Cref{subsubsec:ornamentation}). Please note that this work refers to the academic usage of the term. In common language, a creative task is often misunderstood as one that produces a visual product.
+
+\textbf{Design space:} Refers loosely to all visual results a technique can create. For example, a simple Perlin noise has a rather restricted design space of noise images, only differing, for example, in their frequency. Drawing with a pen can result in many different designs, thus resulting in a larger design space.
+
+\textbf{Expressiveness:} Refers in this work to the size, the variability and the openness of a design space as in detail discussed in~\Cref{ec:creativ_means}. Expressiveness is commonly used in the context of creative controls - however, usually without a clear understanding of its meaning.
+
+% \textbf{Goal-oriented control:} Refers to an clearly targeted design task and stands in contrast to exploration. For example, reference images might be given, or an artist may have a clear mindset about how the output of the creation process should look.
+
+\textbf{Canvas:} Constitutes the area in which the output is generated, similar to a canvas in a painting context.
+
+\textbf{User Interface (UI):} Refers in this work to a space that is separate from the canvas where an artist controls the system through abstracted representations, such as buttons and sliders or custom-made visual controls. In terms of controllability it makes a difference for an artist to be able to work directly on a canvas or being required to do so in a separated and often abstracted UI and hence this explicit distinction is needed in the context of this work.
+
+\textbf{Interactive:} Refers in this work to systems with which an artist can interact (e.g., through a UI with reasonable response performance). In terms of control mechanisms, we evaluate interactive systems as a whole and also qualitatively. An one-time investment for an initial computation of 10 seconds, for example, is still acceptable, while a 5-second delay at each click is not.
+
+\textbf{Shape:} Refers in this work to the external boundary or outline on the canvas or of an object without any restrictions on the form. 
+
+\textbf{Curves:} Refers in this work as general term for arbitrarily shaped curves or lines without any implications for the formal representation they are based on. Curves can be computed or be derived from drawn strokes, for example. The specifics of these inherently different formal representations are not relevant for the following discussion about control mechanisms.
+
+\textbf{Procedural:} Refers to the production of output by evaluating an algorithm or a rule-based system.
+
+\textbf{Data-driven:} Refers to the production of output based on given, and usually limited, data.
+
+\textbf{Parameterized:} Refers in its original meaning to a system that is based on an implicit equation. However, in regard to control mechanisms and for this work, it simply means that a system offers separated, individually controllable characteristics. Parameterization commonly does not imply a procedural representation but can be part of any technique, including data-driven ones.
+
+
