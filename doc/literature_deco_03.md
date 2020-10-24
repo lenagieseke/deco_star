@@ -1,6 +1,8 @@
 
 # Design Features
 
+As of Oct. 24 this list not kept up to date. 
+
 * [Design Features](#design-features)
     * [Distribution and Repetition](#distribution-and-repetition)
         * [Stochastic Pattern](#stochastic-pattern)
