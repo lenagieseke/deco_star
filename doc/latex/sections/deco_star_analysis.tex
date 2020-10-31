@@ -103,18 +103,22 @@ By introducing a noise that permits for the approximation of arbitrary spectral 
 \paragraph{Regular to Irregular Pattern}
 \label{para:analysis_distribution_and_repetition_regular}
 
-\minortodo[inline]{Add intro}
+All the above discussed noise-based methods control a single stochastic procedural model. Even though recent advances greatly increase their expressiveness, the design space of noise-based models is too limited for creative pattern generation. Procedural models featuring regular to irregular pattern designs can potentially be visually more complex to meet the requirements of their intended task. Techniques are optimized for specific design goals or even support a variety of procedural models within this class of designs.
 
 \subparagraph{Example-Based Control}
 \label{subpara:analysis_regular_examplebased_control}
 
-All the above discussed noise-based methods control a single stochastic procedural model. Even though recent advances greatly increase their expressiveness, the design space of noise-based models is too limited for creative pattern generation. In addition to methods dealing with generalizable stochastic models, methods employ procedural textures optimized for specific design goals. These textures can potentially be visually more complex to meet the requirements of their intended task. For brick and wood textures, the early work of \citeauthor*{lefebvre_2000_ass}~\cite{lefebvre_2000_ass} presents an example-based control by transferring specific measured properties of an input to corresponding parameters for the procedural representation. The algorithm takes a suitable reference image, a binary mask, and the texture class as input and produces results for these two structural texture types. The authors describe the matching performance from a few minutes up to an hour. \cite{gilet_2012_map} focus on the interactive creation of procedural semi-structured texture models and also handle the control of visual features. With an improved point distribution function that can consider hierarchical spatial relationships, random variations of statistical shape models are generated from artist input. In order to do so, an artist needs to give multiple exemplary object distributions. 
+For brick and wood textures, the early work of \citeauthor*{lefebvre_2000_ass}~\cite{lefebvre_2000_ass} presents an example-based control by transferring specific measured properties of an input to corresponding parameters for the procedural representation. The algorithm takes a suitable reference image, a binary mask, and the texture class as input and produces results for these two structural texture types. The authors describe the matching performance from a few minutes up to an hour. \cite{gilet_2012_map} focus on the interactive creation of procedural semi-structured texture models and also handle the control of visual features. With an improved point distribution function that can consider hierarchical spatial relationships, random variations of statistical shape models are generated from artist input. In order to do so, an artist needs to give multiple exemplary object distributions. 
 
-\citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} allow for the whole procedural texture spectrum with their parameter retrieval technique. In so doing, they employ two types of similarity metrics, and two types of optimization strategies. As input, an artist needs to individually select the distance metric and optimization strategy for each fitting task. As initialization for the optimization, the authors propose "on the order of 200" pre-computed random choices to choose from. The authors report an average optimization time of 12 minutes, not specifying for how many parameters. \citeauthor*{gilet_2012_mkn}~\cite{gilet_2012_mkn} report more than an hour for the performance times. For such a search-based approach, the parameter count is highly influential on the performance for both visual quality and computation time. With a higher number of parameters the current form of the approach quickly becomes unfeasible. 
+\citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} allow for the whole procedural texture spectrum with their parameter retrieval technique. In so doing, they employ two types of similarity metrics, and two types of optimization strategies. As input, an artist needs to individually select the distance metric and optimization strategy for each fitting task. As initialization for the optimization, the authors propose "on the order of 200" pre-computed random choices to choose from. The authors report an average optimization time of 12 minutes, not specifying for how many parameters. \citeauthor*{gilet_2012_mkn}~\cite{gilet_2012_mkn} report more than an hour for the performance times. For such a search-based approach, the parameter count is highly influential on the performance for both visual quality and computation time. With a higher number of parameters the current form of the approach quickly becomes unfeasible. \citeauthor*{gieseke_2014_ipr}~\cite{gieseke_2014_ipr} build up on the work of \citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} and interpret the parameter matching as retrieval task. Based on pre-computed caches and a perceptually motivated image metric, the authors achieve interactive performance for fitting a $256\times256$ exemplar. As a one time investment the caches for the textures have to be computed. An artist has to chose the texture model to be matched and give the exemplar. After the parameter fitting, the artist can further adjust the parameter values with a given interface. A similar approach offer \citeauthor*{hu_2019_anf}~\cite{hu_2019_anf}, training Convolutional Neural Networks for the parameter retrieval and adding a style transfer step in the pixel domain to fit visual details. Next to given the input example, a user a to chose from four high level texture classes. With the pre-computed caches ready, the fitting is interactive, with performances around one second, depending on texture resolution and the style-transfer in the range of minutes.
 
-\insertref[inline]{\cite{gieseke_2014_ipr, tu_2020_cct, guehl_2020_stu}}
+%TODO: Bedrich, ok?
+While focusing on stochastic pattern, the semi-procedural approach of \citeauthor*{guehl_2020_stu}~\cite{guehl_2020_stu} enables also irregular pattern and pattern combinations. The technique
+generates textures based on input exemplars and gives an artist the option for manual editing and database browsing to shape the output. At its core the system is based on a noise-by-example approach for which the authors define a novel parameterized Procedural Point Process Texture Basis Function. The appearance space of the noise can be explored with an interactive 2D map and the browsing of a database of preview images, which is a wide range of options for an artist. Data-driven details are smoothly combined with the noise and the user can adjust with different parameters. The system is interactive with reported synthesis times below one second.
 
-\insertref[inline]{Drawing Tiles: \cite{bian_2018_tpd, guehl_2020_stu, derouet_2019_gsw}}
+
+
+\insertref[inline]{Drawing Tiles: \cite{bian_2018_tpd, derouet_2019_gsw}}
 
 \paragraph{Rule-based and Design-Specific Pattern}
 \label{subsubsec:analysis_rulebased_and_designspecific}
@@ -273,6 +277,15 @@ In section \ref{subsubpara:analysis_rulebased_sketchbased_datadriven} we already
 %\insertref[inline]{Street-Modeling: \cite{chu_2019_ntg}, Plants: \cite{haedrich_2017_ima}, Terrain: guerin_2017_ieb}
 
 
+\subparagraph{Drawing Examplars / Data-Driven}
+\label{subpara:analysis_connections_branches_and_directionality_drawing}
+
+% TODO: SORT PROPERLY
+
+
+\citeauthor*{tu_2020_cct}~\cite{tu_2020_cct} synthesize continuous curve patterns from exemplars made of Bezier-curves, focusing not only on the position of detached elements but also on their connectivity. Hence, the authors enable the matching of continuos structures and the design features of repetition, curves, frames and connectivity. The authors report on matching times 160s depending on the sampling density. The technique samples the input and creates a graph-based representation from it based on an optimization process. The example-based generation process is supported by various artist controllable interactions through out the creation process. An artist can also draw the example directly on the canvas from scratch . After the filling of the drawn space, the artist can edit the pattern with the deletion and re-filling of certain areas or used copy and paste from other areas. Connections are re-computed and also can be manually created by setting the control points for the curves. 
+
+
 \subparagraph{Vector Fields}
 \label{subpara:analysis_connections_branches_and_directionality_vectorfields}
 
@@ -299,7 +312,7 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 \label{subsubsec:analysis_combination_of_design_features}
 
 \majortodo[inline]{Write Section}
-\insertref[inline]{\cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva}}
+\insertref[inline]{\cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva, tu_2020_cct}}
 
 
 \subsection{Discussion}
@@ -310,14 +323,14 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 
 % TABLE
 % This is for overaleaf a preview image as the table does not compile there...
-% \subimport{tables/}{table_all}
+\subimport{tables/}{table_all}
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=\textwidth]{tables/table_all.png}
-    \label{table:control_mechanisms}
-    \caption[Control mechanisms in the state of the art]{Recent techniques are sorted by design areas and visual features they enable. For each work it is analysed and indicated which specific control mechanisms they offer.  \colorbox{red} {Will update table last.}}
-\end{figure*}
+% \begin{figure*}
+%     \centering
+%     \includegraphics[width=\textwidth]{tables/table_all.png}
+%     \label{table:control_mechanisms}
+%     \caption[Control mechanisms in the state of the art]{Recent techniques are sorted by design areas and visual features they enable. For each work it is analysed and indicated which specific control mechanisms they offer.  \colorbox{red} {Will update table last.}}
+% \end{figure*}
 
 
 
