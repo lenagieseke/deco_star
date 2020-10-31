@@ -120,10 +120,9 @@ generates textures based on input exemplars and gives an artist the option for m
 \label{subpara:analysis_regular_examplebased_control_tiling}
 
 % QUESTION: Move to connectivity?
-\citeauthor*{bian_2018_tpd}~\cite{bian_2018_tpd} offer a data-driven texture generation approach based on the tiling of vector pattern. The technique is worth mentioning due to its combination of manual creation and automation, which supports an artist to create structurally sound connections between tiles. The tiling itself is with a hierarchical tiling algorithm computed from tiles, which an artist can draw from scratch. In that the artist is supported through the authoring interface, which computes and previews the tiling interactively. The artist draws a minimal set of $4\times4$ tiles on the canvas. The interface gives hints and corrections for the construction of structurally sound pattern, such as previews of the pattern on the canvas, snapping to proper correction points and automatic corrections near tile boundaries.
+\citeauthor*{bian_2018_tpd}~\cite{bian_2018_tpd} offer a data-driven texture generation approach based on the tiling of vector pattern. The technique is worth mentioning due to its combination of manual creation and automation, which supports an artist to create structurally sound connections between tiles. The tiling itself is with a hierarchical tiling algorithm computed from tiles, which an artist can draw from scratch. In that the artist is supported through the authoring interface, which computes and previews the tiling interactively. The artist draws a minimal set of $4\times4$ tiles on the canvas. The interface gives hints and corrections for the construction of structurally sound pattern, such as previews of the pattern on the canvas, snapping to proper correction points and automatic corrections near tile boundaries. Similarly optimizing for structural soundness when putting decorative elements together,~\citeauthor*{li_2019_aqp}~\cite{li_2019_aqp} do so in the context of quilting pattern generation. A user must input the decorative element, a region boundary for it and values for the point distribution distance, the element size, the gap length between elements and an angle, controlling the alignment of elements. Then a quilting pattern is generated automatically for which no further adjustments are possible. The performance is below 10 seconds.
 
-
-% \citeauthor*{derouet_2019_gsw}~\cite{derouet_2019_gsw} -> It is just a specific model?
+% \citeauthor*{derouet_2019_gsw}~\cite{derouet_2019_gsw} -> It is just a model?!
 
 
 
@@ -176,57 +175,15 @@ Other systems provide global outlining shape control on procedural processes by 
 % Mention "more artistic freedom"
 % These systems produce patterns that are more homogeneous than the decorative ornaments that we aim for.
 
-\subparagraph{Sketch-based Control}
-\label{subpara:analysis_rulebased_sketchbased}
-
-Curves and hand-drawn paths give an artist more direct control than the previously discussed methods to fill a space. In addition to the visual output being further constrained, the control is put onto the actual canvas. Curves are needed for tasks such as creating an decorative frame or structuring the space. Some techniques consider the whole curve before computing the ornament, optimizing the filling of the curve based on certain design goals, enabling a form of global planning.
-
-Painting-tool-like methods create output along curves but do so directly without taking an a priori completed curve into consideration, as if using a spray can or a brush. Painting techniques usually include a brush diameter, hence the size of the area to be filled along the curve.
-
-% Besides the value of the indirect use of curves as a control tool, their direct employment as a visual element is also relevant. Formed curves, such as circles, spirals or hearts, are essential components for many pattern designs such as ornamentation.
-
-% The following section first discusses work that enables the direct control of curves as pattern elements. The state of the art using curves as control mechanisms are then discussed for both procedural and data-driven methods.
-
-\textbf{Procedural Generation}:\label{subsubpara:analysis_rulebased_sketchbased_procedural}
-\citeauthor*{mech_2012_tdf}~\cite{mech_2012_tdf} present examples of painting methods for different aspects of generating procedural models, from painting growth constraints, such as masks, to having a pattern grow along the strokes. This discussion only refers to the actual examples given by the authors. However, these are only selective examples for the flexible \textit{Deco} procedural engine. The engine opens up and generalizes environments for interactive control mechanisms for various types of procedural models. For the programming of decorative pattern models within the engine, helpful functionalities, such as symmetry objects and control guides, are predefined. All artist control mechanisms have an interactive performance. Overall performance mainly depends on the pattern generation scripts. The engine offers to load pattern codes as a dynamic library, optimizing performance. In theory, the Deco engine could allow for the editing both of single elements and their connections. This is crucial for decorative patterns, for example, in setting visual highlights. In \citeauthor*{mech_2012_tdf}~\cite{mech_2012_tdf} however, no examples for this feature are given. 
-
-\citeauthor*{jacobs_2018_dbe}~\cite{jacobs_2018_dbe} developed the programming and drawing environment \textit{Dynamic Brushes}, in which an artist can create individual procedural brushes for a stylus pen. General programming logic and relevant mathematical functions for creating patterns are translated into a visual programming interface. The evaluation of the system by two professional artists shows that once initial struggles to learn the system were mastered, the artists were able capture their personal analog styles with the procedural brushes. Overall, the authors and the artists open many valuable questions about the usage of current tools and about alternative approaches that seek to seamlessly blend manual and procedural creation processes.
-
-
-\insertref[inline]{\cite{gieseke_2017_ooo}}
-\citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo}
-
-
-More painting-like methods can be found, for example, in procedural botanical modeling \cite{anastacio_2008_spl,chen_2008_stm,palubicki_2009_sot}, procedural landscape generation~\cite{emilien_2015_wie}, as part of a procedural water color engine~\cite{diverdi_2013_ppp} or for dynamic effects~\cite{xing_2016_eit}. 
-
-
-
-
-\textbf{Data-driven Generation:}\label{subsubpara:analysis_rulebased_sketchbased_datadriven}
-In order to create an pattern along a sketch, \citeauthor*{lu_2014_dds}~\cite{lu_2014_dds} present a data-driven approach. Given vector pattern exemplars are placed and deformed along a artist-given curve. Boundaries between element segments and visual soundness are optimized through graph cut and hierarchical texture synthesis. For the exemplars, an artist has to define the start and end point of their spines. If needed, the whole spine can be sketched as an input. The artist can refine results with add and erase constraints that are drawn on the pattern. The authors report a synthesizing performance from 1 to 8 seconds. A related data-driven approach for synthesizing example-based vector patterns along a curve was presented by \citeauthor*{zhou_2014_tsv}~\cite{zhou_2014_tsv} in the same year. In this work, the authors focus on ensuring a structurally sound output pattern and an extension to fill a surface. Topology descriptors and artist-given topological constraints are included in the element assembling optimization process. Additionally, local pattern orientations and a variation value can be defined by an artist. Once a pattern is generated, an artist can interactively adjust the underlying curve, with the pattern being updated accordingly. Generation performances are reported to be around a few seconds, with complex models a little more than 2 minutes.
-
-\citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} present a multifaceted tool to create textures from pen-and-ink drawings with sketch-based control mechanisms, mixing data-driven and procedural modeling. Basis drawings can be repeated along paths, used for brushes, fill regions, optionally consider perspective and propagate modifications of the drawing to all repeated elements. A user study confirms the system's usefulness to efficiently create repetitive textures while maintaining the natural workflow and artistic control of an artist. \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} build upon that work by automatically detecting and suggesting possible repetitions to the artist, aiming for a less regular, more painting-like quality. The presented system also offers various brush options and navigation tools in order to combine automation with artist control.
-% They seem to have a undo button?
-
-% Not in table
-Similar approaches have also been investigated in the context of texture painting~\cite{lukac_2013_pft}, hand-drawn animations~\cite{xing_2015_aha}, creating mosaics~\cite{igarashi_2010_dde,abdrashitov_2014_msi} and data visualization~\cite{xia_2018_ddc}. These ideas cohere to the needed control principles for creative creation while focusing on their specific design tasks. 
-
-\subparagraph{Feature Exploration}
-\label{subpara:analysis_rulebased_sketchbased_feature_exploration}
-
-Even though not a generating technique in itself, exploration is an important characteristic of a creative process. \citeauthor*{todi_2016_sse}~\cite{todi_2016_sse} present a tool for exploring sketches and the automatic optimization of common layout types. With the method of \citeauthor*{chen_2016_msi}~\cite{chen_2016_msi}, an artist can browse a collection of texture images by sketching highly abstracted pattern features. The represented structural features of reflection, rotation, and translation symmetries adhere to important design principles for visually pleasing patterns. One could imagine a similar intuitive approach for exploring the parameter space of an ornamental procedural representation, for example.
-
-\insertref[inline]{\cite{talton_2009_emw}}
-
 
 
 
 \paragraph{Element Arrangements}
 \label{para:analysis_element_arrangements}
 
-Element arrangements have individual and unconnected visual entities as smallest unit. Arrangements are often function-based distributions and hence can be considered rule-based procedural models, while the elements themselves usually come from input data, such as vector files. Because many visually complex pattern contain areas of formal arranged elements, this is a relevant sub-goal for a creative pattern generation task.
+Element arrangements have individual and unconnected visual entities as smallest unit. Arrangements are often function-based distributions and hence can be considered rule-based procedural models, while the elements themselves usually come from input data, such as vector files. When filling a shape with elements or masking areas on the canvas, elements should ideally not be cut and align themselves for evenly filling the shape.  
 
-\minortodo[inline]{Also mention shapes and masks.}
+Because many visually complex pattern contain areas of formal arranged elements, this is a relevant sub-goal for a creative pattern generation task.
 
 \subparagraph{Example-Based Control}
 \label{subpara:analysis_element_arrangements_example}
@@ -235,13 +192,17 @@ An example-based control can be used to arrange the elements. From an example ar
 
 \citeauthor*{barla_2006_spa}~\cite{barla_2006_spa} and \citeauthor*{hurtut_2009_ags}~\cite{hurtut_2009_ags} focus on example-based element arrangements of stroke-based vector elements. \citeauthor*{barla_2006_spa}~\cite{barla_2006_spa} map vector data to an intermediate representation based on proximity and continuation, which the authors call clusters of strokes. To synthesize a similar arrangement, elements are transferred by local neighborhood matching to a global seed distribution computed by Lloyd relaxation. Computing arrangements takes up to 10 seconds, and artist-input is used in addition to the stroke patterns. A choice between two modes for processing strokes and the amount of variation added is a post-processing step. \citeauthor*{hurtut_2009_ags}~\cite{hurtut_2009_ags} extend that work by categorizing elements as appearance units and transferring their spatial statistical interactions to new arrangements in the order of seconds, also being able to capture non-uniform distributions. As a possible artist input, one exemplary shape input and density map are shown, and other input options are discussed in principle. The authors clearly state their focus to be on automation.
 
- \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} analyze a given element distribution by local neighborhood comparisons and synthesize output with interactive performance with incremental rule-based local growth. Hence, the technique combines data-driven texture synthesis with procedural generation. Element attributes that go beyond the positions of the elements and orientation cannot be controlled. Artists can choose between three element orientation modes, and as a global design constraint, artists can use an interactive spray tool to define areas to grow in, a flow field tool to define overall alignments and a boundary tool. Moreover, the reconstructed topology can manually be adjusted. The combination of tools that allow the artist to work on the canvas support the immersion in the creative tasks because an artist can think less about abstract setups and instead focus on the actual output.
+\citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} analyze a given element distribution by local neighborhood comparisons and synthesize output with interactive performance with incremental rule-based local growth. Hence, the technique combines data-driven texture synthesis with procedural generation. Element attributes that go beyond the positions of the elements and orientation cannot be controlled. Artists can choose between three element orientation modes, and as a global design constraint, artists can use an interactive spray tool to define areas to grow in, a flow field tool to define overall alignments and a boundary tool. Moreover, the reconstructed topology can manually be adjusted. The combination of tools that allow the artist to work on the canvas support the immersion in the creative tasks because an artist can think less about abstract setups and instead focus on the actual output.
 
 The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a sample of a discrete element distribution and an output shape to fill both in two and three dimensions. The exemplar has to contain the actual elements in their domain and cannot be basic pixel data. In its broadest sense, this underlying distribution model can be seen as a procedural model. Even though there are no generative rules, characteristics of the discrete elements and their distribution can be parametrized, and changes can be automatically processed and reproduced in the output. In order to fill the output shape with elements, an energy optimization is processed with a novel neighborhood similarity metric. In addition to element positions, the metric includes  variable features referring to orientation, geometry, appearance and type, for example. Hence, the metric is capable of reproducing global aggregate distributions that go beyond local element placements. The authors also extended their work to the spatial-temporal domain~\cite{ma_2013_det}. In regard to the available control mechanisms for artists, necessary inputs are the exemplary element distribution, the neighborhood size to consider and the output shape. Further distribution constraints based on element attributes are optional. Examples for the inclusion of a vector field and element drag and drop are given. The authors report seconds to minutes for performance times with a non-optimized implementation.
 
+\citeauthor*{almeraj_2013_pgt}~\cite{almeraj_2013_pgt} based their example-based geometric textures genration technique  on how such textures were manually created in the user study of \citeauthor*{almeraj_2011_tgt}~\cite{almeraj_2011_tgt}. The authors identify tiling, structure and randomness as the prominently used creation strategies. The patch-based algorithm, which focuses on eliminating the appearance of regularity, doesn't seem to allow for any user interaction. The authors do not report on the performance. Up until now there have been several advancements made in regard to example-based element and point distributions. However, we do not include the ones with no or unclear user input beyond non-creative system configuration parameter here such as~\cite{peihan_2019_pps, chen_2019_mpc}.
 
-\insertref[inline]{Also needs sorting: \cite{almeraj_2013_pgt, landes_2013_asm, davison_2019_ief, peihan_2019_pps, chen_2019_mpc, li_2019_aqp}}
+% % This is not a good paper: 
+% % In related fashion, \citeauthor*{chen_2019_mpc}~\cite{chen_2019_mpc} destribute ellipses along a boundary of a shape and optimize for structurally sound pattern collages along a boundary.
 
+
+\citeauthor*{landes_2013_asm}~\cite{landes_2013_asm} present an element distribution technique in 2D as well as 3D that improves on collision-free and anisotropic distributions by extending point based element placement to a shape-driven processes with spatial relationship measurements. Next to the exemplar, there are several user inputs possible, such as a gradient image for the distribution intensity and parameter for the fitting algorithm. Even though these can control quite a visual range, their communication is quite abstract. Performances range from seconds to several minutes depending on the complexity of the arrangement. While most related techniques in 3D focus on world building with different design requirements than pattern generation, the 3D element distribution technique from \cite{davison_2019_ief} is worthwhile to point our for their interactive brushing systems based on different example palettes. With that the approach employs several example arrangements, which can be freely combined. 
 
 
 
@@ -261,13 +222,23 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 
 
 
-Tile-based Pattern Design with Topology Control
-
 \subsubsection{Frames and Hierarchies}
 \label{subsubsec:analysis_frames_and_hierarchies}
 
+Curves and hand-drawn paths give an artist visually more direct control than the previously discussed methods to fill a space. In addition to the visual output being further constrained, the control is put onto the actual canvas. Curves are needed for tasks such as creating an decorative frame or structuring the space. Some techniques consider the whole curve before computing the ornament, optimizing the filling of the curve based on certain design goals, enabling a form of global planning.
+
+Painting-tool-like methods create output along curves but do so directly without taking an a priori completed curve into consideration, as if using a spray can or a brush. Painting techniques usually include a brush diameter, hence the size of the area to be filled along the curve.
+
+
+
+
 % Shape-based, grammar
 \citeauthor*{benes_2011_gpm}~\cite{benes_2011_gpm} offer a complex shape-filling and masking system for procedural open L-system models by dividing a target space into artist editable guide shapes. Seeds for the L-system are interactively given by an artist as a position and orientation. The guide shapes determine what types of patterns grow in different areas. The connections between the shapes are manually specified by the artist and in turn guide the connections between elements. Based on a mass-spring system, the guides can be intuitively edited as a whole. The authors report on pattern generation performance for most scenarios as less than a second, with up to 45 seconds for only one complex scenario.
+
+
+\insertref[inline]{\cite{gieseke_2017_ooo}}
+\citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo}
+
 
 \insertref[inline]{\cite{alvarez_2019_ido}}
 
@@ -288,6 +259,40 @@ Also incorporating an artist-defined curve as the spine of a pattern, \citeautho
 \insertref[inline]{\cite{pedersen_2006_ola}}
 
 In section \ref{subsubpara:analysis_rulebased_sketchbased_datadriven} we already discussed data-driven techniques for creating repetitive structures with sketching. ~\cite{kazi_2012_vit, xing_2014_apr, xing_2015_aha} can be similarly used to sketch parts of a pattern directly.
+
+
+
+
+
+
+\citeauthor*{jacobs_2018_dbe}~\cite{jacobs_2018_dbe} developed the programming and drawing environment \textit{Dynamic Brushes}, in which an artist can create individual procedural brushes for a stylus pen. General programming logic and relevant mathematical functions for creating patterns are translated into a visual programming interface. The evaluation of the system by two professional artists shows that once initial struggles to learn the system were mastered, the artists were able capture their personal analog styles with the procedural brushes. Overall, the authors and the artists open many valuable questions about the usage of current tools and about alternative approaches that seek to seamlessly blend manual and procedural creation processes.
+
+More painting-like methods can be found, for example, in procedural botanical modeling \cite{anastacio_2008_spl,chen_2008_stm,palubicki_2009_sot}, procedural landscape generation~\cite{emilien_2015_wie}, as part of a procedural water color engine~\cite{diverdi_2013_ppp} or for dynamic effects~\cite{xing_2016_eit}. 
+
+
+% Besides the value of the indirect use of curves as a control tool, their direct employment as a visual element is also relevant. Formed curves, such as circles, spirals or hearts, are essential components for many pattern designs such as ornamentation.
+
+% The following section first discusses work that enables the direct control of curves as pattern elements. The state of the art using curves as control mechanisms are then discussed for both procedural and data-driven methods.
+
+
+
+
+\textbf{Data-driven Generation:}\label{subsubpara:analysis_rulebased_sketchbased_datadriven}
+In order to create an pattern along a sketch, \citeauthor*{lu_2014_dds}~\cite{lu_2014_dds} present a data-driven approach. Given vector pattern exemplars are placed and deformed along a artist-given curve. Boundaries between element segments and visual soundness are optimized through graph cut and hierarchical texture synthesis. For the exemplars, an artist has to define the start and end point of their spines. If needed, the whole spine can be sketched as an input. The artist can refine results with add and erase constraints that are drawn on the pattern. The authors report a synthesizing performance from 1 to 8 seconds. A related data-driven approach for synthesizing example-based vector patterns along a curve was presented by \citeauthor*{zhou_2014_tsv}~\cite{zhou_2014_tsv} in the same year. In this work, the authors focus on ensuring a structurally sound output pattern and an extension to fill a surface. Topology descriptors and artist-given topological constraints are included in the element assembling optimization process. Additionally, local pattern orientations and a variation value can be defined by an artist. Once a pattern is generated, an artist can interactively adjust the underlying curve, with the pattern being updated accordingly. Generation performances are reported to be around a few seconds, with complex models a little more than 2 minutes.
+
+\citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} present a multifaceted tool to create textures from pen-and-ink drawings with sketch-based control mechanisms, mixing data-driven and procedural modeling. Basis drawings can be repeated along paths, used for brushes, fill regions, optionally consider perspective and propagate modifications of the drawing to all repeated elements. A user study confirms the system's usefulness to efficiently create repetitive textures while maintaining the natural workflow and artistic control of an artist. \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} build upon that work by automatically detecting and suggesting possible repetitions to the artist, aiming for a less regular, more painting-like quality. The presented system also offers various brush options and navigation tools in order to combine automation with artist control.
+% They seem to have a undo button?
+
+% Not in table
+Similar approaches have also been investigated in the context of texture painting~\cite{lukac_2013_pft}, hand-drawn animations~\cite{xing_2015_aha}, creating mosaics~\cite{igarashi_2010_dde,abdrashitov_2014_msi} and data visualization~\cite{xia_2018_ddc}. These ideas cohere to the needed control principles for creative creation while focusing on their specific design tasks. 
+
+\subparagraph{Feature Exploration}
+\label{subpara:analysis_rulebased_sketchbased_feature_exploration}
+
+Even though not a generating technique in itself, exploration is an important characteristic of a creative process. \citeauthor*{todi_2016_sse}~\cite{todi_2016_sse} present a tool for exploring sketches and the automatic optimization of common layout types. With the method of \citeauthor*{chen_2016_msi}~\cite{chen_2016_msi}, an artist can browse a collection of texture images by sketching highly abstracted pattern features. The represented structural features of reflection, rotation, and translation symmetries adhere to important design principles for visually pleasing patterns. One could imagine a similar intuitive approach for exploring the parameter space of an ornamental procedural representation, for example.
+
+\insertref[inline]{\cite{talton_2009_emw}}
+
 
 \subsubsection{Connections, Branches and Directionality}
 \label{subsubsec:analysis_connections_branches_and_directionality}
@@ -334,7 +339,15 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 \label{subsubsec:analysis_combination_of_design_features}
 
 \majortodo[inline]{Write Section}
-\insertref[inline]{\cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva, tu_2020_cct}}
+
+
+\citeauthor*{mech_2012_tdf}~\cite{mech_2012_tdf} present examples of painting methods for different aspects of generating procedural models, from painting growth constraints, such as masks, to having a pattern grow along the strokes. This discussion only refers to the actual examples given by the authors. However, these are only selective examples for the flexible \textit{Deco} procedural engine. The engine opens up and generalizes environments for interactive control mechanisms for various types of procedural models. For the programming of decorative pattern models within the engine, helpful functionalities, such as symmetry objects and control guides, are predefined. All artist control mechanisms have an interactive performance. Overall performance mainly depends on the pattern generation scripts. The engine offers to load pattern codes as a dynamic library, optimizing performance. In theory, the Deco engine could allow for the editing both of single elements and their connections. This is crucial for decorative patterns, for example, in setting visual highlights. In \citeauthor*{mech_2012_tdf}~\cite{mech_2012_tdf} however, no examples for this feature are given. 
+
+\citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo} focus in their work on the generation of procedural ornamentation. At the core of their system a procedural element placing can be combined with custom made placement functions, which enable global design constraints such as symmetry. An artist can control the overall growth of the pattern as well as the connectivity of the elements by drawing frames and paths directly onto the canvas or by designing a vector field by sketching its directions. Local editing operations include the deletion and placement of single elements and connections and the dragging and dropping of existing ones.
+
+
+
+\insertref[inline]{\cite{jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva, tu_2020_cct}}
 
 
 \subsection{Discussion}
