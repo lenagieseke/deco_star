@@ -112,18 +112,30 @@ For brick and wood textures, the early work of \citeauthor*{lefebvre_2000_ass}~\
 
 \citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} allow for the whole procedural texture spectrum with their parameter retrieval technique. In so doing, they employ two types of similarity metrics, and two types of optimization strategies. As input, an artist needs to individually select the distance metric and optimization strategy for each fitting task. As initialization for the optimization, the authors propose "on the order of 200" pre-computed random choices to choose from. The authors report an average optimization time of 12 minutes, not specifying for how many parameters. \citeauthor*{gilet_2012_mkn}~\cite{gilet_2012_mkn} report more than an hour for the performance times. For such a search-based approach, the parameter count is highly influential on the performance for both visual quality and computation time. With a higher number of parameters the current form of the approach quickly becomes unfeasible. \citeauthor*{gieseke_2014_ipr}~\cite{gieseke_2014_ipr} build up on the work of \citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} and interpret the parameter matching as retrieval task. Based on pre-computed caches and a perceptually motivated image metric, the authors achieve interactive performance for fitting a $256\times256$ exemplar. As a one time investment the caches for the textures have to be computed. An artist has to chose the texture model to be matched and give the exemplar. After the parameter fitting, the artist can further adjust the parameter values with a given interface. A similar approach offer \citeauthor*{hu_2019_anf}~\cite{hu_2019_anf}, training Convolutional Neural Networks for the parameter retrieval and adding a style transfer step in the pixel domain to fit visual details. Next to given the input example, a user a to chose from four high level texture classes. With the pre-computed caches ready, the fitting is interactive, with performances around one second, depending on texture resolution and the style-transfer in the range of minutes.
 
-%TODO: Bedrich, ok?
 While focusing on stochastic pattern, the semi-procedural approach of \citeauthor*{guehl_2020_stu}~\cite{guehl_2020_stu} enables also irregular pattern and pattern combinations. The technique
 generates textures based on input exemplars and gives an artist the option for manual editing and database browsing to shape the output. At its core the system is based on a noise-by-example approach for which the authors define a novel parameterized Procedural Point Process Texture Basis Function. The appearance space of the noise can be explored with an interactive 2D map and the browsing of a database of preview images, which is a wide range of options for an artist. Data-driven details are smoothly combined with the noise and the user can adjust with different parameters. The system is interactive with reported synthesis times below one second.
 
 
+\subparagraph{Tiling}
+\label{subpara:analysis_regular_examplebased_control_tiling}
 
-\insertref[inline]{Drawing Tiles: \cite{bian_2018_tpd, derouet_2019_gsw}}
+% QUESTION: Move to connectivity?
+\citeauthor*{bian_2018_tpd}~\cite{bian_2018_tpd} offer a data-driven texture generation approach based on the tiling of vector pattern. The technique is worth mentioning due to its combination of manual creation and automation, which supports an artist to create structurally sound connections between tiles. The tiling itself is with a hierarchical tiling algorithm computed from tiles, which an artist can draw from scratch. In that the artist is supported through the authoring interface, which computes and previews the tiling interactively. The artist draws a minimal set of $4\times4$ tiles on the canvas. The interface gives hints and corrections for the construction of structurally sound pattern, such as previews of the pattern on the canvas, snapping to proper correction points and automatic corrections near tile boundaries.
+
+
+% \citeauthor*{derouet_2019_gsw}~\cite{derouet_2019_gsw} -> It is just a specific model?
+
+
+
 
 \paragraph{Rule-based and Design-Specific Pattern}
 \label{subsubsec:analysis_rulebased_and_designspecific}
 
 \minortodo[inline]{Add intro}
+
+\subparagraph{Example-Based Control}
+
+\citeauthor*{stava_2010_ipm}~\cite{stava_2010_ipm} present a context-free L-System that is able to recreate a given two-dimensional vector image consisting of groups of line segments. The algorithm creates similarity groups of these basic elements, computes spatial relationship clusters and iteratively translates these into rules. An artist is required to define a similarity threshold and significance weights for the different clusters, such as element distance or similarity, for example, thus guiding their representation according to the L-system rules. The time needed for the inverse step, depending on the number of elements in the input, is reported to range from a few seconds up to 20 minutes. \citeauthor*{talton_2012_ldp}~\cite{talton_2012_ldp} further generalize the idea of inverse grammar generation and interpret it as a probabilistic interference problem. Their system induces a probabilistic formal grammar from a hierarchy of labeled components with a Bayesian model merging technique.
 
 \subparagraph{Shapes and Masks}
 \label{subpara:analysis_rulebased_shapes_and_masks}
@@ -141,7 +153,6 @@ The following section discusses techniques that consider global shapes and masks
 \citeauthor*{loi_2017_pae}~\cite{loi_2017_pae} present a procedural framework for a large variety of element texture designs. The authors aim for designs that are unrelated to their spatial location and the space they fill, calling it stationary. Their programmable method is developed for technical artists and requires programming expertise. Generating pattern scripts are built with partitioning, mapping and merging operators. These operators enable both global and local design control and the composition of designs. The operator-based technique would enable a node-based interface design, which is not explicitly demonstrated in the article. The execution time for most designs is a few seconds, with some examples taking more than 1 minute. A user study with technical artists carefully evaluates the system's scripting interface, concluding positive results overall.
 
 
-
 \subparagraph{Probabilistic Interference}
 \label{subara:analysis_rulebased_shapes_probabilistic}
 
@@ -151,12 +162,12 @@ Other systems provide global outlining shape control on procedural processes by 
 
 \citeauthor*{ritchie_2015_cpm}~\cite{ritchie_2015_cpm} controlled rule-based hierarchical and iterative procedural models similar to \citeauthor*{talton_2011_mpm}~\cite{talton_2011_mpm} with image-based matching and target volumes. The authors present a sequential Monte Carlo variant that is able to score incomplete model states, thus improving convergence behavior and final scores. The reported performances range from around 3 seconds to 12 minutes, and the authors show that the number of included primitives scales reasonably. \citeauthor*{ritchie_2016_ngp}~\cite{ritchie_2016_ngp} make use of machine learning to improve the performance of the image-matching grammar-based models of \citeauthor*{ritchie_2015_cpm}~\cite{ritchie_2015_cpm}. The updated system increases performance up to 10 times by integrating a neural network and sampling a learned constraint-satisfying approximation. Reported performances are overall below 3 seconds. Interactive performance is the foundation of all creative control means and hence of great importance.
 
-\subparagraph{Grammar Generation}
-\label{subpara:analysis_rulebased_shapes_grammar}
+% \subparagraph{Grammar Generation}
+% \label{subpara:analysis_rulebased_shapes_grammar}
 
-Grammars are a classical procedural representation. Grammar-based output can be designed through the generating grammar, the included visual elements and often custom-made parameters for visual features. To translate a desired visual output to an abstract grammar is a daunting task for most artists, and first efforts have been made to provide an example-based technique for the grammar generation itself.
+% Grammars are a classical procedural representation. Grammar-based output can be designed through the generating grammar, the included visual elements and often custom-made parameters for visual features. To translate a desired visual output to an abstract grammar is a daunting task for most artists, and first efforts have been made to provide an example-based technique for the grammar generation itself.
 
-\citeauthor*{stava_2010_ipm}~\cite{stava_2010_ipm} present a context-free L-System that is able to recreate a given two-dimensional vector image consisting of groups of line segments. The algorithm creates similarity groups of these basic elements, computes spatial relationship clusters and iteratively translates these into rules. An artist is required to define a similarity threshold and significance weights for the different clusters, such as element distance or similarity, for example, thus guiding their representation according to the L-system rules. The time needed for the inverse step, depending on the number of elements in the input, is reported to range from a few seconds up to 20 minutes. \citeauthor*{talton_2012_ldp}~\cite{talton_2012_ldp} further generalize the idea of inverse grammar generation and interpret it as a probabilistic interference problem. Their system induces a probabilistic formal grammar from a hierarchy of labeled components with a Bayesian model merging technique.
+
 
 \subparagraph{Vector Fields}
 \label{subpara:analysis_rulebased_vector_fields}
@@ -167,7 +178,6 @@ Grammars are a classical procedural representation. Grammar-based output can be 
 
 \subparagraph{Sketch-based Control}
 \label{subpara:analysis_rulebased_sketchbased}
-
 
 Curves and hand-drawn paths give an artist more direct control than the previously discussed methods to fill a space. In addition to the visual output being further constrained, the control is put onto the actual canvas. Curves are needed for tasks such as creating an decorative frame or structuring the space. Some techniques consider the whole curve before computing the ornament, optimizing the filling of the curve based on certain design goals, enabling a form of global planning.
 
@@ -182,9 +192,14 @@ Painting-tool-like methods create output along curves but do so directly without
 
 \citeauthor*{jacobs_2018_dbe}~\cite{jacobs_2018_dbe} developed the programming and drawing environment \textit{Dynamic Brushes}, in which an artist can create individual procedural brushes for a stylus pen. General programming logic and relevant mathematical functions for creating patterns are translated into a visual programming interface. The evaluation of the system by two professional artists shows that once initial struggles to learn the system were mastered, the artists were able capture their personal analog styles with the procedural brushes. Overall, the authors and the artists open many valuable questions about the usage of current tools and about alternative approaches that seek to seamlessly blend manual and procedural creation processes.
 
-More painting-like methods can be found, for example, in procedural botanical modeling \cite{anastacio_2008_spl,chen_2008_stm,palubicki_2009_sot}, procedural landscape generation~\cite{emilien_2015_wie}, as part of a procedural water color engine~\cite{diverdi_2013_ppp} or for dynamic effects~\cite{xing_2016_eit}. 
 
 \insertref[inline]{\cite{gieseke_2017_ooo}}
+\citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo}
+
+
+More painting-like methods can be found, for example, in procedural botanical modeling \cite{anastacio_2008_spl,chen_2008_stm,palubicki_2009_sot}, procedural landscape generation~\cite{emilien_2015_wie}, as part of a procedural water color engine~\cite{diverdi_2013_ppp} or for dynamic effects~\cite{xing_2016_eit}. 
+
+
 
 
 \textbf{Data-driven Generation:}\label{subsubpara:analysis_rulebased_sketchbased_datadriven}
@@ -228,6 +243,8 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 \insertref[inline]{Also needs sorting: \cite{almeraj_2013_pgt, landes_2013_asm, davison_2019_ief, peihan_2019_pps, chen_2019_mpc, li_2019_aqp}}
 
 
+
+
 \subparagraph{Vector Fields}
 \label{subpara:analysis_element_arrangements_fields}
 
@@ -235,11 +252,16 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 
 \insertref[inline]{\cite{saputra_2018_rde, hsu_2018_bef, davison_2019_ief, hsu_2020_aef}}
 
+
+
 \subparagraph{Data-Driven Approach}
 \label{subpara:analysis_element_arrangements_datadriven}
 
 \citeauthor*{phan_2016_ple}~\cite{phan_2016_ple} offer a data-driven recommendation system for circular ornamentation, employing a learned style and composition feature vector. Based on a custom ring-based layout system that represents, for example, plates, vases and a first decorative element chosen by the artist, the system completes a design. The artist can also chose to incrementally add elements manually, while the system accompanies this by suggesting suitable elements and placements. This work indicates the promising direction of using learned characteristics to further stimulating tools, which, for example, generate meaningful design suggestions.
 
+
+
+Tile-based Pattern Design with Topology Control
 
 \subsubsection{Frames and Hierarchies}
 \label{subsubsec:analysis_frames_and_hierarchies}
