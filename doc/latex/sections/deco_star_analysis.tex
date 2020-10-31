@@ -52,6 +52,17 @@ For creative pattern generation, this type of variation is needed for preventing
 
 \minortodo[inline]{Lead over to the next section}
 
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Design Features}
 \label{subsec:analysis_design_features}
 
@@ -105,13 +116,13 @@ All the above discussed noise-based methods control a single stochastic procedur
 
 \insertref[inline]{Drawing Tiles: \cite{bian_2018_tpd, guehl_2020_stu, derouet_2019_gsw}}
 
-\subsubsection{Rule-based and Design-Specific Pattern}
+\paragraph{Rule-based and Design-Specific Pattern}
 \label{subsubsec:analysis_rulebased_and_designspecific}
 
 \minortodo[inline]{Add intro}
 
-\paragraph{Shapes and Masks}
-\label{para:analysis_rulebased_shapes_and_masks}
+\subparagraph{Shapes and Masks}
+\label{subpara:analysis_rulebased_shapes_and_masks}
 
 The following section discusses techniques that consider global shapes and masks.
 
@@ -143,15 +154,15 @@ Grammars are a classical procedural representation. Grammar-based output can be 
 
 \citeauthor*{stava_2010_ipm}~\cite{stava_2010_ipm} present a context-free L-System that is able to recreate a given two-dimensional vector image consisting of groups of line segments. The algorithm creates similarity groups of these basic elements, computes spatial relationship clusters and iteratively translates these into rules. An artist is required to define a similarity threshold and significance weights for the different clusters, such as element distance or similarity, for example, thus guiding their representation according to the L-system rules. The time needed for the inverse step, depending on the number of elements in the input, is reported to range from a few seconds up to 20 minutes. \citeauthor*{talton_2012_ldp}~\cite{talton_2012_ldp} further generalize the idea of inverse grammar generation and interpret it as a probabilistic interference problem. Their system induces a probabilistic formal grammar from a hierarchy of labeled components with a Bayesian model merging technique.
 
-\paragraph{Vector Fields}
-\label{para:analysis_rulebased_vector_fields}
+\subparagraph{Vector Fields}
+\label{subpara:analysis_rulebased_vector_fields}
 
 \citeauthor*{yuanyuan_2011_gso}~\cite{yuanyuan_2011_gso} present a shape grammar that is guided by either a vector or tensor field. The field can influence the grammar's translation command, potentially leading to globally pronounced structures. The field can furthermore guide rotation, scaling, and color parameters. The artist can specify a priori field constraints, such as regular and singular field elements, on the surface to be filled. Once the field is computed, local Laplacian smoothing can be applied. The authors report a synthesis performance for geometric surfaces from less than a second up to 3 minutes.
 % Mention "more artistic freedom"
 % These systems produce patterns that are more homogeneous than the decorative ornaments that we aim for.
 
-\paragraph{Sketch-based Control}
-\label{para:analysis_rulebased_sketchbased}
+\subparagraph{Sketch-based Control}
+\label{subpara:analysis_rulebased_sketchbased}
 
 
 Curves and hand-drawn paths give an artist more direct control than the previously discussed methods to fill a space. In addition to the visual output being further constrained, the control is put onto the actual canvas. Curves are needed for tasks such as creating an decorative frame or structuring the space. Some techniques consider the whole curve before computing the ornament, optimizing the filling of the curve based on certain design goals, enabling a form of global planning.
@@ -162,9 +173,7 @@ Painting-tool-like methods create output along curves but do so directly without
 
 % The following section first discusses work that enables the direct control of curves as pattern elements. The state of the art using curves as control mechanisms are then discussed for both procedural and data-driven methods.
 
-\subparagraph{Procedural Generation}
-\label{subpara:analysis_rulebased_sketchbased_procedural}
-
+\textbf{Procedural Generation}:\label{subsubpara:analysis_rulebased_sketchbased_procedural}
 \citeauthor*{mech_2012_tdf}~\cite{mech_2012_tdf} present examples of painting methods for different aspects of generating procedural models, from painting growth constraints, such as masks, to having a pattern grow along the strokes. This discussion only refers to the actual examples given by the authors. However, these are only selective examples for the flexible \textit{Deco} procedural engine. The engine opens up and generalizes environments for interactive control mechanisms for various types of procedural models. For the programming of decorative pattern models within the engine, helpful functionalities, such as symmetry objects and control guides, are predefined. All artist control mechanisms have an interactive performance. Overall performance mainly depends on the pattern generation scripts. The engine offers to load pattern codes as a dynamic library, optimizing performance. In theory, the Deco engine could allow for the editing both of single elements and their connections. This is crucial for decorative patterns, for example, in setting visual highlights. In \citeauthor*{mech_2012_tdf}~\cite{mech_2012_tdf} however, no examples for this feature are given. 
 
 \citeauthor*{jacobs_2018_dbe}~\cite{jacobs_2018_dbe} developed the programming and drawing environment \textit{Dynamic Brushes}, in which an artist can create individual procedural brushes for a stylus pen. General programming logic and relevant mathematical functions for creating patterns are translated into a visual programming interface. The evaluation of the system by two professional artists shows that once initial struggles to learn the system were mastered, the artists were able capture their personal analog styles with the procedural brushes. Overall, the authors and the artists open many valuable questions about the usage of current tools and about alternative approaches that seek to seamlessly blend manual and procedural creation processes.
@@ -174,9 +183,7 @@ More painting-like methods can be found, for example, in procedural botanical mo
 \insertref[inline]{\cite{gieseke_2017_ooo}}
 
 
-\subparagraph{Data-driven Generation}
-\label{subpara:analysis_rulebased_sketchbased_datadriven}
-
+\textbf{Data-driven Generation:}\label{subsubpara:analysis_rulebased_sketchbased_datadriven}
 In order to create an pattern along a sketch, \citeauthor*{lu_2014_dds}~\cite{lu_2014_dds} present a data-driven approach. Given vector pattern exemplars are placed and deformed along a artist-given curve. Boundaries between element segments and visual soundness are optimized through graph cut and hierarchical texture synthesis. For the exemplars, an artist has to define the start and end point of their spines. If needed, the whole spine can be sketched as an input. The artist can refine results with add and erase constraints that are drawn on the pattern. The authors report a synthesizing performance from 1 to 8 seconds. A related data-driven approach for synthesizing example-based vector patterns along a curve was presented by \citeauthor*{zhou_2014_tsv}~\cite{zhou_2014_tsv} in the same year. In this work, the authors focus on ensuring a structurally sound output pattern and an extension to fill a surface. Topology descriptors and artist-given topological constraints are included in the element assembling optimization process. Additionally, local pattern orientations and a variation value can be defined by an artist. Once a pattern is generated, an artist can interactively adjust the underlying curve, with the pattern being updated accordingly. Generation performances are reported to be around a few seconds, with complex models a little more than 2 minutes.
 
 \citeauthor*{kazi_2012_vit}~\cite{kazi_2012_vit} present a multifaceted tool to create textures from pen-and-ink drawings with sketch-based control mechanisms, mixing data-driven and procedural modeling. Basis drawings can be repeated along paths, used for brushes, fill regions, optionally consider perspective and propagate modifications of the drawing to all repeated elements. A user study confirms the system's usefulness to efficiently create repetitive textures while maintaining the natural workflow and artistic control of an artist. \citeauthor*{xing_2014_apr}~\cite{xing_2014_apr} build upon that work by automatically detecting and suggesting possible repetitions to the artist, aiming for a less regular, more painting-like quality. The presented system also offers various brush options and navigation tools in order to combine automation with artist control.
@@ -185,22 +192,25 @@ In order to create an pattern along a sketch, \citeauthor*{lu_2014_dds}~\cite{lu
 % Not in table
 Similar approaches have also been investigated in the context of texture painting~\cite{lukac_2013_pft}, hand-drawn animations~\cite{xing_2015_aha}, creating mosaics~\cite{igarashi_2010_dde,abdrashitov_2014_msi} and data visualization~\cite{xia_2018_ddc}. These ideas cohere to the needed control principles for creative creation while focusing on their specific design tasks. 
 
-\paragraph{Feature Exploration}
-\label{para:analysis_rulebased_sketchbased_feature_exploration}
+\subparagraph{Feature Exploration}
+\label{subpara:analysis_rulebased_sketchbased_feature_exploration}
 
 Even though not a generating technique in itself, exploration is an important characteristic of a creative process. \citeauthor*{todi_2016_sse}~\cite{todi_2016_sse} present a tool for exploring sketches and the automatic optimization of common layout types. With the method of \citeauthor*{chen_2016_msi}~\cite{chen_2016_msi}, an artist can browse a collection of texture images by sketching highly abstracted pattern features. The represented structural features of reflection, rotation, and translation symmetries adhere to important design principles for visually pleasing patterns. One could imagine a similar intuitive approach for exploring the parameter space of an ornamental procedural representation, for example.
 
 \insertref[inline]{\cite{talton_2009_emw}}
 
-\subsubsection{Element Arrangements}
-\label{subsubsec:analysis_element_arrangements}
+
+
+
+\paragraph{Element Arrangements}
+\label{para:analysis_element_arrangements}
 
 Element arrangements have individual and unconnected visual entities as smallest unit. Arrangements are often function-based distributions and hence can be considered rule-based procedural models, while the elements themselves usually come from input data, such as vector files. Because many visually complex pattern contain areas of formal arranged elements, this is a relevant sub-goal for a creative pattern generation task.
 
 \minortodo[inline]{Also mention shapes and masks.}
 
-\paragraph{Example-Based Control}
-\label{para:analysis_element_arrangements_example}
+\subparagraph{Example-Based Control}
+\label{subpara:analysis_element_arrangements_example}
 
 An example-based control can be used to arrange the elements. From an example arrangements, relationships between elements are extracted, and results are reproduced for the synthesis. 
 
@@ -214,21 +224,21 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 \insertref[inline]{Also needs sorting: \cite{almeraj_2013_pgt, landes_2013_asm, davison_2019_ief, peihan_2019_pps, chen_2019_mpc, li_2019_aqp}}
 
 
-\paragraph{Vector Fields}
-\label{para:analysis_element_arrangements_fields}
+\subparagraph{Vector Fields}
+\label{subpara:analysis_element_arrangements_fields}
 
 \citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. For each element, a predefined spine controls the element's deformation. The artist defines direction guides and optionally fixed elements that control the computation of evenly placed streamlines. Elements are placed and deformed along streamlines. An iterative refinement step optimizes for a dense and balanced filling. First, streamlines are slightly shifted to cohere to the space available. Second, elements a re-placed with rotational adjustments and possible overlaps into free space of neighboring elements, reducing negative space. An average packing takes about an hour.
 
 \insertref[inline]{\cite{saputra_2018_rde, hsu_2018_bef, davison_2019_ief, hsu_2020_aef}}
 
-\paragraph{Data-Driven Approach}
-\label{para:analysis_element_arrangements_datadriven}
+\subparagraph{Data-Driven Approach}
+\label{subpara:analysis_element_arrangements_datadriven}
 
 \citeauthor*{phan_2016_ple}~\cite{phan_2016_ple} offer a data-driven recommendation system for circular ornamentation, employing a learned style and composition feature vector. Based on a custom ring-based layout system that represents, for example, plates, vases and a first decorative element chosen by the artist, the system completes a design. The artist can also chose to incrementally add elements manually, while the system accompanies this by suggesting suitable elements and placements. This work indicates the promising direction of using learned characteristics to further stimulating tools, which, for example, generate meaningful design suggestions.
 
 
-\subsection{Frames and Hierarchies}
-\label{subsec:analysis_frames_and_hierarchies}
+\subsubsection{Frames and Hierarchies}
+\label{subsubsec:analysis_frames_and_hierarchies}
 
 % Shape-based, grammar
 \citeauthor*{benes_2011_gpm}~\cite{benes_2011_gpm} offer a complex shape-filling and masking system for procedural open L-system models by dividing a target space into artist editable guide shapes. Seeds for the L-system are interactively given by an artist as a position and orientation. The guide shapes determine what types of patterns grow in different areas. The connections between the shapes are manually specified by the artist and in turn guide the connections between elements. Based on a mass-spring system, the guides can be intuitively edited as a whole. The authors report on pattern generation performance for most scenarios as less than a second, with up to 45 seconds for only one complex scenario.
@@ -236,8 +246,8 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 \insertref[inline]{\cite{alvarez_2019_ido}}
 
 
-\subsection{Curves, Lines and Sketches}
-\label{subsec:analysis_curves_lines_and_sketches}
+\subsubsection{Curves, Lines and Sketches}
+\label{subsubsec:analysis_curves_lines_and_sketches}
 
 Besides the value of the indirect use of curves as a control tool, their direct employment as a visual element is also relevant. Formed curves, such as circles, spirals or hearts, are essential components for many pattern designs such as ornamentation. The following section discusses work that enables the direct control of curves as pattern elements.
 
@@ -251,20 +261,20 @@ Also incorporating an artist-defined curve as the spine of a pattern, \citeautho
 
 \insertref[inline]{\cite{pedersen_2006_ola}}
 
-In section \ref{subpara:analysis_rulebased_sketchbased_datadriven} we already discussed data-driven techniques for creating repetitive structures with sketching. ~\cite{kazi_2012_vit, xing_2014_apr, xing_2015_aha} can be similarly used to sketch parts of a pattern directly.
+In section \ref{subsubpara:analysis_rulebased_sketchbased_datadriven} we already discussed data-driven techniques for creating repetitive structures with sketching. ~\cite{kazi_2012_vit, xing_2014_apr, xing_2015_aha} can be similarly used to sketch parts of a pattern directly.
 
-\subsection{Connections, Branches and Directionality}
-\label{subsec:analysis_connections_branches_and_directionality}
+\subsubsection{Connections, Branches and Directionality}
+\label{subsubsec:analysis_connections_branches_and_directionality}
 
 \majortodo[inline]{Write Section}
 
-\insertref[inline]{Example-based branching: \cite{guo_2020_ipm, guerin_2017_ieb}}
+\insertref[inline]{Example-based branching: \cite{guo_2020_ipm}}
 \insertref[inline]{Data-driven directionality: \cite{xing_2016_eit, hu_2019_ssf}}
-\insertref[inline]{Street-Modeling: \cite{chu_2019_ntg}, Plants: \cite{haedrich_2017_ima}}
+%\insertref[inline]{Street-Modeling: \cite{chu_2019_ntg}, Plants: \cite{haedrich_2017_ima}, Terrain: guerin_2017_ieb}
 
 
-\subsubsection{Vector Fields}
-\label{subsec:analysis_connections_branches_and_directionality_vectorfields}
+\subparagraph{Vector Fields}
+\label{subpara:analysis_connections_branches_and_directionality_vectorfields}
 
 In section~\ref{para:analysis_element_arrangements_example} about element arrangements discussed in detail, \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} employ vector fields to define the overall growth direction and alignment of elements within an example-guided arrangement. \citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. In section~\ref{para:analysis_rulebased_vector_fields} about rule-based pattern discussed in detail, \citeauthor*{yuanyuan_2011_gso}~\cite{yuanyuan_2011_gso} present a shape grammar that is guided by either a vector or tensor field.
 
@@ -274,8 +284,8 @@ Vector fields are further employed in various other specific procedural modeling
 
 
 
-\subsection{Single Accents}
-\label{subsec:analysis_single_accents}
+\subsubsection{Single Accents}
+\label{subsubsec:analysis_single_accents}
 
 By detecting symmetries and curvilinear element arrangements in a given vector pattern, \citeauthor*{yeh_2009_dsa}~\cite{yeh_2009_dsa} extend the manual data-driven design processes with procedural-modeling-like editing options. Based on the detected element groups, an artist can adjust the spacing, location and scale of one element directly and propagate that change to the all other elements in the group. The authors also offer a brush that recreates recognized element groups.
 
@@ -285,8 +295,8 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 
 
 
-\subsection{Combination of Design Features}
-\label{subsec:analysis_combination_of_design_features}
+\subsubsection{Combination of Design Features}
+\label{subsubsec:analysis_combination_of_design_features}
 
 \majortodo[inline]{Write Section}
 \insertref[inline]{\cite{mech_2012_tdf, gieseke_2017_ooo, jacobs_2017_sep, jacobs_2018_dbe, li_2020_sva}}
@@ -305,6 +315,8 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{tables/table_all.png}
+    \label{table:control_mechanisms}
+    \caption[Control mechanisms in the state of the art]{Recent techniques are sorted by design areas and visual features they enable. For each work it is analysed and indicated which specific control mechanisms they offer.  \colorbox{red} {Will update table last.}}
 \end{figure*}
 
 
@@ -362,36 +374,3 @@ Element placement control mechanisms are closely related to the data-driven sket
 % As \Cref{table:analysis_elementplacement} shows,
 \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} present a overall transparently navigable and stimulating control mechanism. With a carefully designed workflow, it further fosters an artist stimulation by offering novel but suitable design variations.
 
-
-\section{Outlook}
-\label{sec:outlook}
-
-The review of the state of the art shows that there are various limitations and possibilities for future work within the specific contexts of the work. However, there are also novel paradigms for creative control and their underlying algorithms that uniquely add to the state of the art. The most prominent development is the integration of machine learning techniques and so-called mixed-initiative algorithms and possibilities of the usage of semantic attributes.
-
-In addition collaboration is a valuable future line of investigation for enabling creative work. With regard to technology, more and more aspects of common tools either are fully browser-based or are in some way connected to the cloud-based storage of assets, settings and results; therefore, they function online and are easily shared. Collaboration is closely connected to the previously discussed issue of navigation histories. This is not only relevant for individual work processes but also for more general production pipelines in a commercial context. In this regard, the sharing and collaborative work on iterations, which involves multiple persons referencing different versions, is essential. Some work has been done (e.g.,~\cite{talton_2009_emw, salvati_2015_mcm,oleary_2018_csi}) but further investigations of collaboration for creative control are called for. 
-
-As discussed in \Cref{sec:models}, control techniques are closely inter-related with the representation of the underlying models. Therefore, a more unified development of models across research communities would be beneficial. Expert knowledge of usability should especially be considered. However, further automation for the creation of complex decorative models also poses interesting challenges, such as abstraction \cite{nan_2011_cgr}, symmetry computation~\cite{cullen_2011_sh} and design space variations.
-
-
-\subsection{Mixed Initiative Interfaces}
-\label{subsec:analysis_outlook_mixed_initiative_interfaces}
-
-% This is actually quite important and could/should be further elaborated.
-The procedural content generation (PCG) for games community is pushing the general integration of artificial intelligence (AI) into a procedural creation process. A new paradigm of \textit{mixed-initiative creative interfaces} is rising and is actively fostered, as an ACM Conference on Human Factors in Computing Systems (CHI) workshop under the same name in 2017 shows~\cite{deterding_2017_mci}. As the workshop summary states, it is the goal to ``put human and computer in a tight interactive loop where each suggests, produces, evaluates, modifies, and selects creative outputs in response to the other.'' In order to achieve this, AI enables computer agency, and novel interfaces enable collaboration between computers and human users. The workshop brought PCG and interaction design researchers together, stressing the importance of bridging disciplines. Similarly to games, the context of creative pattern generation also constitutes a challenging but fruitful testing ground for the investigation of mixed-initiative creative interfaces and for the task of balancing artist control and automation, as this survey shows. In general, the involvement of the computer graphics community with its various topics and rich algorithmic knowledge would be promising.
-
-\insertref[inline]{\cite{heer_2019_apa}}
-
-\subsection{Semantic Attributes}
-\label{subsec:analysis_outlook_semantic-attributes}
-
-The usage of semantic attributes presents a highly intuitive navigation technique, which so far has been successfully applied in the context of shape modifications, for example by \citeauthor*{yumer_2015_sse}~\cite{yumer_2015_sse}.
-
-In the context of complex patterns, procedural textures constitute the most related field of investigation. For the control of procedural textures, methods are based on the analysis and description of texture in regard to human perception, which has a long research tradition. In his influential work, \citeauthor*{julesz_1981_tte}~\cite{julesz_1981_tte} defines textons as the basic units of pre-attentive human texture perception. Since then, this line of research has continued, and texture descriptions with perceptual \cite{liu_2015_vpp} and semantic~\cite{matthews_2013_eta,cimpoi_2014_dtw} attributes have been investigated. \citeauthor*{dong_2017_ptg}~\cite{dong_2017_ptg} and \citeauthor*{liu_2018_ppt}~\cite{liu_2018_ppt} employed such features in first experiments for the navigation of a procedural texture space and for the generation of suitable textures by given features. % As texture generation method the authors apply a Generative Adversarial Networks, which includes semantic attributes in the texture generation process. 
-However, the results of such studies are still limited and of varying quality - and the authors themselves \cite{liu_2018_ppt} call their results experimental.
-
-Nonetheless, these works present an interesting approach that is worth further investigation. Because many pattern designs are structured and follow an internal logic, it seems feasible to come up with a collection of suitable attributes. For example an ornamental design space is much smaller in comparison to all ``textures in the wild''~\cite{cimpoi_2014_dtw}, and ornamentation could constitute a valuable context for further investigations into the incorporation of semantic attributes into a creative creation process.
-
-% % \minortodo[inline]{Add Semantic aware methods for evolutionary art} ??
-% https://dl.acm.org/doi/10.1145/2576768.2598293
-
-\insertref[inline]{\cite{joppi_2019_tri}}

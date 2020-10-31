@@ -9,6 +9,14 @@ The underlying regularity of 2D pattern designs is based on a repetitive and bal
 % Much effort has gone into investigating control mechanisms for procedural representations within specific contexts, as procedural models are notoriously difficult to control~\cite{bourque_2004_ptm,lagae_2010_pis,gilet_2010_ias,benes_2011_gpm,lasram_2012_ssf,lasram_2012_ptp}.
 However, the creative demands of, for example, laying out space-specific designs and of placing highlights must also be considered. Procedural models must be augmented, and different approaches must be unified in order to enable the control and quality of manual creation as well as the efficiency and accuracy of computation~\cite{gieseke_2017_ooo}. 
 
+
+\legie{We review recent advances in 2D pattern generation and we focus on methods that include certain level of automatic generation. We discuss procedural models, data-drive generation, design-specific pattern generation.}
+
+% This is still badly written but hopefully gets the point across?
+\legie{As theoretical grounding, we classify control mechanisms and their characteristics from the perspective of an artist from global to local and from automatic to manual, with varying levels of abstraction for their handling. As a basis for a discussion of the capabilities of control mechanisms in a creative process and their potential for creative creation, we review literature on creativity and summarize aspects that can help to understand such capabilities in the context of computer graphic publications.}
+
+\legie{For the review of the state of the art, we organize recent techniques by design areas and the visual features they enable. For the design areas we further group related work by commonly used control types where ever possible. Then, we specifically analyse for each reference the offered control for an artist. Our review is summarized in Table ~\ref{table:control_mechanisms}, where we organize recent techniques by design areas and the visual features they enable on the y-axis and list for each work the specific control mechanisms they offer on the x-axis. Based on this detailed analysis, we then conclude the review of the state of the art with an overall discussion of the creative means for the different control mechanism types.}
+
 \bb{Lena - can you please add a paragraph here stating what will be the rows and the columns of the table in MS Word? I am still fuzzy on this. I am shaping a version that is probably wrong. But I feel the reader needs to know now what is the paper about. }
 \bb{We review recent advances in 2D pattern generation and we focus on methods that include certain level of automatic generation. We discuss procedural models, data-drive generation, design-specific pattern generation. We cross-analyze these methods from the viewpoint of control: example-based, shapes and masks, vector fields, and curves and sketches.}
 The review does not focus on 3D modeling contexts. For 3D generation techniques, the interested reader is referred to the surveys of world building~\cite{smelik_2014_aso, aliaga_2016_ipm}, terrain modeling~\cite{galin_2019_aro} and game-specific approaches~\cite{hendrikx_2013_pcg, togelius_2011_sbp}.
@@ -18,13 +26,5 @@ The review does not focus on 3D modeling contexts. For 3D generation techniques,
 
 % Research questions are then structured along an axis of decreasing automation, from fully automated goal-oriented control to interactive creative control to manual experimental control.
 
-% TODO: These still need work.
-\legie{The contributions need some work. They are too verbose.}
-\begin{itemize}
-    \item The classification of control mechanisms as theoretical grounding, ranging from global to local and from automatic to manual, with varying levels of abstraction for their handling and the relation of these mechanisms to the stages of a creation process. 
-    \item A dissection of a creative process into potentially classifiable characteristics within the context of algorithms as common ground for a discussion about enabling creativity.
-    \item An interlinking analysis of the state of the art based on design features, bridging between procedural and data-driven solutions with joint classification results. 
-    \item An investigation of the capabilities of mechanisms in a creative process and their potential for creative creation within a coherent workflow.
-\end{itemize}
 
 We start this survey with a summary of relevant terms~\Cref{terminology}. \Cref{sec:taxo_control_mechanism} lays the theoretical groundwork for our later evaluation of control mechanisms of the state of the art by classifying general control characteristics and identifying the specific control mechanisms that associate with these characteristics. We add to this preparatory work in~\Cref{sec:creativ_means} with a basis for enabling a discussion of the creative means for a technique. Before turning to the analysis of the state of the art in~\Cref{sec:analysis}, we establish in~\Cref{sec:design} the areas of investigation by describing possible design features of creative pattern generation and their underlying creation models in~\Cref{sec:models}. Lastly, we discuss future trends and give an outlook to relevant topics in~\Cref{sec:outlook} and conclude the survey in~\Cref{sec:conclusion}.
