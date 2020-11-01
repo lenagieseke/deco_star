@@ -3,108 +3,99 @@
 
 %-------------------------------------------------------------------------
 %-------------------------------------------------------------------------
-\section{Taxonomy of Control Mechanisms}
-\label{sec:taxo_control_mechanism}
+\section{Taxonomy of Control Mechanisms}\label{sec:taxo_control_mechanism}
 
+\bb{Should we merge this with the previous section and call it Terminology and Taxonomy of Control Mechanisms?}\legie{What would be the benefit of it? Saving space?}
 
-
+% \bb{I would significantly simplify this section. Each could be one paragraph \eg timeline could look like: \textbf{When? - Timeline} defines when can input be given and at what time in the creation process is the control executed. It can be input is given \textit{before}, \textit{during} the creation process, when parts of the results are already visible, or \textit{after} the creation process. The result is visible to the artist and can be adjusted retrospectively. Have a look at the timeline section and see how many times it says "creative process". Also - I do not understand the images in this section and I would probably remove most of them. I feel the concepts are obvious \eg global-local, abstract-concrete, before-during-after and they do not need an image. Also, we should have the list of papers that belong to each category in Table~1 somewhere - in Appendix?}
 % To offer creative means is a layered process. At its core, the generating algorithm should ease the creation process for an artist and fully use the benefits of computational control. However, the algorithm also has to be flexible enough to allow for various interaction methods and individual design goals. There is a delicate balance between giving artists as much control as is needed without burdening them with unwanted details and tedious manufacturing. Similarly, this analysis framework is multi-layered to distill and summarize the different aspects of creative control.
 
+It is difficult to derived the discussion of creative means directly from the related work. Past authors have followed various motivations and have emphasized different aspects when describing their work and results. To classify the work in an objective and unified manner, we analyze the actual presented control mechanisms and relate them to general characteristics of control with digital creation tools. Based on this analysis, we then investigate the creative means. While the classification of the control mechanisms can be directly taken from the authors' descriptions (\Cref{sec:analysis}), the following discussion of the creative means has an interpretative nature to it. 
 
-A discussion of creative means cannot be derived directly from the related work. Past authors have followed various motivations and have emphasized different aspects when describing their work and results. In order to classify the work in an objective and unified manner, we analyze the actual presented control mechanisms and relate them to general characteristics of control with digital creation tools. Based on this analysis, we then can also investigate the creative means. While the classification of the control mechanisms can be directly taken from the authors' descriptions (\Cref{sec:analysis}), its following discussion of the creative means has an interpretative nature to it. 
+Below we lay the groundwork for our later evaluation of control mechanisms of the state of the art. As guide for our review of references, we first dissect a creation process into overall control characteristics and classify specific control mechanisms by their interaction types. The following taxonomy shows the capabilities of the different control mechanisms and potential trade-offs between approaches.  
 
-We now lay the groundwork for our later evaluation of control mechanisms of the state of the art. As guide for our review of references, we first dissect a creation process into overall control characteristics and classify specific control mechanisms by their interaction types. The following taxonomy shows the capabilities of the different control mechanisms and potential trade-offs between approaches.  
+\newcommand{\controlParamsFigWidth}{0.9}
 
-\newcommand{\controlParamsFigWidth}{1.0}
-
-\subsection{Control Characteristics}
-\label{control_charateristics}
-
+\subsection{Control Characteristics}\label{control_charateristics}
 A creation process can be described by answering the questions of \textit{how}, \textit{what}, \textit{where}, \textit{when} and \textit{who}. These characteristics can be discussed in various creation contexts and could even be translated to traditional media such as aquarell on paper.
+% \bb{Below is a NEW version of how I would simplify it. The original version is commented}
 
-\subsubsection{How? - User Interaction}
+\noindent\textbf{How (User Interaction)} is a control executed or an input given by an artist? How far is it from the visual result on the canvas? 
 
-How is a control executed or an input given by an artist? How far is it from the visual result on the canvas?
+\legie{In this how-section I would keep the visual structuring of the terms to communicate that these are some form of categories and the block of text was hard to read. Like this it is clear that it is not meant as a flowing text. I am not happy that it is not consistent to the upcoming sections of where and when but I think this mixture might be the best option.}
 
+% The control is externally given, such as with code or a configuration \textit{file}. A separate \textit{UI} is given through which an artist gives input and activates states. User interfaces are often in close proximity to the canvas, carefully designed and easily usable. However, because they detach the work from the actual output, UIs have an abstract nature. An artist must actively translate his or her interaction with the UI to the resulting output on the canvas. Controls are executed directly on the output \textit{canvas}. Most of these controls require an activation or selection of a tool in a separate UI, such as selecting a pen for drawing on a canvas. In this case we consider the pen primarily as a control mechanism. There are cases where controls cannot clearly be classified as either UI or on canvas. A pen, for example, can have different characteristics that an artist needs to set in the UI. The adjustment of settings should be as seamlessly integrated into an on-canvas tool as possible (\eg~with selection choices appearing as tool tips). 
 
 \textit{File}: The control is externally given, such as with code or a configuration file.
 
-\textit{UI}: A separate UI is given through which an artist gives input and activates states. User interfaces are often in close proximity to the canvas, carefully designed and easily usable. However, because they detach the work from the actual output, UIs still have an abstract nature. An artist must actively translate his or her interaction with the UI to the resulting output on the canvas.
+\textit{UI}: A separate UI is given through which an artist gives input and activates states. User interfaces are often in close proximity to the canvas, carefully designed and easily usable. However, because they detach the work from the actual output, UIs have an abstract nature. An artist must actively translate the interaction with the UI to the resulting output on the canvas.
 
-\textit{On canvas}: Controls are executed directly on the output canvas. Most of these controls require an activation or selection of a tool in a separate UI, such as selecting a pen for drawing on a canvas. In this case we consider the pen primarily as a control mechanism. There are cases where controls cannot clearly be classified as either UI or on canvas. A pen, for example, can have different characteristics that an artist needs to set in the UI. Ideally, the adjustment of settings should be as seamlessly integrated into an on-canvas tool as possible (e.g., with selection choices appearing as tool tips).
+\textit{On canvas}: Controls are executed directly on the output canvas. Most of these controls require an activation or selection of a tool in a separate UI, such as selecting a pen for drawing on a canvas. 
+% In this case we consider the pen primarily as a control mechanism. 
+There are cases where controls cannot clearly be classified as either UI or on canvas. A pen, for example, can have different characteristics that an artist needs to set in the UI. The adjustment of settings should be as seamlessly integrated into an on-canvas tool as possible (\eg~with selection choices appearing as tool tips). 
 
-\begin{figure}[H]
+\begin{figure}[hbt]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/how.pdf}
+    \caption{How is input given?}
 \end{figure}
 
+\legie{The figures are meant to visualize the input characteristics for a more intuitive understanding (e.g. as a system diagram would do). I do agree that they do not add that much in terms of understanding. But I have a hard time kicking them out. They do underline what we are talking about nicely e.g. for someone who is just skimming the paper. But if you think they must go, then ok. Of course, if we keep them, they need to be placed under their respective sections.}
+\legie{I took out the figure captions because I thought it became clear that they are a visualization of their respective texts and without the caption the text is more dense and flows better. If no captions is too strong of a no-go for an academic publication, we can add them.}
 
-\subsubsection{What? - Content}
 
-What does an artist give as input? What is the level of abstraction of the content that an artist works with?
+\noindent\textbf{What (Content)} does an artist give as input? What is the level of abstraction of the content that an artist works with?
 
 \textit{Code}: Input is a syntactically structured and formal language.
 
 \textit{Value}: The input is a single value, chosen from a range - for example, with a slider.
 
-\textit{Intermediate}: The input is visual but still of an abstract nature, such as controlling sketches for a mask or arrows for directionality. Again, artists have to interpret how these inputs affect the result.
+\textit{Intermediate}: The input is visual but still of an abstract nature, such as controlling sketches for a mask or arrows for directionality. Artists still have to interpret how these inputs affect the result.
 
 \textit{Element}: The input constitutes a component of the resulting pattern.
 
 \begin{figure}[H]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/what.pdf}
+        \caption{What does an artist give as input?}
 \end{figure}
 
-
-
-\subsubsection{Where? - Canvas}
-
-Where does the input have an effect spatially and what is its area of influence?
-
-\textit{Global}: The input has global influence (e.g., by filling the whole space or by adjusting all elements on the canvas).
-
-\textit{Region}: The input has an effect in a region of the canvas (e.g., on a drawn curve).
-
-\textit{Local}: The input has an effect on one specific element.
-
-\begin{figure}[H]
+\noindent\textbf{Where (Canvas)} has the input an effect spatially and what is the area of influence? The input can have \textit{global}, \textit{regional}, e.g., on a drawn curve or \textit{local}, e.g. on one specific element,  influence.
+% \textit{Global}: The input has global influence (e.g., by filling the whole space or by adjusting all elements on the canvas).
+% \textit{Region}: The input has an effect in a region of the canvas (e.g., on a drawn curve).
+% \textit{Local}: The input has an effect on one specific element.
+\begin{figure}[hbt]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/where.pdf}
+        \caption{Where does the input have an effect?}
 \end{figure}
 
 
-\subsubsection{When? - Timeline}
+% \noindent\textbf{When (Timeline)}
+% When can input be given and at what time in the creation process is the control executed?
 
-When can input be given and at what time in the creation process is the control executed?
-
-\textit{Before}: Input is given before the actual creation process.
-
-\textit{During}: Input is given during the creation process, when parts of the results are already visible. This is typically a painting mechanism. However, some processes can also be paused and adjusted.
-
-\textit{After}: Input is given after the creation process. The result is visible to the artist and can be adjusted retrospectively.
-
+\textbf{When (Timeline)} is the input given and at what time in the creation process is the control executed? Input can be given \textit{before}, \textit{during} the creation process, when parts of the results are already visible e.g. with a painting mechanism, or \textit{after} the creation process. The result is visible to the artist and can be adjusted retrospectively.
 \begin{figure}[H]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/when.pdf}
+        \caption{When is the input given?}
 \end{figure}
+% \textit{Before}: Input is given before the actual creation process.
 
+% \textit{During}: Input is given during the creation process, when parts of the results are already visible. This is typically a painting mechanism. However, some processes can also be paused and adjusted.
 
-\subsubsection{Who? - Creator}
+% \textit{After}: Input is given after the creation process. The result is visible to the artist and can be adjusted retrospectively.
 
-Who can give the input in regard to the type of skill set needed? This category can be in part derived from the above characteristics of \textit{how} and \textit{what}. In most general terms this category can be classified as the following.
+\noindent\textbf{Who (User)} can give the input in regard to the type of skill set needed? This category can be in part derived from the above characteristics of \textit{how} and \textit{what}. In most general terms this category can be classified the skill set of a \textit{Programmer}, for giving, e.g. code as input, requiring analytical-formal and logical thinking and the ability to abstract. On the other end of the spectrum, the skill set of an \textit{Artist} is needed, e.g. for drawing, requiring intuitive-visual and spatial thinking and the ability to create.
 
-
-\textit{Programmer}: To give input with dissecting analytical-formal and logical thinking and the ability to abstract.
-
-\textit{Artist}: To give input with comprehensive intuitive-visual and spatial thinking and the ability to create (e.g., by drawing).
-
-\begin{figure}[H]
+\begin{figure}[hbt]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/who.pdf}
+        \caption{Who can give the input? Which skill set is needed?}
 \end{figure}
 
-The who category is listed here for completeness. However, to fully answer the questions of needed competencies, skill- and mindsets, including the accompanying psychological and artistic aspects, is out of the scope of this thesis and requires knowledge in fields other than computer science. The following discussions are rooted in computer graphics research and aim for an assessment of algorithmic controllability. Hence, the classification of who specifically is most suitable to use a tool, is put aside.
+The who category is listed here for completeness. However, to answer questions of needed competencies, skill- and mindsets, including the accompanying psychological and artistic aspects, is out of the scope of this survey.
+% and requires knowledge in fields other than computer science. The following discussions are rooted in computer graphics research and aim for an assessment of algorithmic controllability. Hence, the classification of who specifically is most suitable to use a tool, is put aside.
 
 
 \subsection{Control Mechanisms}
@@ -117,9 +108,6 @@ For a meaningful analysis, the above classification must be further broken down 
 The following low-level characteristics categorize input modes and how they are used. These characteristics are in the analysis of the state of the art then specified for each reference (see Table~\ref{table:analysis}). Because this survey focuses on interfacing algorithms, UI specifics, such as the layout of buttons, are not considered. Once the specific control mechanisms are analyzed, they constitute a method in combination with the above control paradigms.
 
 \subsubsection{Initialization}
-
-
-
 \textit{System Configuration}: Required overall setup of the system, such as computing caches or training a model. This is usually a one-time investment.
 
 \textit{Task Initialization}: A non-creative task that has to be executed each time in order to produce an output, such as selecting the specific optimization algorithm.
