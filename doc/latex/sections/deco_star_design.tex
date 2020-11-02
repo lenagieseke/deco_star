@@ -1,21 +1,17 @@
 %!TEX root = ../deco_star.tex
 
 %-------------------------------------------------------------------------
-\section{Designs}
+\section{Design Features}
 \label{sec:design}
 
-In the previous section we have categorized control mechanisms and have discussed factors that might enable a creative workflow. In the following section we highlight to which type of pattern designs creative creation could lead.
+For the analysis of the state of the art we sort the work into design areas, hence the visual features they enable. Within those design areas we are then discussing the control mechanisms.
 
-\subsection{Design Goals}
-\label{subsec:design_goals}
-
-The universe is made of repeating structures that can be found on all scales, from the nature of galaxies down to molecular micro-patterns. Equally ubiquitous are repetitive structures visible to the human eye. Such patterns range from natural appearances, like stone or wood textures, to highly stylized and abstracted designs, such as ornaments. Artists throughout all cultures and times have used creative patterning and ornaments to embellish the world around them. 
-
-On the one hand, creative pattern generation includes repetitive and ordered structures that are often considered as \textit{textures}, thus demanding automatic and procedural creation. On the other hand, creative pattern generation might also include a global layout, adapting to the space they are filling. Furthermore, this type of patterns might include visual hierarchies and highlights that are singularly placed with creative intent. With that creative pattern generation is an interesting testing ground for addressing the delicate balance between giving artists as much control as is needed without burdening them with unwanted details.
+In regard to design features, on the one hand, creative pattern generation includes repetitive and ordered structures that are often considered as \textit{textures}, thus demanding automatic and procedural creation. On the other hand, creative pattern generation might also include a global layout, adapting to the space they are filling. Furthermore, this type of patterns might include visual hierarchies and highlights that are singularly placed with creative intent. 
+% With that creative pattern generation is an interesting testing ground for addressing the delicate balance between giving artists as much control as is needed without burdening them with unwanted details.
 
 Specifically, we categorize the analysis of the state of the art in \Cref{sec:analysis} on the following potential design features for creative pattern generation:
 
-% TODO: Add graphic for each category
+% TODO: Add graphic for each category?
 
 \begin{itemize}
     \item Distribution and Repetition
@@ -25,16 +21,16 @@ Specifically, we categorize the analysis of the state of the art in \Cref{sec:an
     \item Single Accents
 \end{itemize}
 
-Ornamentation constitutes an illustrative example of a creative pattern generation task and includes all of the above design features. Even though this survey investigates a more general design space, in the following we are briefly summarizing the specific design goal of ornamentation for a better understanding overall. Ornamentation brings many design aspects of creative pattern generation together and triggers challenging questions. 
+For these features, ornamentation constitutes an illustrative example of a creative pattern generation task and includes all of the above visual characteristics. Even though this survey investigates a more general design space, in the following we are briefly summarizing the specific design goal of ornamentation for a better understanding overall. 
 
-\subsubsection{Ornamentation}
+\subsection{Ornamentation}
 \label{subsubsec:ornamentation}
 
-% For a better understanding of the required design principles, we define ornamentation as aspired design goal, derive design principles from that goal and investigate techniques towards that goal.
-
-% \question[inline]{Should the following description of ornaments be shortened?}
-
-The Oxford English Dictionary~\cite{oed_2017} defines ornaments as nonessential accessories intended to adorn. There is no functionality to an ornament other than to beautify a manufactured article without changing its shape or character~\cite{ward_1896_tpo}. The term ornament can be found in a large variety of contexts, such as in architecture, music or poetry, but this work only refers to two-dimensional visual ornaments. While ornaments may carry symbolic meanings in the arranged elements \cite{wornum_1896_aof}, this work does not include semantics but focuses on visual qualities. Different cultures and times resulted in various ornamental styles, with great differences in the details as \Cref{fig:historic_examples} shows. Nevertheless common underlying design principles for ornamentation can be identified.
+% The Oxford English Dictionary~\cite{oed_2017} defines ornaments as nonessential accessories intended to adorn.
+There is no functionality to an ornament other than to beautify a manufactured article without changing its shape or character~\cite{ward_1896_tpo}.
+% The term ornament can be found in a large variety of contexts, such as in architecture, music or poetry, but this work only refers to two-dimensional visual ornaments. 
+% While ornaments may carry symbolic meanings in the arranged elements \cite{wornum_1896_aof}, this work does not include semantics but focuses on visual qualities. 
+Different cultures and times resulted in various ornamental styles, with great differences in the details as \Cref{fig:historic_examples} shows. Nevertheless common underlying design principles for ornamentation can be identified.
 
 \begin{figure}
     % \centering
@@ -64,7 +60,10 @@ Contrasts and accents are crucial for the visual appeal of an ornament~\cite{won
 
 \Cref{fig:ornamentation_principles} gives an example of how the described design principles are combine seamlessly into a coherent design.
 
-As \citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo} state, it takes artistic expertise to balance the contrast between carefully chosen visual accents and to create a sense of order by applying compositional rules and by complementing the space. However, the authors explain, it is exactly this combination of qualities - rule-based composition and repetition on the one hand and the placement of visual accents and the breaking free from order on the other - that make creative pattern generation an interesting but highly challenging field of algorithmic research in the context of computer graphics.
+% As \citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo} state, it takes artistic expertise to balance the contrast between carefully 
+
+As we have stated in previous work~\cite{gieseke_2017_ooo}, it takes artistic expertise to balance the contrast between carefully chosen visual accents and to create a sense of order by applying compositional rules and by complementing the space. However, it is exactly this combination of qualities - rule-based composition and repetition on the one hand and the placement of visual accents and the breaking free from order on the other.
+% - that make creative pattern generation an interesting but highly challenging field of algorithmic research in the context of computer graphics.
 
 
 \begin{figure}
@@ -73,22 +72,7 @@ As \citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo} state, it takes artist
        \bb{I replaced it with JPG for faster compilation. Replace with PNG for the submission.}        \caption[Ornamentation principles]{\label{fig:ornamentation_principles} Exemplary dissection of visual characteristics fulfilling ornamental principles. Single features often support several principles, as, for example, the frames and borders create a hierarchical composition, an adaption to the space the ornament fills and visual contrasts. Image source: \bb{Use cite. This may change} [11]}
 \end{figure}
 
-\subsection{Summary}
-\label{subsec:design_summary}
+% \subsection{Summary}
+% \label{subsec:design_summary}
 
-Creative pattern generation differentiates itself from homogeneous pattern creation by including aspects such as distribution and repetition, curves, lines and sketches, frames and hierarchies, connections, branches and directionality, and single accents. Creative pattern generation exemplifies the common challenge of enabling control for tasks for which humans are indispensable in combination with the automation of tedious manufacturing and the computation of structuring rules. With that it is a representative design goal to aspire to for a general investigation of creative control mechanisms.
-
-
-
-% \subsubsection{Summary}
-% \label{subsec:ornamentation_summary}
-
-% \label{sum:ornamentation}
-% \textit{Ornamentation}
-%     \begin{itemize}
-%     \item Perception of order
-%     \item Hierarchical compositions
-%     \item Adaptation to the space
-%     \item Contrasts and visual accents
-%     \end{itemize}
-
+% Creative pattern generation differentiates itself from homogeneous pattern creation by including aspects such as distribution and repetition, curves, lines and sketches, frames and hierarchies, connections, branches and directionality, and single accents. Creative pattern generation exemplifies the common challenge of enabling control for tasks for which humans are indispensable in combination with the automation of tedious manufacturing and the computation of structuring rules. With that it is a representative design goal to aspire to for a general investigation of creative control mechanisms.

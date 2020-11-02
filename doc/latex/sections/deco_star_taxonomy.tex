@@ -4,9 +4,8 @@
 %-------------------------------------------------------------------------
 %-------------------------------------------------------------------------
 \section{Taxonomy of Control Mechanisms}\label{sec:taxo_control_mechanism}
-It is difficult to derive the discussion of creative means directly from the related work, as its authors have followed various motivations independently while emphasizing different aspects when describing their work and results. To classify the work in an objective and unified manner, we analyze the actual presented control mechanisms and relate them to general characteristics of control with digital creation tools. Based on this analysis, we then investigate the creative means. Thus, while the classification of the control mechanisms can be directly taken from the authors' descriptions (\Cref{sec:analysis}), the following discussion of the creative means has an interpretative nature to it. 
 
-Below we lay the groundwork for our later evaluation of control mechanisms of the state of the art. As guide for our review of references, we first dissect a creation process into overall control characteristics and classify specific control mechanisms by their interaction types. The following taxonomy shows the capabilities of the different control mechanisms and potential trade-offs between approaches.  
+The following taxonomy lays groundwork for our later evaluation of control mechanisms of the state of the art. It is difficult to derive the discussion of creative means directly from the related work, as its authors have followed various motivations and have emphasized different aspects when describing their work and results. To classify the work in an objective and unified manner, we analyze general characteristics of control with digital creation tools and relate the actual presented control mechanisms to them. Based on this analysis, we review the related work in~\Cref{sec:analysis}.
 
 \newcommand{\controlParamsFigWidth}{0.9}
 
@@ -16,75 +15,76 @@ A creation process can be described by answering the questions of \textit{how}, 
 
 \noindent\textbf{How (User Interaction)} is a control executed or an input given by an artist? How far is it from the visual result on the canvas? 
 
-\textit{File}: The control is externally given, such as with code or a configuration file.
-
-\textit{UI}: A separate UI is given through which an artist gives input and activates states. User interfaces are often in close proximity to the canvas, carefully designed and easily usable. However, because they detach the work from the actual output, UIs have an abstract nature. An artist must actively translate the interaction with the UI to the resulting output on the canvas.
-
-\textit{On canvas}: Controls are executed directly on the output canvas. Most of these controls require an activation or selection of a tool in a separate UI, such as selecting a pen for drawing on a canvas. 
-% In this case we consider the pen primarily as a control mechanism. 
-There are cases where controls cannot clearly be classified as either UI or on canvas. A pen, for example, can have different characteristics that an artist needs to set in the UI. The adjustment of settings should be as seamlessly integrated into an on-canvas tool as possible (\eg~with selection choices appearing as tool tips). 
-
-\begin{figure}[hbt]
+\begin{figure}[H]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/how.pdf}
-    \caption{How is input given?}
+    % \caption{How is input given?}
 \end{figure}
 
-\legie{The figures are meant to visualize the input characteristics for a more intuitive understanding (e.g. as a system diagram would do). I do agree that they do not add that much in terms of understanding. But I have a hard time kicking them out. They do underline what we are talking about nicely e.g. for someone who is just skimming the paper. But if you think they must go, then ok. Of course, if we keep them, they need to be placed under their respective sections.}
-\legie{I took out the figure captions because I thought it became clear that they are a visualization of their respective texts and without the caption the text is more dense and flows better. If no captions is too strong of a no-go for an academic publication, we can add them.}
-\bb{Sincerely, I do not understand the images. I understand the text, but not the images. Maybe ask others for their feedback?}
+\begin{itemize}
+    \item \textit{File}: The control is externally given, such as with code or a configuration file.
+    \item \textit{UI}: A separate UI is given through which an artist gives input and activates states. User interfaces are often in close proximity to the canvas, carefully designed and easily usable. However, because they detach the work from the actual output, UIs have an abstract nature. An artist must actively translate the interaction with the UI to the resulting output on the canvas.
+    \item \textit{On canvas}: Controls are executed directly on the output canvas. Most of these controls require an activation or selection of a tool in a separate UI, such as selecting a pen for drawing on a canvas. 
+    % In this case we consider the pen primarily as a control mechanism. 
+    There are cases where controls cannot clearly be classified as either UI or on canvas. A pen, for example, can have different characteristics that an artist needs to set in the UI. The adjustment of settings should be as seamlessly integrated into an on-canvas tool as possible (\eg~with selection choices appearing as tool tips). 
+\end{itemize}
+
+
+
+
+
+
+% \legie{The figures are meant to visualize the input characteristics for a more intuitive understanding (e.g. as a system diagram would do). I do agree that they do not add that much in terms of understanding. But I have a hard time kicking them out. They do underline what we are talking about nicely e.g. for someone who is just skimming the paper. But if you think they must go, then ok. Of course, if we keep them, they need to be placed under their respective sections.}
+% \legie{I took out the figure captions because I thought it became clear that they are a visualization of their respective texts and without the caption the text is more dense and flows better. If no captions is too strong of a no-go for an academic publication, we can add them.}
+% \bb{Sincerely, I do not understand the images. I understand the text, but not the images. Maybe ask others for their feedback?}
 
 
 \noindent\textbf{What (Content)} does an artist give as input? What is the level of abstraction of the content that an artist works with?
 
-\textit{Code}: Input is a syntactically structured and formal language.
-
-\textit{Value}: The input is a single value, chosen from a range - for example, with a slider.
-
-\textit{Intermediate}: The input is visual but still of an abstract nature, such as controlling sketches for a mask or arrows for directionality. Artists still have to interpret how these inputs affect the result.
-
-\textit{Element}: The input constitutes a component of the resulting pattern.
-
 \begin{figure}[H]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/what.pdf}
-        \caption{What does an artist give as input?}
+        % \caption{What does an artist give as input?}
 \end{figure}
 
-\noindent\textbf{Where (Canvas)} has the input an effect spatially and what is the area of influence? The input can have \textit{global}, \textit{regional}, e.g., on a drawn curve or \textit{local}, e.g. on one specific element,  influence.
-% \textit{Global}: The input has global influence (e.g., by filling the whole space or by adjusting all elements on the canvas).
-% \textit{Region}: The input has an effect in a region of the canvas (e.g., on a drawn curve).
-% \textit{Local}: The input has an effect on one specific element.
+\begin{itemize}
+    \item \textit{Code}: Input is a syntactically structured and formal language.
+    \item \textit{Value}: The input is a single value, chosen from a range - for example, with a slider.
+    \item \textit{Intermediate}: The input is visual but still of an abstract nature, such as controlling sketches for a mask or arrows for directionality. Artists still have to interpret how these inputs affect the result.
+    \item \textit{Element}: The input constitutes a component of the resulting pattern.
+\end{itemize}
+
+\noindent\textbf{Where (Canvas)} has the input an effect spatially and what is the area of influence? 
 \begin{figure}[hbt]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/where.pdf}
-        \caption{Where does the input have an effect?}
+        % \caption{Where does the input have an effect?}
 \end{figure}
+
+The input can have \textit{global}, \textit{regional}, e.g., on a drawn curve or \textit{local}, e.g. on one specific element, influence.
 
 
 % \noindent\textbf{When (Timeline)}
 % When can input be given and at what time in the creation process is the control executed?
 
-\textbf{When (Timeline)} is the input given and at what time in the creation process is the control executed? Input can be given \textit{before}, \textit{during} the creation process, when parts of the results are already visible e.g. with a painting mechanism, or \textit{after} the creation process. The result is visible to the artist and can be adjusted retrospectively.
+\textbf{When (Timeline)} is the input given and at what time in the creation process is the control executed? 
 \begin{figure}[H]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/when.pdf}
-        \caption{When is the input given?}
+        % \caption{When is the input given?}
 \end{figure}
-% \textit{Before}: Input is given before the actual creation process.
 
-% \textit{During}: Input is given during the creation process, when parts of the results are already visible. This is typically a painting mechanism. However, some processes can also be paused and adjusted.
+Input can be given \textit{before}, \textit{during} the creation process, when parts of the results are already visible e.g. with a painting mechanism, or \textit{after} the creation process. The result is visible to the artist and can be adjusted retrospectively.
 
-% \textit{After}: Input is given after the creation process. The result is visible to the artist and can be adjusted retrospectively.
 
-\noindent\textbf{Who (User)} can give the input in regard to the type of skill set needed? This category can be in part derived from the above characteristics of \textit{how} and \textit{what}. In most general terms this category can be classified the skill set of a \textit{Programmer}, for giving, e.g. code as input, requiring analytical-formal and logical thinking and the ability to abstract. On the other end of the spectrum, the skill set of an \textit{Artist} is needed, e.g. for drawing, requiring intuitive-visual and spatial thinking and the ability to create.
-
-\begin{figure}[hbt]
+\noindent\textbf{Who (User)} can give the input in regard to the type of skill set needed? 
+\begin{figure}[H]
     \centering
         \includegraphics[width=\controlParamsFigWidth\linewidth]{figures/control_paradigms/who.pdf}
-        \caption{Who can give the input? Which skill set is needed?}
+        % \caption{Who can give the input? Which skill set is needed?}
 \end{figure}
 
+This category can be in part derived from the above characteristics of \textit{how} and \textit{what}. In most general terms this category can be classified the skill set of a \textit{Programmer}, for giving, e.g. code as input, requiring analytical-formal and logical thinking and the ability to abstract. On the other end of the spectrum, the skill set of an \textit{Artist} is needed, e.g. for drawing, requiring intuitive-visual and spatial thinking and the ability to create.
 The who category is listed here for completeness. However, to answer questions of needed competencies, skill- and mindsets, including the accompanying psychological and artistic aspects, is out of the scope of this survey.
 % and requires knowledge in fields other than computer science. The following discussions are rooted in computer graphics research and aim for an assessment of algorithmic controllability. Hence, the classification of who specifically is most suitable to use a tool, is put aside.
 
@@ -93,76 +93,61 @@ The who category is listed here for completeness. However, to answer questions o
 \label{subsec:taxo_control_mechanism}
 
 \bb{To self - go on here}
-For a meaningful analysis, the above classification must be further broken down into the specific control mechanisms. 
-% These are described for each technique by the authors of that publication. 
-% For the assessment of a mechanism, the \textit{how}, \textit{what}, \textit{where} and \textit{when} are interdependent, as Table~\ref{table:taxo_controlmechanism} indicates and what is further discussed in .
 
-The following low-level characteristics categorize input modes and how they are used. These characteristics are in the analysis of the state of the art then specified for each reference (see Table~\ref{table:analysis}). Because this survey focuses on interfacing algorithms, UI specifics, such as the layout of buttons, are not considered. Once the specific control mechanisms are analyzed, they constitute a method in combination with the above control paradigms.
-
-\bb{I would do the same as above wit the subsections here. I would use textbf. It will save a lot of space.}
-\subsubsection{Initialization}
-\textit{System Configuration}: Required overall setup of the system, such as computing caches or training a model. This is usually a one-time investment.
-
-\textit{Task Initialization}: A non-creative task that has to be executed each time in order to produce an output, such as selecting the specific optimization algorithm.
+Next to the above overall relevant factors for an artist when using digital tools, we now classify the control mechanisms as they are described in the state of the art. These low-level mechanisms define what an artist can (or has to) work with and are specified for each reference in Table~\ref{table:analysis}. Because this survey focuses on interfacing algorithms, UI specifics, such as the layout of buttons, are not considered. For each mechanism we summarize the \textit{how}, \textit{what}, \textit{where} and \textit{when} characteristics over all reviewed publications and with that show the connections and capabilities of the different control mechanisms and potential trade-offs between approaches in Table~\ref{table:taxo_controlmechanism}.
 
 
+\noindent\textbf{Initialization}
 
-\subsubsection{Exemplars}
+\begin{itemize}
+    \item \textit{System Configuration}: Required overall setup of the system, such as computing caches or training a model. This is usually a one-time investment.
+    \item \textit{Task Initialization}: A non-creative task that has to be executed each time in order to produce an output, such as selecting the specific optimization algorithm.
+\end{itemize}
 
+\noindent\textbf{Exemplars}
 
-\textit{Image}: An example image that should be matched in its entirety. Examples are usually pixel data.
+\begin{itemize}
+    \item \textit{Image}: An example image that should be matched in its entirety. Examples are usually pixel data.
+    \item \textit{Element Arrangement}: An example element arrangement that should be matched in its entirety. Elements are usually separate shapes and might carry additional data.
+    \item \textit{Element}: One specific, individual, asset that becomes in the result part of a whole. Elements can be shapes or pixel data.
+\end{itemize}
 
-\textit{Element Arrangement}: An example element arrangement that should be matched in its entirety. Elements are usually separate shapes and might carry additional data.
+\noindent\textbf{Parameterization}
 
-\textit{Element}: One specific, individual, asset that becomes in the result part of a whole. Elements can be shapes or pixel data.
+\begin{itemize}
+    \item \textit{Visual Output}: Parameters that can adjust visual features directly in the output.
+    \item \textit{System/Generation}: Parameters that influence the output indirectly, such as parameters for an optimization algorithm or constraints.
+\end{itemize}
 
+\noindent\textbf{Handling}
 
-\subsubsection{Parameterization}
+\begin{itemize}
+    \item \textit{Visualization}: Any type of visual interface that goes beyond the standard UI elements, such as sliders and buttons.
+    \item \textit{Image-Based}: Images as indirect control input, such as pixel data masks.
+    \item \textit{Sketch-Based}: Sketches and curves directly put on the canvas - for example, the drawing of a mask with a pen tool.
+\end{itemize}
 
+\noindent\textbf{Filling}
 
-\textit{Visual Output}: Parameters that can adjust visual features directly in the output.
+\begin{itemize}
+    \item \textit{Shapes}: A space to fill (e.g., a specific shape).
+    \item \textit{Masking}: Areas within the shape to fill that should remain unaffected.
+    \item \textit{Curves to Fill}: A one-dimensional curve or path to be filled. The curve is given as a whole before the filling starts.
+\end{itemize}
 
-\textit{System/Generation}: Parameters that influence the output indirectly, such as parameters for an optimization algorithm or constraints.
+\noindent\textbf{Guiding}
 
+\begin{itemize}
+    \item \textit{Brushing/Strokes to Follow}: A curve, usually created by mouse movements or with a stylus pen, that is filled with output elements while the curve is generated - often understood as brushing.
+    \item \textit{Directions}: Visual elements such as intermediate curves, arrows or output components that define directions for the design to follow (e.g., with an underlying vector field).
+\end{itemize}
 
-\subsubsection{Handling}
+\noindent\textbf{Placing}
 
-
-\textit{Visualization}: Any type of visual interface that goes beyond the standard UI elements, such as sliders and buttons.
-
-\textit{Image-Based}: Images as indirect control input, such as pixel data masks.
-
-\textit{Sketch-Based}: Sketches and curves directly put on the canvas - for example, the drawing of a mask with a pen tool.
-
-
-\subsubsection{Filling}
-
-
-\textit{Shapes}: A space to fill (e.g., a specific shape).
-
-\textit{Masking}: Areas within the shape to fill that should remain unaffected.
-
-\textit{Curves to Fill}: A one-dimensional curve or path to be filled. The curve is given as a whole before the filling starts.
-
-
-\subsubsection{Guiding}
-
-
-\textit{Painting/Strokes to Follow}: A curve, usually created by mouse movements or with a stylus pen, that is filled with output elements while the curve is generated - often understood as brushing.
-
-\textit{Directions}: Visual elements such as intermediate curves, arrows or output components that define directions for the design to follow (e.g., with an underlying vector field).
-
-
-\subsubsection{Placing}
-
-
-\textit{Element Placement}: The direct placement of components on the canvas as part of the final result.
-
-\textit{Element Drag \& Drop}: Drag and drop of components on the canvas within the existing result.
-
-
-\subsubsection{Control Stages of the Mechanisms}
-\label{subsec:taxo_control_stages}
+\begin{itemize}
+    \item \textit{Element Placement}: The direct placement of components on the canvas as part of the final result.
+    \item \textit{Element Drag \& Drop}: Drag and drop of components on the canvas within the existing result.
+\end{itemize}
 
 
 % TABLE
@@ -173,6 +158,7 @@ The following low-level characteristics categorize input modes and how they are 
     \centering
     \includegraphics[width=\linewidth]{tables/table_controlmechanism.png}
     \caption{Prevalence of control mechanisms in literature... \bb{Should this be in results? We analyze papers that we have not introduced yet...}}
+    \label{table:taxo_controlmechanism}
 \end{table}
 
 
@@ -181,14 +167,7 @@ For interrelating the control mechanisms to the control characteristics, we cons
 
 \todo[inline]{Update Table.}
 
-Table~\ref{table:taxo_controlmechanism} shows that global, hence automatic, control is usually enabled through intermediate representations, such as an example image, while on the other end of the spectrum, the placement of elements as part of the actual output is local, and automation is lost.
+Table~\ref{table:taxo_controlmechanism} shows that global, hence automatic, control is usually enabled through intermediate representations, such as an example image, while on the other end of the spectrum, the placement of elements as part of the actual output is local, and automation is lost. Parameterization and the different types of handling also require abstracted input from an artist, such as the use of a slider. Sketch-based controls, such as an eraser, move the interaction onto the canvas and can make small-scale adjustments. The definition of a space or a curve to fill and masking areas is also usually done directly on the canvas but only influence the output indirectly. A brushing mechanism simultaneously creates the output directly on the canvas but can only do so in a limited region depending on the brush size. All other inputs are typically given before or after the generation of the output.
 
-Parameterization and the different types of handling also require abstracted input from an artist, such as the use of a slider. Sketch-based controls, such as an eraser, move the interaction onto the canvas and can make small-scale adjustments. The definition of a space or a curve to fill and masking areas is also usually done directly on the canvas but only influence the output indirectly.
-
-A painting mechanism simultaneously creates the output directly on the canvas but can only do so in a limited region depending on the brush size. All other inputs are typically given before or after the generation of the output.
-
-\subsection{Summary}
-\label{subsec:taxonomy_summary}
-
-This classification underlines that a focus on one control type, as is usual in computer graphics research, leads to the common trade-off between global automation and local manual manufacturing. In order to support creative work, control mechanisms need to be combined in a novel and unified manner.
+This classification underlines that a focus on one control type, as is usual in computer graphics research, leads to the common trade-off between global automation and local manual manufacturing.
 
