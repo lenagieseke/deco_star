@@ -1,0 +1,190 @@
+% ---------------------------------------------------------------------------
+% Author guideline and sample document for EG publication using LaTeX2e input
+% D.Fellner, v1.15, Dec 14, 2018
+
+\documentclass{egpubl}
+\usepackage{eg2021}
+
+% --- for  Annual CONFERENCE
+% \ConferenceSubmission   % uncomment for Conference submission
+% \ConferencePaper        % uncomment for (final) Conference Paper
+\STAR                   % uncomment for STAR contribution
+% \Tutorial               % uncomment for Tutorial contribution
+% \ShortPresentation      % uncomment for (final) Short Conference Presentation
+% \Areas                  % uncomment for Areas contribution
+% \MedicalPrize           % uncomment for Medical Prize contribution
+% \Education              % uncomment for Education contribution
+% \Poster                 % uncomment for Poster contribution
+% \DC                     % uncomment for Doctoral Consortium
+%
+% --- for  CGF Journal
+% \JournalSubmission    % uncomment for submission to Computer Graphics Forum
+% \JournalPaper         % uncomment for final version of Journal Paper
+%
+% --- for  CGF Journal: special issue
+% \SpecialIssueSubmission    % uncomment for submission to , special issue
+% \SpecialIssuePaper         % uncomment for final version of Computer Graphics Forum, special issue
+%                          % EuroVis, SGP, Rendering, PG
+% --- for  EG Workshop Proceedings
+% \WsSubmission      % uncomment for submission to EG Workshop
+% \WsPaper           % uncomment for final version of EG Workshop contribution
+% \WsSubmissionJoint % for joint events, for example ICAT-EGVE
+% \WsPaperJoint      % for joint events, for example ICAT-EGVE
+% \Expressive        % for SBIM, CAe, NPAR
+% \DigitalHeritagePaper
+% \PaperL2P          % for events EG only asks for License to Publish
+
+% --- for EuroVis 
+% for full papers use \SpecialIssuePaper
+% \STAREurovis   % for EuroVis additional material 
+% \EuroVisPoster % for EuroVis additional material 
+% \EuroVisShort  % for EuroVis additional material
+
+% !! *please* don't change anything above
+% !! unless you REALLY know what you are doing
+% ------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{dfadobe}  
+
+% \usepackage{cite}  % comment out for biblatex with backend=biber
+% ---------------------------
+\biberVersion
+\BibtexOrBiblatex
+\usepackage[backend=biber,bibstyle=EG,citestyle=alphabetic,backref=true]{biblatex} 
+\addbibresource{deco_star.bib}
+
+% ---------------------------  
+\electronicVersion
+\PrintedOrElectronic
+% for including postscript figures
+% mind: package option 'draft' will replace PS figure by a filename within a frame
+\ifpdf \usepackage[pdftex]{graphicx} \pdfcompresslevel=9
+\else \usepackage[dvips]{graphicx} \fi
+
+\usepackage{egweblnk} 
+% end of prologue
+
+
+%BBs
+% \input{doc/latex/sections/macros}
+\input{./sections/macros.tex}
+
+%-------------------------------------------------------------------------
+% Lenas:
+\usepackage{xcolor}
+\usepackage{deco_star}
+\usepackage[colorinlistoftodos]{todonotes}
+% \usepackage{todonotes} 
+\usepackage{cleveref}
+\usepackage{import}
+\usepackage{float} 
+
+\usepackage{tabu}
+\usepackage{rotating}%Ro­ta­tion tools, in­clud­ing ro­tated full-page floats
+\usepackage{multirow}%Create tab­u­lar cells span­ning mul­ti­ple rows
+\usepackage{makecell}
+
+% Rotate text 90 degree in a tabu table
+\newcommand{\sidy}[1]{\begin{sideways}{#1}\end{sideways}}
+% Insert a line break inside a table cell
+\newcommand{\newl}[2]{\vtop{\hbox{\strut {#1}}\hbox{\strut {#2}}}}
+
+\usepackage{yFlatTable}
+
+
+
+
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+% PAPER
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+%BB: use this to find wrong unicode characters
+%\DeclareUnicodeCharacter{0301}{XXXXXXX}
+
+
+% ---------------------------------------------------------------------
+% EG author guidelines plus sample file for EG publication using LaTeX2e input
+% D.Fellner, v2.03, Dec 14, 2018
+
+
+% \title[A Survey of Creative Pattern Generation]%
+%       {WT: A Survey of Creative Pattern Generation}
+\title[A Survey of Control Mechanisms for Creative Pattern Generation]%
+      {A Survey of Control Mechanisms for Creative Pattern Generation}
+
+% for anonymous conference submission please enter your SUBMISSION ID
+% instead of the author's name (and leave the affiliation blank) !!
+% for final version: please provide your *own* ORCID in the brackets following \orcid; see https://orcid.org/ for more details.
+\author[L. Gieseke, P. Asente, R. Mech, B. Benes, M. Fuchs]
+{\parbox{\textwidth}{\centering Lena Gieseke$^{1}$, Paul Asente$^{2}$, Radom\'{\i}r M\v{e}ch$^{2}$, Bedrich Benes$^{3}$, and Martin Fuchs$^{4}$}
+        \\
+% {\parbox{\textwidth}{\centering Name$^{1,2}$\orcid{0000-0001-7756-0901}
+%         and Name$^{2}$\orcid{0000-0001-5923-423X} 
+% %        S. Spencer$^2$\thanks{Chairman Siggraph Publications Board}
+%         }
+%         \\
+% For Computer Graphics Forum: Please use the abbreviation of your first name.
+{\parbox{\textwidth}{\centering $^1$Film University Babelsberg Konrad Wolf,\\
+         $^2$Adobe Research,\\
+         $^3$Purdue University,\\
+         $^4$Stuttgart Media University
+       }
+}
+}
+% ------------------------------------------------------------------------
+
+% if the Editors-in-Chief have given you the data, you may uncomment
+% the following five lines and insert it here
+%
+% \volume{36}   % the volume in which the issue will be published;
+% \issue{1}     % the issue number of the publication
+% \pStartPage{1}      % set starting page
+
+
+%-------------------------------------------------------------------------
+\begin{document}
+\onecolumn
+% uncomment for using teaser
+% \teaser{
+%  \includegraphics[width=\linewidth]{eg_new}
+%  \centering
+%   \caption{New EG Logo}
+% \label{fig:teaser}
+% }
+
+\maketitle
+%-------------------------------------------------------------------------
+
+
+\section*{Biographies of the Authors}
+
+\paragraph*{Lena Gieseke} is professor of Visual Media Technologies and Technical Direction at Film University Babelsberg Konrad Wolf. Her current research areas are media design and artist-friendly interaction mechanisms. She received her PhD from the University of Stuttgart, working on procedural image representations. 
+
+\paragraph*{Paul Asente} is a Senior Principal Scientist with Adobe Research. His main research areas are 2D design, HCI, and Augmented Reality. He received his A.B. in mathematics from Dartmouth College in 1979 and his Ph.D. in computer science from Stanford University in 1987. In the distant past he was a major contributor to the X Window System and has contributed to many Adobe products including Illustrator, Photoshop, After Effects, and Character Animator.
+
+\paragraph*{Radom\'{\i}r M\v{e}ch}  received his Ph.D. from University of Calgary in Canada, working on procedural modeling of plants and trees. {Radom\'{\i}r} now heads the Procedural Imaging Group at Adobe Research. The group's research covers areas of 2D and 3D design, inverse modeling, and HCI. His areas of research are modeling and imaging algorithms, with a particular focus on user interaction with procedural models, and ease of modeling in general.
+
+\paragraph*{Bedrich Benes} is George McNelly professor of Technology and professor of Computer Science at Purdue University. His research area is in procedural and inverse procedural modeling and simulation of natural phenomena, and he has published over 150 research papers in the field.
+
+
+\paragraph*{Martin Fuchs}  holds a PhD from Saarland University (2008) for his research on image-space relighting techniques at the Max-Planck-Institute for Informatics. His postdoctoral research took place at Princeton University, where he worked on appearance fabrication and began his work on unconventional light field imaging methods. During his junior professor phase at the University of Stuttgart (2011 - 2016), his research interests extended beyond computational photography to encompass procedural texturing and ornamentation. Since 2016, he is professor for the computer science of Interactive Systems / Games at Hochschule der Medien, Stuttgart, where he became co-director of the Institute for Games.
+
+
+
+%-------------------------------------------------------------------------
+% bibtex
+% \bibliographystyle{eg-alpha-doi} 
+% \bibliography{deco_star}       
+
+% biblatex with biber
+
+
+
+\printbibliography
+%-------------------------------------------------------------------------
+
+\end{document}
+
