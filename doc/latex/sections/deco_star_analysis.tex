@@ -6,7 +6,7 @@
 
 The following survey contributes with an analysis of control mechanisms in the state of the art for creative pattern generation from the perspective of an artist. Techniques are investigated as a whole, from required configuration input, over creative tasks, to performance times. The analysis of the control mechanisms is directly taken from the authors' descriptions. 
 
-Publications are clustered by the design features (~\Cref{sec:design}), hence by what they can create. Within those areas it is investigated how an artist can create such designs and control mechanisms clustered for each design feature. If a reference belongs to several design categories, it is discussed in detail in the most fitting area and then briefly referenced in all other applicable areas. Techniques are considered procedural if not indicated otherwise. Only work that goes beyond automatically filling a space, are included in the summarizing Table~\ref{table:analysis}.
+Publications are clustered by the design features (~\Cref{sec:design}), hence by what they can create. Within those areas it is investigated how an artist can create such designs and control mechanisms clustered for each design feature. If a reference belongs to several design categories, it is discussed in detail in the most fitting area and then briefly referenced in all other applicable areas. Techniques are considered procedural if not indicated otherwise. Only work that goes beyond automatically filling a space, is included in the summarizing Table~\ref{table:analysis}.
 
 % TODO: What to do about it in the table?
 
@@ -68,7 +68,7 @@ generates textures based on input exemplars and gives an artist the option for m
 
 \citeauthor*{tu_2020_cct}~\cite{tu_2020_cct} synthesize continuous curve patterns from exemplars made of Bezier-curves, focusing not only on the position of detached elements but also on their connectivity. Hence, the authors enable the matching of continuos structures and the design features of repetition, curves, frames and connectivity. The authors report on matching times 160s depending on the sampling density. The technique samples the input and creates a graph-based representation from it based on an optimization process. The example-based generation process is supported by various artist controllable interactions through out the creation process. An artist can also draw the example directly on the canvas from scratch . After the filling of the drawn space, the artist can edit the pattern with the deletion and re-filling of certain areas or used copy and paste from other areas. Connections are re-computed and also can be manually created by setting the control points for the curves.
 
-In 3D but similar in spirit to what this survey investigates, \citeauthor*{zehnder_2016_dso}~\cite{zehnder_2016_dso} provide artists with a tool to directly assemble structurally sound curve networks on a three-dimensional surface. The components of the network are spline curves defined by the artist. Components can be placed manually or are repeated semi-automatically. The curves can be moved on the surface while having an elastic quality to them, which seems to be a quite enganging task. To prevent structural weaknesses, the system indicates problematic areas and suggests improvements, seamlessly combining the design task with engineering requirements.
+In 3D but similar in spirit to what this survey investigates, \citeauthor*{zehnder_2016_dso}~\cite{zehnder_2016_dso} provide artists with a tool to directly assemble structurally sound curve networks on a three-dimensional surface. The components of the network are spline curves defined by the artist. Components can be placed manually or are repeated semi-automatically. The curves can be moved on the surface while having an elastic quality to them, which seems to be a quite enganging task. To prevent structural weaknesses, the system indicates problematic areas and suggests improvements, seamlessly combining the design task with engineering requirements. For filigrees, which are thinly structured repetitive patterns, \citeauthor*{chen_2016_sof}~\cite{chen_2016_sof} present a mainly data-driven approach. Their method automatically distributes and assembles a set of suitable independent input elements for which an up vector is specified into a pattern in both 2D and 3D. The authors implement an optimization of a packing problem under specific constraints, mechanically creating strengthened fillings. This method does not rely on an underlying procedural model, but it also processes control parameters for the filigree generation. Due to the nature of the optimizations, a randomization and a distortion ratio parameter are required input. Additionally a field of directional strokes can be drawn on the canvas, controlling element orientation and size. When multiple elements are combined into one common pattern, percentages for appearances of the elements can be given. The performance in two-dimensional space runs from 6 to 26 seconds.
 
 % \citeauthor*{derouet_2019_gsw}~\cite{derouet_2019_gsw} -> It is just a model?!
  
@@ -249,7 +249,7 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 \section{Discussion and Creative Means}
 \label{subsec:analysis_creative_means}
 
-% \subimport{tables/}{table_all}
+\subimport{tables/}{table_all}
 
 % TABLE
 % This is for overleaf a preview image as the table does not compile there...
@@ -258,11 +258,11 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
 % Can we spell out more of the heading? I find myself wondering what Hand. , Exemp. mean ..
 %  (Always put the label inside (or after?) the caption. Placed before, the reference will give the section number instead of the figure number)
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.9\textwidth]{tables/table_all.png}
-    \caption[Control mechanisms in the state of the art]{Recent techniques are sorted by design features. For each work it is analysed and indicated which specific control mechanisms they offer. *\cite{mech_2012_tdf} present a procedural modeling engine, which can be programmed to include almost any control type.\label{table:analysis}}
-\end{figure*}
+% \begin{figure*}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{tables/table_all.png}
+%     \caption[Control mechanisms in the state of the art]{Recent techniques are sorted by design features. For each work it is analysed and indicated which specific control mechanisms they offer. *\cite{mech_2012_tdf} present a procedural modeling engine, which can be programmed to include almost any control type.\label{table:analysis}}
+% \end{figure*}
 
 % Within the above design areas, control mechanisms are manifold and well distributed over all areas. Because of that, we start by briefly summarizing the most common control mechanisms and their role in creative pattern generation processes before turning to the state of the art.
 
