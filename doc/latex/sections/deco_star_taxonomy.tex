@@ -144,25 +144,3 @@ Next to the above overall relevant factors for an artist using digital tools, we
     \item \textit{Element Drag \& Drop}: Drag and drop of components on the canvas within the existing result.
 \end{itemize}
 
-
-% TABLE
-% This is for overaleaf a preview image as the table does not compile there...
-% \subimport{tables/}{table_controlmechanism}
-
-\begin{table}
-    \centering
-    \includegraphics[width=\linewidth]{tables/table_controlmechanism.png}
-    \caption{Prevalence of control mechanisms in literature... \bb{Should this be in results? We analyze papers that we have not introduced yet...}}
-    \label{table:taxo_controlmechanism}
-\end{table}
-
-
-
-For interrelating the control mechanisms to the control characteristics, we considered the publications that are investigated in \cref{sec:analysis}~\nameref{sec:analysis}. Due to the diversity of the underlying methods and the different design goals of the considered body of work, we believe this to be a representative summarization.
-
-\todo[inline]{Update Table.}
-
-Table~\ref{table:taxo_controlmechanism} shows that global, hence automatic, control is usually enabled through intermediate representations, such as an example image, while on the other end of the spectrum, the placement of elements as part of the actual output is local, and automation is lost. Parameterization and the different types of handling also require abstracted input from an artist, such as the use of a slider. Sketch-based controls, such as an eraser, move the interaction onto the canvas and can make small-scale adjustments. The definition of a space or a curve to fill and masking areas is also usually done directly on the canvas but only influence the output indirectly. A brushing mechanism simultaneously creates the output directly on the canvas but can only do so in a limited region depending on the brush size. All other inputs are typically given before or after the generation of the output.
-
-This classification underlines that a focus on one control type, as is usual in computer graphics research, leads to the common trade-off between global automation and local manual manufacturing.
-

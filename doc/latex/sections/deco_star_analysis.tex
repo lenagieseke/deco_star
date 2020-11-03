@@ -6,13 +6,9 @@
 
 The following survey contributes with an analysis of control mechanisms in the state of the art for creative pattern generation from the perspective of an artist. Techniques are investigated as a whole, from required configuration input, over creative tasks, to performance times. The analysis of the control mechanisms is directly taken from the authors' descriptions. 
 
-Publications are clustered by the design features (~\Cref{sec:design}), hence by what they can create. Within those areas it is investigated how an artist can create such designs and control mechanisms clustered for each design feature. If a reference belongs to several design categories, it is discussed in detail in the most fitting area and then briefly referenced in all other applicable areas. Techniques are considered procedural if not indicated otherwise. Only work that goes beyond automatically filling a space, is included in the summarizing Table~\ref{table:analysis}.
-
-% TODO: What to do about it in the table?
-
-% The most basic control requirement is to define an area to be filled. Methods that focus on the development of novel underlying pattern systems with no acknowledgment of control mechanisms, also need to define the space to fill and a relationship of the system to that space. Many approaches take the idea of simply outlining a space further and carefully design growth constraints, offer masking and the sketching of areas to be filled, thus leading to complex designs. 
-
-
+Publications are clustered by the design features (~\Cref{sec:design}), hence by what they can create. Within those areas it is investigated how an artist can create such designs and control mechanisms are clustered for each design feature. If a reference belongs to several design categories, it is discussed in detail in the most fitting area and then briefly referenced in all other applicable areas. Techniques are considered procedural if not indicated otherwise. As it is the nature of procedural generation to automatically fill a space upon execution, for all procedural systems the shapes category in Table~\ref{table:analysis} is counted even though this control might not be mentioned in a publication. 
+%TODO: Move this to table 1
+If a publication does not specify how the shape to be filled is provided, we count the control as code given by a file.
 
 \subsection{Distribution and Repetition}
 \label{subsec:analysis_distribution_and_repetition}
@@ -58,7 +54,7 @@ For brick and wood textures, the early work of \citeauthor*{lefebvre_2000_ass}~\
 \citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} allow for the whole procedural texture spectrum with their parameter retrieval technique. In so doing, they employ two types of similarity metrics, and two types of optimization strategies. As input, an artist needs to individually select the distance metric and optimization strategy for each fitting task. As initialization for the optimization, the authors propose "on the order of 200" pre-computed random choices to choose from. The authors report an average optimization time of 12 minutes, not specifying for how many parameters. \citeauthor*{gilet_2012_mkn}~\cite{gilet_2012_mkn} report more than an hour runtime. For such a search-based approach, the parameter count is highly influential on the performance for both visual quality and computation time. With a higher number of parameters the current form of the approach quickly becomes unfeasible. \citeauthor*{gieseke_2014_ipr}~\cite{gieseke_2014_ipr} build up on the work of \citeauthor*{bourque_2004_ptm}~\cite{bourque_2004_ptm} and interpret the parameter matching as retrieval task. Based on pre-computed caches and a perceptually motivated image metric, their technique achieves interactive performance for fitting a $256\times256$ exemplar. As a one time investment the caches for the textures have to be computed. An artist has to chose the texture model to be matched and give the exemplar. After the parameter fitting, the artist can further adjust the parameter values with a given interface. A similar approach offer \citeauthor*{hu_2019_anf}~\cite{hu_2019_anf} by training convolutional neural networks for the parameter retrieval and adding a style transfer step in the pixel domain to fit visual details. Next to given the input example, the user has to chose from four high level texture classes. With the pre-computed caches ready, the fitting is interactive, with performances around one second, depending on texture resolution and the style-transfer in the range of minutes.
 
 While focusing on stochastic pattern, the semi-procedural approach of \citeauthor*{guehl_2020_stu}~\cite{guehl_2020_stu} enables also irregular pattern and pattern combinations. The technique
-generates textures based on input exemplars and gives an artist the option for manual editing and database browsing to shape the output. At its core the system is based on a noise-by-example approach for which the authors define a novel parameterized Procedural Point Process Texture Basis Function. The appearance space of the noise can be explored with an interactive 2D map and the browsing of a database of preview images, which is a wide range of options for an artist. Data-driven details are smoothly combined with the noise and the user can adjust with different parameters. The system is interactive with reported synthesis times below one second.
+generates textures based on input exemplars and gives an artist the option for manual editing and database browsing to shape the output. At its core the system is based on a noise-by-example approach for which the authors define a novel parameterized Procedural Point Process Texture Basis Function. The appearance space of the noise can be explored with an interactive 2D map and the browsing of a database of preview images, which are unusual options example-based modeling. The interactive 2D map is visually abstract and not suitable for reaching a specific output quickly but helpful for exploring the design space. Data-driven details are smoothly combined with the noise and the user can adjust with different parameters. The system is interactive with reported synthesis times below one second.
 
 
 \subparagraph*{Data-Driven}
@@ -135,7 +131,7 @@ The technique of \citeauthor*{ma_2011_det}~\cite{ma_2011_det} is based on a samp
 % % In related fashion, \citeauthor*{chen_2019_mpc}~\cite{chen_2019_mpc} destribute ellipses along a boundary of a shape and optimize for structurally sound pattern collages along a boundary.
 
 
-\citeauthor*{landes_2013_asm}~\cite{landes_2013_asm} present an element distribution technique in 2D as well as 3D that improves on collision-free and anisotropic distributions by extending point based element placement to a shape-driven processes with spatial relationship measurements. Next to the exemplar, there are several user inputs possible, such as a gradient image for the distribution intensity and parameter for the fitting algorithm. Even though these can control quite a visual range, their communication is quite abstract. Performances range from seconds to several minutes depending on the complexity of the arrangement. 
+\citeauthor*{landes_2013_asm}~\cite{landes_2013_asm} present an element distribution technique in 2D as well as 3D that improves on collision-free and anisotropic distributions by extending point based element placement to a shape-driven processes with spatial relationship measurements. Next to the exemplar, there are several user inputs possible, such as a gradient image for the distribution intensity and parameter for the fitting algorithm. Even though these can control a visual range, their communication is quite abstract. Performances range from seconds to several minutes depending on the complexity of the arrangement. 
 % While most related techniques in 3D focus on world building with different design requirements than pattern generation, the 3D element distribution technique from 
 
 
@@ -224,7 +220,7 @@ While the above discussed work, such as~\cite{yu_2012_ans,xu_2009_mcc, merrell_2
 The already discussed work of \citeauthor*{gieseke_2017_ooo}~\cite{gieseke_2017_ooo} (\Cref{subsec:analysis_frames_and_hierarchies}) enables a sense of directionality by controlling the growth of a pattern through vector fields or the connectivity and with that the branching of elements through pre-given paths. Also, pattern align to the space they are filling by automatically avoiding obstacles by growing around them, implemented through a shortest-path finding approach. In regard to element arrangements (\Cref{para:analysis_element_arrangements_example}), \citeauthor*{ijiri_2008_aeb}~\cite{ijiri_2008_aeb} employ vector fields to define the overall growth direction and alignment of elements within an example-guided arrangement, enabling the design of directionality. Similarly creating a sense of flow, \citeauthor*{saputra_2017_ffo}~\cite{saputra_2017_ffo} optimize a flow-based ornamental packing of elements into a two-dimensional outline. Vector fields are further employed in various other specific procedural modeling contexts. For example for procedural street modeling~\cite{chen_2008_ips}, micrography~\cite{maharik_2011_dm} or botanical models~\cite{xu_2015_ptm}.
 
 \paragraph*{Example-based}
-\citeauthor*{guo_2020_ipm}~\cite{guo_2020_ipm} focus specifically on branching structures with an inverse modeling process for inferring generating L-Systems. The technique is robust and take a variety of input designs such as real-world images and hand-drawn sketches of the branching. The inverse modeling first detects in the input with convolutional neural networks eight possible branching structures and their transformations and represents them as a tree graph. From that the reproducing grammar is inferred through greedy optimization. Next to the exemplar, a user can input the length of the rules and the frequency of the repetition. Once the network is trained, the inference take a fraction of a second.
+\citeauthor*{guo_2020_ipm}~\cite{guo_2020_ipm} focus specifically on branching structures with an inverse modeling process for inferring generating L-Systems. The technique is robust and takes a variety of input designs such as real-world images ob objects and hand-drawn sketches of the branching. The inverse modeling first detects in the input with convolutional neural networks eight possible branching structures and their transformations and represents them as a tree graph. From that the reproducing grammar is inferred through greedy optimization. Next to the exemplar, a user can input the length of the rules and the frequency of the repetition. Once the network is trained, the inference take a fraction of a second.
 
 \paragraph*{Data-Driven}
 % Not in table.
@@ -240,14 +236,9 @@ By detecting symmetries and curvilinear element arrangements in a given vector p
 
 The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers suitable design variations of the vector pattern an artist is working on. An artist can select and continue with one of the offered alternatives. The system constantly re-selects from an exponential number of relevant variations based on the artist's modifications. The user interface is carefully laid out in order to offer design variations in an intuitive and efficient manner while at the same time not hindering an artist's own workflow. The authors thoroughly evaluate their system quantitatively and qualitatively - for example, with a user study. Overall, participants agreed on the usefulness of technique.
 
-
-
 % Also, there are procedural techniques that enable low-level control on the results themselves. But only in specific contexts such as architecture~\cite{lipp_2008_ive} and landscapes \citeauthor*{emilien_2015_wie}~\cite{emilien_2015_wie}, which do not translate to the context of ornamentation. 
 
 
-
-\section{Discussion and Creative Means}
-\label{subsec:analysis_creative_means}
 
 % \subimport{tables/}{table_all}
 
@@ -264,9 +255,33 @@ The technique of \citeauthor*{guerrero_2016_pep}~\cite{guerrero_2016_pep} offers
     \caption[Control mechanisms in the state of the art]{Recent techniques are sorted by design features. For each work it is analysed and indicated which specific control mechanisms they offer. *\cite{mech_2012_tdf} present a procedural modeling engine, which can be programmed to include almost any control type.\label{table:analysis}}
 \end{figure*}
 
-% Within the above design areas, control mechanisms are manifold and well distributed over all areas. Because of that, we start by briefly summarizing the most common control mechanisms and their role in creative pattern generation processes before turning to the state of the art.
 
-While Table~\ref{table:analysis} summarizes the above discussed control mechanisms, we now further investigate the techniques potential to support a creative workflow. This discussion of the creative means has an interpretative nature to it. Arguably, not always is an unambiguous reasoning manageable. Thus, this discussion should be viewed as a step toward an objective discussion about terms such as artist-usable and creatively controllable as well as a more realistic usage of these terms.
+\section{Discussion and Creative Means}
+\label{subsec:analysis_creative_means}
+
+% TODO: More discussion for table:analysis
+Table~\ref{table:analysis} lists for the above discussed control mechanisms the in~\Cref*{sec:taxo_control_mechanism} discussed categories. For interrelating the control mechanisms to the control characteristics, we considered the publications in Table~\ref{table:analysis}. Due to the diversity of the underlying methods and the different design goals of the considered body of work, we believe this to be a representative summarization.
+
+% TODO: Update
+Table~\ref{table:taxo_controlmechanism} shows that global, hence automatic, control is usually enabled through intermediate representations, such as an example image, while on the other end of the spectrum, the placement of elements as part of the actual output is local, and automation is lost. Parameterization and the different types of handling also require abstracted input from an artist, such as the use of a slider. Sketch-based controls, such as an eraser, move the interaction onto the canvas and can make small-scale adjustments. The definition of a space or a curve to fill and masking areas is also usually done directly on the canvas but only influence the output indirectly. A brushing mechanism simultaneously creates the output directly on the canvas but can only do so in a limited region depending on the brush size. All other inputs are typically given before or after the generation of the output.
+
+This classification underlines that a focus on one control type, as is usual in computer graphics research, leads to the common trade-off between global automation and local manual manufacturing.
+
+
+
+
+% TABLE
+% This is for overaleaf a preview image as the table does not compile there...
+% \subimport{tables/}{table_controlmechanism}
+
+\begin{table}
+    \centering
+    \includegraphics[width=\linewidth]{tables/table_controlmechanism.png}
+    \caption{Prevalence of control mechanisms in literature... \bb{Should this be in results? We analyze papers that we have not introduced yet...}}
+    \label{table:taxo_controlmechanism}
+\end{table}
+
+We now further investigate the techniques potential to support a creative workflow. This discussion of the creative means has an interpretative nature to it. Arguably, not always is an unambiguous reasoning manageable. Thus, this discussion should be viewed as a step toward an objective discussion about terms such as artist-usable and creatively controllable as well as a more realistic usage of these terms.
 
 \majortodo[inline]{Add work from 2018 on to the discussion.}
 
