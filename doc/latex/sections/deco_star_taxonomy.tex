@@ -65,7 +65,7 @@ The input can have \textit{global} influence, \textit{regional}, \eg~on a drawn 
         % \caption{When is the input given?}
 \end{figure}
 
-Input can be given \textit{before}, \textit{during} the creation process, when parts of the results are already visible e.g. with a painting mechanism, or \textit{after} the creation process. The result is visible to the artist and can be adjusted retrospectively.
+Input can be given \textit{before}, \textit{during} the creation process, when parts of the results are already visible \eg~with a painting mechanism, or \textit{after} the creation process. The result is visible to the artist and can be adjusted retrospectively.
 
 
 \noindent\textbf{Who (User)} gives the input in regard to the needed type of skill set. 
@@ -75,12 +75,11 @@ Input can be given \textit{before}, \textit{during} the creation process, when p
         % \caption{Who can give the input? Which skill set is needed?}
 \end{figure}
 
-This category can be in part derived from the above characteristics of \textit{how} and \textit{what}. In most general terms this category can be classified the skill set of a \textit{Programmer}, for giving, \eg~code as input, requiring analytical-formal and logical thinking and the ability to abstract. On the other end of the spectrum, the skill set of an \textit{Artist} is needed, \eg~for drawing, requiring intuitive-visual and spatial thinking and the ability to create. The \textit{who} category is listed here for completeness. However, to answer questions of needed competencies, skill- and mindsets, including the accompanying psychological and artistic aspects, is out of the scope of this survey.
+This category can be in part derived from the above characteristics of \textit{how} and \textit{what}. In most general terms, this category can be classified the skill set of a \textit{Programmer}, for giving, \eg~code as input, requiring analytical-formal and logical thinking and the ability to abstract. On the other end of the spectrum, the skill set of an \textit{Artist} is needed, \eg~for drawing, requiring intuitive-visual and spatial thinking and the ability to create. The \textit{who} category is listed here for completeness. However, to answer questions of needed competencies, skill- and mindsets, including the accompanying psychological and artistic aspects, is out of the scope of this survey.
 % and requires knowledge in fields other than computer science. The following discussions are rooted in computer graphics research and aim for an assessment of algorithmic controllability. Hence, the classification of who specifically is most suitable to use a tool, is put aside.
 
 \subsection{Control Mechanisms}\label{subsec:taxo_control_mechanism}
 Next to the above overall relevant factors for an artist using digital tools, we now classify the control mechanisms as they are described in the state of the art. These low-level mechanisms define what an artist can (or has to) work with and are specified for each reference in Table~\ref{table:analysis}. Because this survey focuses on interfacing algorithms, UI specifics, such as the layout of buttons, are not considered. For each mechanism we summarize the \textit{how}, \textit{what}, \textit{where} and \textit{when} characteristics over all reviewed publications and with that show the connections and capabilities of the different control mechanisms and potential trade-offs between approaches in Table~\ref{table:taxo_controlmechanism}.
-
 
 \noindent\textbf{Initialization}
 \begin{itemize}
@@ -89,7 +88,6 @@ Next to the above overall relevant factors for an artist using digital tools, we
 \end{itemize}
 
 \noindent\textbf{Exemplars}
-
 \begin{itemize}
     \item \textit{Image}: An example image that should be matched in its entirety. Examples are usually pixel data.
     \item \textit{Element Arrangement}: An example element arrangement that should be matched in its entirety. Elements are usually separate shapes and might carry additional data.
@@ -97,14 +95,12 @@ Next to the above overall relevant factors for an artist using digital tools, we
 \end{itemize}
 
 \noindent\textbf{Parameterization}
-
 \begin{itemize}
     \item \textit{Visual Output}: Parameters that can adjust visual features directly in the output.
     \item \textit{System/Generation}: Parameters that influence the output indirectly, such as parameters for an optimization algorithm or constraints.
 \end{itemize}
 
 \noindent\textbf{Handling}
-
 \begin{itemize}
     \item \textit{Visualization}: Any type of visual interface that goes beyond the standard UI elements, such as sliders and buttons.
     \item \textit{Image-Based}: Images as indirect control input, such as pixel data masks.
@@ -112,22 +108,19 @@ Next to the above overall relevant factors for an artist using digital tools, we
 \end{itemize}
 
 \noindent\textbf{Filling}
-
 \begin{itemize}
-    \item \textit{Shapes}: A space to fill (e.g., a specific shape).
+    \item \textit{Shapes}: A space to fill (\eg~a specific shape).
     \item \textit{Masking}: Areas within the shape to fill that should remain unaffected.
     \item \textit{Curves to Fill}: A one-dimensional curve or path to be filled. The curve is given as a whole before the filling starts.
 \end{itemize}
 
 \noindent\textbf{Guiding}
-
 \begin{itemize}
-    \item \textit{Brushing/Strokes to Follow}: A curve, usually created by mouse movements or with a stylus pen, that is filled with output elements while the curve is generated - often understood as brushing.
-    \item \textit{Directions}: Visual elements such as intermediate curves, arrows or output components that define directions for the design to follow (e.g., with an underlying vector field).
+    \item \textit{Brushing/Strokes to Follow}: A curve, usually created by mouse movements or with a stylus pen, that is filled with output elements -often understood as brushing.
+    \item \textit{Directions}: Visual elements such as intermediate curves, arrows or output components that define directions for the design to follow (\eg~with an underlying vector field).
 \end{itemize}
 
 \noindent\textbf{Placing}
-
 \begin{itemize}
     \item \textit{Element Placement}: The direct placement of components on the canvas as part of the final result.
     \item \textit{Element Drag \& Drop}: Drag and drop of components on the canvas within the existing result.

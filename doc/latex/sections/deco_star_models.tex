@@ -12,7 +12,7 @@ For this goal, this survey focuses on procedural models as a basis, but it also 
 \subsection{Procedural}
 \label{subsec:models_procedural}
 
-\citeauthor*{ebert_2003_tmp}~\cite{ebert_2003_tmp} describe procedural techniques as algorithms and mathematical functions that synthesize a model or an effect. Solely equation-based representations are considered the ``purest'' form of procedural modeling~\cite{smelik_2014_aso}. This approach gained immediate importance in the early days of computer graphics. Simple equations are able to reproduce many natural phenomena - such as wood, stone, water, smoke and plants - with only some lines of code in the range of kilobytes, hence being memory efficient. The main appeals of such procedural representation include its compactness in combination with being continuous, scalable and unbound to a specific resolution. While procedural generation techniques have been a constant basis for generating content for games, its characteristics of memory efficiency and unlimited resolution are more important than ever with the rise of virtual reality, for example.
+\citeauthor*{ebert_2003_tmp}~\cite{ebert_2003_tmp} describe procedural techniques as algorithms and mathematical functions that synthesize a model or an effect. Solely equation-based representations are considered the ``purest'' form of procedural modeling~\cite{smelik_2014_aso}. This approach gained immediate importance in the early days of computer graphics. Analytical forms are able to reproduce many natural phenomena -such as wood, stone, water, smoke and plants- with only some lines of code in the range of kilobytes, hence being memory efficient. The main appeals of such procedural representation include its compactness in combination with being continuous, scalable and unbound to a specific resolution. While procedural generation techniques have been a constant basis for generating content for games, its characteristics of memory efficiency and unlimited resolution are more important than ever with the rise of virtual reality, for example.
 
 The compactness and efficiency of a procedural model also enable parameterization, resulting in the model being responsive and flexible. Parameters usually represent certain visual characteristics and their amplification. Parameterization brings the crucial benefit that, for example, textures remain editable throughout the entire visual effect production pipeline.
 
@@ -22,44 +22,26 @@ In addition to the disadvantage in the control of a procedural representation, t
 
 The classifications of core mechanisms for procedural generation of \citeauthor*{hendrikx_2013_pcg}~\cite{hendrikx_2013_pcg} in the context of games and the categorization of \citeauthor*{smelik_2014_aso}~\cite{smelik_2014_aso} for virtual worlds are equally appropriate in the context of creative pattern generation. In the following we briefly discuss core mechanisms in the context of creative pattern generation, based on the previously mentioned taxonomies (\cite{hendrikx_2013_pcg}, \cite{smelik_2014_aso}).
 
-\subsubsection{Stochastic Models}
-
-For stochastic models, noise functions generate maps of random values. They can either be used in their original form as procedural model or as a basis function. Visual features can be added by combining multiple layers of the noise in different resolutions. 
-
-Typical noise functions are lattice value noise, lattice gradient noise (e.g., Perlin noise \cite{perlin_1985_ais}), sparse convolution noise and spectral noise~\cite{ebert_2003_tmp,lagae_2010_sap}. 
+\paragraph*{Stochastic Models} generate models by using random values. They can either be used in their original form as procedural model or as a noise basis function. Visual features can be added by combining multiple layers of the noise in different resolutions. Typical noise functions are lattice value noise, lattice gradient noise (\eg~Perlin noise \cite{perlin_1985_ais}), sparse convolution noise and spectral noise~\cite{ebert_2003_tmp,lagae_2010_sap}. 
 % These ``pure'' procedural programs also have the advantage of being well suited for optimization, such as parallelization, because they can be randomly evaluated in constant time~\cite{lagae_2010_sap}. 
 In the context of creative pattern generation, stochastic models build a basis for many designs but their design spectrum and controllability are limited.
 
-\subsubsection{Function- and Rule-based Models} 
+\paragraph*{Function-based Models} extend the class of stochastic models by layering and combining a variety of functions to form a visually complex pattern. Typical building blocks are periodic, spline, step, clamp and conditional functions~\cite{ebert_2003_tmp} and are the basis for regular patterns designs. 
 
-Function-based models extend the class of stochastic models by layering and combining a variety of functions to form a visually complex pattern. Typical building blocks are periodic, spline, step, clamp and conditional functions~\cite{ebert_2003_tmp}. 
+\paragraph*{Rule-based Models} are part of individual, and often quite complex, generation systems that can be context-dependent and/or design-specific. Rule-based models are programs that relate to and partition the space to fill and follow propagation rules. The algorithmic core often handles proxy shapes, while for the result graphical elements, such as vector graphics, are mapped to the proxies. Rule-based procedural models are suitable for creative pattern generation and novel control mechanisms because their iterative generation logic is open and flexible~\cite{wong_1998_cgf, mech_2012_tdf}. They can implement any designs and include any elements. Moreover, within a suitable pipeline, they can potentially take global constraints into consideration and build structural hierarchies.
 
-Rule-based models are part of individual, and often quite complex, generation systems that can be context-dependent and/or design-specific. Rule-based models are programs that relate to and partition the space to fill and follow propagation rules. The algorithmic core often handles proxy shapes, while for the result graphical elements, such as vector graphics, are mapped to the proxies.
-    
-Rule-based procedural models are suitable for creative pattern generation and novel control mechanisms because their iterative generation logic is open and flexible~\cite{wong_1998_cgf, mech_2012_tdf}. They can implement any designs and include any elements. Moreover, within a suitable pipeline, they can potentially take global constraints into consideration and build structural hierarchies.
-
-\subsubsection{Grammar-based Models}
-
+\paragraph*{Grammar-based Models}
 % Grammar-based models are also considered ``purely'' procedural~\cite{smelik_2014_aso}. 
-These models form grammatically-correct sentences from individual words, based on a system of rules. 
+form grammatically-correct sentences from individual words, based on a system of rules, and they are related to rule-based models in that the rules are using grammars or rewriting systems. 
 % Originally introduced in theoretical linguistics by Noam Chomsky in the late 1950s, grammars are applied in computer graphics to generate objects such as plants from elements encoded as letters or words~\cite{hendrikx_2013_pcg}. 
-Prominent techniques are L-systems and shape grammars. An emerging subgroup of grammar-based models includes \textit{probabilistic} inference into the derivation of correct sentences from a grammar.
-
-In recent years, there have been a variety of successful grammar-based approaches for certain aspects of creative pattern generation~\cite{benes_2011_gpm,talton_2011_mpm,ritchie_2015_cpm}. However, grammars are difficult to set up and to design~\cite{stava_2010_ipm}. Because the execution process is inherently hierarchical, grammar systems have difficulty in supporting creative control from a global to local scale.
+Prominent techniques are L-systems and shape grammars. An emerging subgroup of grammar-based models includes \textit{probabilistic} inference into the derivation of correct sentences from a grammar. In recent years, there have been a variety of successful grammar-based approaches for certain aspects of creative pattern generation~\cite{benes_2011_gpm,talton_2011_mpm,ritchie_2015_cpm}. However, grammars are difficult to set up and to design~\cite{stava_2010_ipm}. Because the execution process is inherently hierarchical, grammar systems have difficulty in supporting creative control from a global to local scale.
 
 % \textit{Simulation Models:} Simulation models are based on techniques that approximate complex phenomena for which an analytical solution is unmanageable or unavailable. \citeauthor*{hendrikx_2013_pcg}~\cite{hendrikx_2013_pcg} further group simulation techniques into cellular automata, vector and tensor fields, and agent-based simulations. 
 
 % In the context of creative pattern generation, simulation models are not prominent, with the exception of vector and tensor fields~\cite{ijiri_2008_aeb,yuanyuan_2011_gso,saputra_2017_ffo}. For simulation models usually interactive performance is a challenge, as well as the control on an element level. However, the potential to create a layout within a space and adapt to the characteristics of that space within a simulation system as well as the possible design variability call for further investigation.
 
-
-\subsubsection{Artificial Intelligence Models}
-
-Artificial intelligence models represent approaches that go beyond the direct execution of specific rules. For example, they automatically optimize results based on fitness or error functions, or they apply planning steps. \citeauthor*{hendrikx_2013_pcg}~\cite{hendrikx_2013_pcg} group this class into genetic algorithms, neural networks and constraint satisfaction and planning. 
-
-In recent years, machine learning has been introduced into procedural content generation with the same impact as in all other computer science fields~\cite{summerville_2017_pcg}. The potential of machine learning techniques in regard to creative pattern generation and their control mechanisms seems almost limitless.
+\paragraph*{Artificial Intelligence Models} represent approaches that go beyond the direct execution of specific rules. For example, they automatically optimize results based on fitness or error functions, or they apply planning steps. \citeauthor*{hendrikx_2013_pcg}~\cite{hendrikx_2013_pcg} group this class into genetic algorithms, neural networks and constraint satisfaction and planning. In recent years, machine learning has been introduced into procedural content generation with the same impact as in all other computer science fields~\cite{summerville_2017_pcg}. The potential of machine learning techniques in regard to creative pattern generation and their control mechanisms seems almost limitless.
 % and is further discussed as outlook in \Cref{subsec:analysis_outlook_mixed_initiative_interfaces}.
-
-
 
 
 

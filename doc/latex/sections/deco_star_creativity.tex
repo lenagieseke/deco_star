@@ -1,27 +1,24 @@
 %!TEX root = ../deco_star.tex
 
 
-\section{Creative Means}
-\label{sec:creativ_means}
-
+\section{Creative Means}\label{sec:creativ_means}
 
 % ZOOM INTO TOPIC
-Many content generation contexts in computer graphics involve creative considerations. To consider creativity is especially relevant for investigating control mechanisms because the controls provide the means for creative creation. However, creativity is also a notoriously difficult topic to address because it is an ill-defined domain and involves insights from various disciplines.
+Many content generation contexts in Computer Graphics involve creative considerations. To consider creativity is especially relevant for investigating control mechanisms because the controls provide the means for creative creation. However, creativity is also a notoriously difficult topic to address, because it is ill-defined and involves insights from various disciplines.
 
-For creativity related research in computer science, on the one hand, there are efforts to develop algorithms that perform creatively. On the other hand, there is the common goal of supporting human creativity with digital tools, which is the focus of this survey. The goal of enabling human creativity is, for example, well researched in regard to interface design. This is an established field in the human-computer interaction community and based largely on the pioneering work of \citeauthor*{shneiderman_2007_cst}~\cite{shneiderman_2007_cst} about \textit{Creativity Support Tools}. This topic has recently found attention again in the HCI community~\cite{frich_2018_tyo, frich_2019_mtl, remy_2020_ecs}, asking for more rigorous evaluation in regard to claimed creativity support. Among other aspects,~\citeauthor*{frich_2018_tyo}~\cite{frich_2018_tyo} ask for "clearer definitions of creativity" and~\citeauthor*{frich_2018_tyo}~\cite{frich_2018_tyo} report that in 113 surveyed publications, "only 26 papers directly quoting creativity metrics (e.g., fluency, originality, novelty, flexibility)." This shows that the HCI community already strives for the type of survey this STAR proposes. However, for this survey, rooted in the field of computer graphics, we review potentially relevant characteristics of underlying algorithms that might help to enable artists to be creative. Interface design aspects are included but are not focus of this survey. However, the need for bridging between developing the core algorithms and the interface in order to support creative-artistic intent has been voiced by past research~\cite{deterding_2017_mci,isenberg_2016_inw, salesin_2002_nar}, and this work wishes to contribute to this effort.
+On the one hand, there are efforts to develop algorithms that perform creatively for creativity-related research in computer science. On the other hand, there is the common goal of supporting human creativity with digital tools, which is the focus of this survey. The goal of enabling human creativity is, for example, well-researched in regard to interface design. This is an established field in the human-computer interaction (HCI) community and it is based largely on the pioneering work of \citeauthor*{shneiderman_2007_cst}~\cite{shneiderman_2007_cst} about \textit{Creativity Support Tools}. This topic has recently found attention again in the HCI community~\cite{frich_2018_tyo, frich_2019_mtl, remy_2020_ecs}, asking for more rigorous evaluation in regard to claimed creativity support. Among other aspects,~\citeauthor*{frich_2018_tyo}~\cite{frich_2018_tyo} ask for "clearer definitions of creativity" and report that in 113 surveyed publications, "only 26 papers directly quoting creativity metrics (\eg fluency, originality, novelty, flexibility)." This shows that the HCI community already strives for the type of survey this STAR proposes. However, for this survey, rooted in the field of computer graphics, we review potentially relevant characteristics of underlying algorithms that might help to enable artists to be creative. Interface design aspects are included but are not focus of this survey. However, the need for bridging between developing the core algorithms and the interface in order to support creative-artistic intent has been voiced by past research~\cite{deterding_2017_mci,isenberg_2016_inw, salesin_2002_nar}, and this work wishes to contribute to this effort.
 
-As evaluation technique, \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} presented the quantifiable \textit{Creativity Support Index} (CSI), which has found its way into the graphics community \cite{shugrina_2017_ppi}. The index measures how well a tool enables creativity based on a psychometric survey. The development and validation of the measurement dimensions - namely, \textit{exploration}, \textit{expressiveness}, \textit{immersion}, \textit{enjoyment}, \textit{results worth effort}, and \textit{collaboration} - are mainly based on user tests. \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} quantified the specific phrases participants used to describe a creative process. However, a clear definition of terms like \textit{exploration} and \textit{expressiveness} is missing or the meaning of a statement such as ``I was able to be very creative, [...]'' is left open. 
+\citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} presented an evaluation technique called the quantifiable \textit{Creativity Support Index} (CSI), which has found its way into the graphics community~\cite{shugrina_2017_ppi}. The index measures how well a tool enables creativity based on a psychometric survey. The development and validation of the measurement dimensions -namely, \textit{exploration}, \textit{expressiveness}, \textit{immersion}, \textit{enjoyment}, \textit{results worth effort}, and \textit{collaboration}- are based on user tests. \citeauthor*{cherry_2014_qcs}~\cite{cherry_2014_qcs} quantified the specific phrases participants used to describe a creative process. However, a clear definition of terms like \textit{exploration} and \textit{expressiveness} is missing or the meaning of a statement such as ``I was able to be very creative, [...]'' is left open. 
 
-Also, a quantified user study is often not feasible, for example for this survey and for assessing the state of the art. Furthermore, doing so would not be meaningful because the support of creativity is not a goal for most methods. However, most methods do offer carefully developed control mechanisms. We propose it to build a discussion of the means for creativity on the presented control mechanisms in a publication and on the specifics given from the authors. Based on the given information, we reflect on the potential for creative means in a meaningful way, even if creative control was not necessarily the authors' intention. 
+A quantified user study is often not feasible, for example for this survey and for assessing the state of the art. Furthermore, doing so would not be meaningful because the support of creativity is not a goal for most methods. However, most methods do offer carefully developed control mechanisms. We propose it to build a discussion of the means for creativity on the presented control mechanisms in a publication and on the specifics given from the authors. Based on the given information, we reflect on the potential for creative means in a meaningful way, even if creative control was not necessarily the authors' intention. 
 
 We derive a working basis of such creative means in regard to control mechanisms in the following review of relevant references. Our classification is meant as a step toward understanding the creative control options within the current state of the art. In terms of measurement dimensions, it can be seen as an evaluation on algorithmic level and a subset of the more general and user-study-based classification with the \textit{Creativity Support Index}. 
 
-\subsection{Discussion Basis}
-\label{subsec:creative_means}
-
+\subsection{Discussion Basis}\label{subsec:creative_means}
 % Academic discussions about what constitutes creativity have a long history in the field of psychology~\cite{weisberg_2006_cui}, cognitive science~\cite{boden_2004_cmm} and philosophy~\cite{gaut_2010_pc} and is ongoing. 
 
 % TODO: Check tense - should it be in present?
+%BB - I believe present is OK. 
 
 \citeauthor*{weisberg_2006_cui}~\cite{weisberg_2006_cui} states that a creative person ``intentionally produces a novel product'' (p.70) and explicitly decouples a possible value of a product from it being the result of a creative process (p.63). 
 % We follow Weisberg's exclusion of a often diffuse value of the result of a creative process and focus on the creative intent. 
@@ -59,7 +56,7 @@ The means of navigation describe whether a creation processes is efficiently man
 
 \begin{itemize}
     \item \textit{Interactive:} Refers to a system with ideally no noticeable delays when executing controls and computing results. Lengthy, non-creative configuration requirements are also potentially distracting. Hence, a thorough analysis should consider the whole process an artist has to go through to produce a result.
-    \item \textit{Quantity of Controls:} This category indicates how flexible and controllable a technique is, e.g. by counting the number of different controls that can be adjusted for one output. 
+    \item \textit{Quantity of Controls:} This category indicates how flexible and controllable a technique is, \eg~by counting the number of different controls that can be adjusted for one output. 
 
     Ideally, this category would refer to the ratio of visual features of the possible output that are relevant to humans to controllable features. This would ensure that the controls cover all necessary features and that they complement each other. However, the identification of generally describable, perceptually relevant visual features is out of the scope of this survey and left to future work.
 
@@ -75,18 +72,16 @@ The means of transparency describe how clear the understanding of cause and effe
 
 \begin{itemize}
     \item \textit{Control Domain:} Refers to how well controls are mapped to visual features and how well they cover the possible design range of each feature. A high-quality control should not have any overlapping effects with other controls.
-    \item \textit{Control Communication:} This category describes how well controls (e.g., with a visualization and/or little abstraction) represent their effects on the result. For artist-centered tools this could mean that controls should be visual and directly on the canvas.
+    \item \textit{Control Communication:} This category describes how well controls (\eg~with a visualization and/or little abstraction) represent their effects on the result. For artist-centered tools this could mean that controls should be visual and directly on the canvas.
 \end{itemize}
 
 
-\noindent\textbf{Variation}
-\label{subsubsec:variation}
+\noindent\textbf{Variation}\label{subsubsec:variation}
 
-% mention expressiveness
-The means of variation indicate how visually different the results can be.
+Variation indicates how visually different the results can be.
 
 \begin{itemize}
-    \item \textit{Size of the Design Space:} A design space is limited if all results look rather similar to each other and are part of a specific design class. A large design space of one technique allows, for example, for different texture classes such as combining stochastic and structural creation.
+    \item \textit{Size of the Design Space:} is limited if all results look rather similar to each other and are part of a specific design class. A large design space of one technique allows, for example, for different texture classes such as combining stochastic and structural creation.
     \item \textit{Openness of the Design Space:} Refers to the limitlessness of possible designs and that there is no attachment of the technique to a specific design class. An open design space enables an artist to come up with a distinctive individual style, for example. Different artists can create inherently different and unique results with the same tool if it has a open desgin space.
 \end{itemize}
 
